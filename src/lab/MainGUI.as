@@ -1,4 +1,4 @@
-package  
+package lab
 {
 	import com.bit101.components.ComboBox;
 	import flash.display.DisplayObjectContainer;

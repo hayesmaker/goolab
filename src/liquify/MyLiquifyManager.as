@@ -156,7 +156,7 @@
 				}
 				default: 
 				{
-					trace("No comprendo ! "+event.keyCode);
+					trace("No comprendo ! " + event.keyCode);
 					break;
 				}
 			}
@@ -199,20 +199,6 @@
 		} // end function
 		
 		/**
-		 * ========================================================================================
-		 * @return
-		 */
-		public function getImageData():BitmapData
-		{
-			trace("=== getImageData");
-			var scale:Number = Math.round(70 * (this.originalImage.width / this.blurredDisplaceMap.width));
-			var bmd:BitmapData = this.originalImage.clone();
-			var dmf:DisplacementMapFilter = new DisplacementMapFilter(this.resize(this.blurredDisplaceMap, this.originalImage.width), new Point(0, 0), 2, 4, scale, scale, DisplacementMapFilterMode.IGNORE);
-			bmd.applyFilter(bmd, bmd.rect, new Point(), dmf);
-			return bmd;
-		} // end function
-		
-		/**
 		 *
 		 * ========================================================================================
 		 * @param	param1
@@ -244,56 +230,6 @@
 			bmdResized.draw(bmdOrig, mat, null, null, null, true);
 			
 			return bmdResized;
-		} // end function
-		
-		/**
-		 * ========================================================================================
-		 * @param	param1
-		 */
-		private function LoadFinalImg(param1:Object = null):void
-		{
-			trace("=== LoadFinalImg");
-			
-			var _width:Number = NaN;
-			var _height:Number = NaN;
-			this.image = new Bitmap(this.originalImage);
-			var _loc_4:Number = 8;
-			var _loc_5:Rectangle = asUtilsGetSize(new Rectangle(this.workingArea[0], this.workingArea[1], this.workingArea[2] - 20, this.workingArea[3] - 20), new Rectangle(0, 0, this.image.width, this.image.height));
-			_width = Math.floor(_loc_5.width);
-			_height = Math.floor(_loc_5.height);
-			this.image.smoothing = true;
-			this.image.width = _width;
-			this.image.height = _height;
-			this.currentImg.x = Math.floor(this.workingArea[0] + this.workingArea[2] / 2 - this.image.width / 2);
-			this.currentImg.y = this.workingArea[1] + Math.floor(this.workingArea[3] / 2) - Math.floor(this.image.height / 2);
-			if (this.currentImg.numChildren)
-			{
-				this.currentImg.removeChildAt(0);
-			}
-			this.currentImg.addChild(this.image);
-			this.origMap = new Bitmap(this.image.bitmapData.clone());
-			this.origMap.smoothing = true;
-			this.origMap.x = this.currentImg.x;
-			this.origMap.y = this.currentImg.y;
-			this.origMap.width = this.image.width;
-			this.origMap.height = this.image.height;
-			this.origMap.visible = false;
-			addChild(this.origMap);
-			
-			this.rect = new Rectangle(0, 0, Math.floor(this.image.width), Math.floor(this.image.height));
-			this.displacementMap = new BitmapData(this.rect.width, this.rect.height, false, 0x808080);
-			this.blurredDisplaceMap = this.displacementMap.clone();
-			this.blurFilter = new BlurFilter(8, 8, 3);
-			this.dispMapF = new DisplacementMapFilter(this.blurredDisplaceMap, new Point(0, 0), 2, 4, 70, 70, DisplacementMapFilterMode.IGNORE);
-			this.displacementMap.fillRect(this.rect, 0x808080);
-			this.blurredDisplaceMap.fillRect(this.rect, 0x808080);
-			this.applyMap();
-			this.initBrush();
-			this.file_loaded = true;
-			blDisMapBm = new Bitmap(blurredDisplaceMap)
-			this.blDisMapBm.visible = false;
-			addChild(this.blDisMapBm);
-		
 		} // end function
 		
 		/**
@@ -581,6 +517,56 @@
 		/**
 		 * ========================================================================================
 		 * @param	param1
+		 */
+		private function LoadFinalImg(param1:Object = null):void
+		{
+			trace("=== LoadFinalImg");
+			
+			var _width:Number = NaN;
+			var _height:Number = NaN;
+			this.image = new Bitmap(this.originalImage);
+			var _loc_4:Number = 8;
+			var _loc_5:Rectangle = asUtilsGetSize(new Rectangle(this.workingArea[0], this.workingArea[1], this.workingArea[2] - 20, this.workingArea[3] - 20), new Rectangle(0, 0, this.image.width, this.image.height));
+			_width = Math.floor(_loc_5.width);
+			_height = Math.floor(_loc_5.height);
+			this.image.smoothing = true;
+			this.image.width = _width;
+			this.image.height = _height;
+			this.currentImg.x = Math.floor(this.workingArea[0] + this.workingArea[2] / 2 - this.image.width / 2);
+			this.currentImg.y = this.workingArea[1] + Math.floor(this.workingArea[3] / 2) - Math.floor(this.image.height / 2);
+			if (this.currentImg.numChildren)
+			{
+				this.currentImg.removeChildAt(0);
+			}
+			this.currentImg.addChild(this.image);
+			this.origMap = new Bitmap(this.image.bitmapData.clone());
+			this.origMap.smoothing = true;
+			this.origMap.x = this.currentImg.x;
+			this.origMap.y = this.currentImg.y;
+			this.origMap.width = this.image.width;
+			this.origMap.height = this.image.height;
+			this.origMap.visible = false;
+			addChild(this.origMap);
+			
+			this.rect = new Rectangle(0, 0, Math.floor(this.image.width), Math.floor(this.image.height));
+			this.displacementMap = new BitmapData(this.rect.width, this.rect.height, false, 0x808080);
+			this.blurredDisplaceMap = this.displacementMap.clone();
+			this.blurFilter = new BlurFilter(8, 8, 3);
+			this.dispMapF = new DisplacementMapFilter(this.blurredDisplaceMap, new Point(0, 0), 2, 4, 70, 70, DisplacementMapFilterMode.IGNORE);
+			this.displacementMap.fillRect(this.rect, 0x808080);
+			this.blurredDisplaceMap.fillRect(this.rect, 0x808080);
+			this.applyMap();
+			this.initBrush();
+			this.file_loaded = true;
+			blDisMapBm = new Bitmap(blurredDisplaceMap)
+			this.blDisMapBm.visible = false;
+			addChild(this.blDisMapBm);
+		
+		} // end function	 
+		
+		/**
+		 * ========================================================================================
+		 * @param	param1
 		 * @param	param2
 		 * @return
 		 */
@@ -621,29 +607,46 @@
 				_loc_3 = param2.width;
 			}
 			return new Rectangle(0, 0, Math.floor(_loc_3), Math.floor(_loc_4));
+		} // end function		
+		
+		/**
+		 * ========================================================================================
+		 */ /*
+		   private function _saveImage():void
+		   {
+		   var bmd:BitmapData = new BitmapData(this.currentImg.width, this.currentImg.height, true, 0);
+		   bmd.draw(this.currentImg); // et ensuite ???????
+		   } // end function
+		 */
+		
+		/*
+		   private function cursorSliderListener(event:SliderEvent) : void
+		   {
+		   var _loc_2:* = event.target.value;
+		   this.cursor.setRadius(_loc_2);
+		   this.mBrush.setRadius(_loc_2);
+		   this.cursor.show();
+		   this.cursor.x = this.workingArea[0] + Math.floor(this.workingArea[2] / 2);
+		   this.cursor.y = this.workingArea[1] + Math.floor(this.workingArea[3] / 2);
+		   }// end function
+		 */
+		
+		/**
+		 * ========================================================================================
+		 * @return
+		 */
+		public function getImageData_OBSOLETE():BitmapData
+		{
+			var scale:Number = Math.round(70 * (this.originalImage.width / this.blurredDisplaceMap.width));
+			var bmd:BitmapData = this.originalImage.clone();
+			var dmf:DisplacementMapFilter = new DisplacementMapFilter(this.resize(this.blurredDisplaceMap, this.originalImage.width), new Point(0, 0), 2, 4, scale, scale, DisplacementMapFilterMode.IGNORE);
+			bmd.applyFilter(bmd, bmd.rect, new Point(), dmf);
+			
+			trace("=== getImageData " + scale);
+			
+			return bmd;
 		} // end function
 	
-	/**
-	 * ========================================================================================
-	 */ /*
-	   private function _saveImage():void
-	   {
-	   var bmd:BitmapData = new BitmapData(this.currentImg.width, this.currentImg.height, true, 0);
-	   bmd.draw(this.currentImg); // et ensuite ???????
-	   } // end function
-	 */
-	
-	/*
-	   private function cursorSliderListener(event:SliderEvent) : void
-	   {
-	   var _loc_2:* = event.target.value;
-	   this.cursor.setRadius(_loc_2);
-	   this.mBrush.setRadius(_loc_2);
-	   this.cursor.show();
-	   this.cursor.x = this.workingArea[0] + Math.floor(this.workingArea[2] / 2);
-	   this.cursor.y = this.workingArea[1] + Math.floor(this.workingArea[3] / 2);
-	   }// end function
-	 */
-	
 	} // end class ================================================================================
+
 } // end package ==================================================================================
