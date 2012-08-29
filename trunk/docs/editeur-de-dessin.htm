@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"><head>
+			<title>Mediabox - Centre de Formation Adobe - Wiki</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="description" content="Wiki Mediabox. Centre de formation (PARIS/LYON) agree par Adobe. Organisme conventionne par l'Etat (FAFIEC, AFDAS, etc) et specialise aux technologies Flash, Flex, Photoshop, Illustrator, Indesign, Acrobat, PHP, MYSQL, Dreamweaver, Flash Media Server, Premiere">
+			<meta name="keywords" content="wiki,formation flash,formation dreamweaver,formation flex,formation php,formation photoshop,formation flash CS4,flashCS4,formation dreamweaver CS4,formation indesign,formation illustrator,adobe creative suite,formation flash 8,flash cs4,flash 10,formation flash CS3,flashCS3,formation dreamweaver CS3,adobe creative suite,formation flash 8,flash cs4,formation paris,formation lyon,dreamweaver cs4,dreamweaver cs3,formation javascript,formation ajax,formation indesign,flash formation,dreamweaver formation,flash remoting,photoshop formation,cours flash,cours dreamweaver,cours photoshop,cours illustrator,formation internet,formation adobe,formation flash communication server,formation premiere,adobe premiere,formation macromedia,flash MX,flash MX 2004,centre de formation agree; adobe,centre de formation agree macromedia,flash,macromedia,formations,mediabox,animation,formation multimedia,formation Internet,divertissement,organisme de formation,centre de formation,formation professionnelle">
+			<meta name="verify-v1" content="">
+			<meta name="revisit-after" content="">
+			<meta name="robots" content="all">
+			<meta name="distribution" content="global"> 
+			<meta name="rating" content="general">
+			<meta name="language" content="french">
+			<meta name="author" content="Mediabox">
+			<link href="editeur-de-dessin_fichiers/reset.css" rel="stylesheet" type="text/css">
+			<link href="editeur-de-dessin_fichiers/main.css" rel="stylesheet" type="text/css">
+			<script src="editeur-de-dessin_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="editeur-de-dessin_fichiers/jquery.js"></script>
+    <script type="text/javascript">var jQ = jQuery.noConflict();</script>
+	<link rel="stylesheet" type="text/css" media="screen" href="editeur-de-dessin_fichiers/topheader2.css">
+    <link rel="shortcut icon" href="http://forums.mediabox.fr/wiki2/lib/tpl/mb/images/favicon-flashico">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="revisit-after" content="15 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="language" content="french">
+    <meta name="author" content="SARL MEDIABOX">
+	<meta name="generator" content="DokuWiki Release 2009-02-14b">
+	<meta name="robots" content="index,follow">
+	<meta name="generator" content="DokuWiki Release 2009-02-14b">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-05-30T14:43:20+0200">
+<meta name="keywords" content="tutoriaux,flashplatform,gui,interactivite,editeur-de-dessin">
+<meta name="subject" content="Créer un éditeur de dessin.">
+<link rel="search" type="application/opensearchdescription+xml" href="http://forums.mediabox.fr/wiki2/lib/exe/opensearch.php" title="Ressources Mediabox">
+<link rel="start" href="http://forums.mediabox.fr/wiki2/">
+<link rel="contents" href="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin?do=index" title="Index">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://forums.mediabox.fr/wiki2/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://forums.mediabox.fr/wiki2/feed.php?mode=list&amp;ns=tutoriaux:flashplatform:gui:interactivite">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://forums.mediabox.fr/wiki2/_export/xhtml/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin">
+<link rel="stylesheet" media="all" type="text/css" href="editeur-de-dessin_fichiers/css.css">
+<link rel="stylesheet" media="screen" type="text/css" href="editeur-de-dessin_fichiers/css_002.css">
+<link rel="stylesheet" media="print" type="text/css" href="editeur-de-dessin_fichiers/css_003.css">
+<script type="text/javascript" charset="utf-8" src="editeur-de-dessin_fichiers/js.php"></script>
+
+			<link href="https://plus.google.com/110558023059228274886" rel="author">
+		</head>
+			<body><div id="mb-page"><div id="mb-header">
+	<div id="mb-header-noire">
+		<div class="centrage">
+			<div id="mb-baseline">
+			<h1 class="baseline-titre">Forums Développement Multimédia</h1></div>
+		</div>
+	</div>
+	<div id="mb-header-rouge">
+		<div class="centrage">
+			<div id="mb-mediabox">
+				<a href="http://forums.mediabox.fr/" title="Forums Développement Multimédia"><img src="editeur-de-dessin_fichiers/mediabox.png" title="Forums Développement Multimédia"></a>
+			</div>
+			<div id="mb-cube">
+				<img src="editeur-de-dessin_fichiers/cube.png">
+			</div>
+		</div>
+	</div>
+	<div id="mb-header-rf">
+		<div class="centrage">
+			
+		<link href="editeur-de-dessin_fichiers/menuForum.css" rel="stylesheet" type="text/css">
+		<div id="primary_nav" class="clearfix">
+			<div class="main_width">
+				<ul class="ipsList_inline" id="community_app_menu">
+					<li id="nav_discussion" class="left"><a href="http://forums.mediabox.fr/" title="Aller sur les discussions">Forums</a></li>						
+					<li id="nav_app_blog" class="left "><a href="http://www.mediabox.fr/" title="Aller au centre de formation Mediabox">Formations</a></li><li id="nav_app_blog" class="left active"><a href="http://forums.mediabox.fr/wiki/tutoriaux" title="Tutoriaux">Wiki</a></li>
+					
+					<li id="nav_other_apps" style="display: none; ">
+						<a href="#" class="ipbmenu" id="more_apps">Plus <img src="editeur-de-dessin_fichiers/useropts_arrow.png"></a>
+					</li><li id="nav_app_blog" class="right" style="margin-right:0px;"><a href="http://forums.mediabox.fr/wiki2/tutoriaux?do=recent" title="Nouveaux tutoriaux">Nouveaux tutoriaux</a></li><li id="nav_app_blog" class="right"><a href="http://forums.mediabox.fr/forum/105-cafe" title="Café">Café</a></li><li id="nav_app_blog" class="right"><a href="http://forums.mediabox.fr/forum/163-offres-demploi-recentes" title="Emploi">Emploi</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		</div>
+		<!-- FIN DIV HEADER HEADER ROUGE -->
+	</div><div id="contenu" class="centrage">
+						
+						
+						
+		<div id="content">
+			
+			
+<div id="fullPage" class="flash">
+        
+    
+    <div class="dokuwiki">
+            
+        <div class="stylehead">
+    
+                
+            <!--
+            http://wikibis.mediabox.fr/feed.php?type=rss2&linkto=current&content=html&mode=recent&ns=tutoriaux:flashplatform&num=20
+            -->
+        
+                        <div class="breadcrumbs">
+                <a href="http://forums.mediabox.fr/wiki2/tutoriaux" title="tutoriaux">tutoriaux</a> » <a href="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform" title="tutoriaux:flashplatform">Flash Platform</a> » <a href="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui" title="tutoriaux:flashplatform:gui">Interactivité, interfaces graphiques et composants</a> » <a href="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite" title="tutoriaux:flashplatform:gui:interactivite">L'interactivité en ActionScript</a> » <a href="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin">Créez votre propre éditeur de dessin en AS3</a>            </div>
+                        
+            <div class="bar" id="mb__top__bar">
+                
+                                    <div id="search">
+                        <a href="http://forums.mediabox.fr/wiki2/aide" target="_blank" class="bar__top__button" title="Aide">
+                            <img src="editeur-de-dessin_fichiers/help.gif" alt="Aide">
+                        </a>
+                        <a style="display: inline;" id="toggle__rss" class="bar__top__button" title="Afficher les flux RSS disponibles" onclick="
+                                var style = document.getElementById('rss__feeds').style;
+                                var img = this.getElementsByTagName('img')[0];
+                                if (style.display =='block') {
+                                    style.display = 'none';
+                                    img.src = img.src.replace('rss-toggle2.gif', 'rss-toggle.gif');
+                                    this.title='Afficher les flux RSS disponibles';
+                                    img.alt = 'Afficher les flux RSS disponibles';
+                                } else {
+                                    style.display = 'block';
+                                    img.src = img.src.replace('rss-toggle.gif', 'rss-toggle2.gif');
+                                    this.title = 'Masquer les flux RSS disponibles';
+                                    img.alt = 'Masquer les flux RSS disponibles';
+                                }
+                            ">
+                            <img src="editeur-de-dessin_fichiers/rss-toggle.gif" alt="Afficher les flux RSS disponibles">
+                        </a>
+                        <a style="display: inline;" id="toggle__user__buttons" class="bar__top__button" title="Navigation / Edition / Connexion" onclick="toggleUserButtons()">
+                            <img src="editeur-de-dessin_fichiers/boutons-toggle.gif" alt="Navigation / Edition / Connexion">
+                        </a>
+                                                <form action="http://forums.mediabox.fr/wiki2/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" type="text"><input value="Rechercher" class="button" title="Rechercher" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>                                            </div>
+                
+                    <div style="display: none;" id="user__buttons">
+                    
+                        <div class="user">
+                                                    </div>
+                        <table><tbody><tr>
+                        <td></td>
+                        <td><form class="button btn_revs" method="get" action="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Anciennes
+révisions" class="button" accesskey="o" title="Anciennes révisions [O]" type="submit"></div></form></td>
+                        <td><form class="button btn_index" method="get" action="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin"><div class="no"><input name="do" value="index" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [X]" type="submit"></div></form></td>
+                        <td><form class="button btn_recent" method="get" action="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin"><div class="no"><input name="do" value="recent" type="hidden"><input value="Derniers
+changements" class="button" accesskey="r" title="Derniers changements [R]" type="submit"></div></form></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><form class="button btn_login" method="get" action="http://forums.mediabox.fr/wiki2/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin"><div class="no"><input name="do" value="login" type="hidden"><input name="sectok" value="efeb9b59b7030542a677af484848621a" type="hidden"><input value="Connexion" class="button" title="Connexion" type="submit"></div></form></td>
+                        </tr></tbody></table>
+                        
+                    </div>
+                
+                    <div style="display: none;" id="rss__feeds">
+                        <a href="http://forums.mediabox.fr/wiki2/feed.php?type=rss2&amp;num=20&amp;content=abstract">
+                            Surveiller tous les articles des ressources Mediabox
+                            <img src="editeur-de-dessin_fichiers/rss.gif">
+                        </a>
+                        <br>
+                                                                        <a href="http://forums.mediabox.fr/wiki2/feed.php?type=rss2&amp;num=20&amp;content=abstract&amp;ns=tutoriaux:flashplatform:gui:interactivite">
+                            Surveiller les articles de la catégorie 
+tutoriaux » Flash Platform » Interactivité, interfaces graphiques et 
+composants » L'interactivité en ActionScript                            <img src="editeur-de-dessin_fichiers/rss.gif">
+                        </a>
+                                            </div>
+                                
+                <div class="clearer"></div>
+            </div>
+            
+                
+        </div>
+        
+            
+        <div class="page">
+                        <!-- wikipage start -->
+            
+<h1 class="firstHeadLine"><a name="creez_votre_propre_editeur_de_dessin_en_as3" id="creez_votre_propre_editeur_de_dessin_en_as3">Créez votre propre éditeur de dessin en AS3</a></h1><!-- TOC START -->
+<div class="toc">
+<div style="cursor: pointer;" class="tocheader toctoggle" id="toc__header"><span style="cursor: pointer;" class="toc_close" id="toc__toggle"><span>−</span></span>Table des matières</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#creez_votre_propre_editeur_de_dessin_en_as3" class="toc">Créez votre propre éditeur de dessin en AS3</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#notions_abordees_dans_ce_cours" class="toc">Notions abordées dans ce cours</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#i._preparation_de_l_animation" class="toc">I. Préparation de l'animation</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#le_cahier_des_charges" class="toc">1) Le cahier des charges</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#regler_quelques_parametres" class="toc">2) Régler quelques paramètres</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#ii._les_bases_de_l_editeur" class="toc">II. Les bases de l'éditeur</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#creer_un_contexte_visuel" class="toc">1) Créer un contexte visuel</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#monter_la_structure_des_fonctions" class="toc">2) Monter la structure des fonctions</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#implementer_le_systeme_de_l_editeur" class="toc">3) Implémenter le système de l'éditeur</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#iii._le_fonctionnement_de_l_editeur" class="toc">III. Le fonctionnement de l'éditeur</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#implementer_la_fonction_de_dessin" class="toc">1) Implémenter la fonction de dessin</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#optimiser_la_vitesse" class="toc">2) Optimiser la vitesse</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#iv._ameliorations_possibles" class="toc">IV. Améliorations possibles</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#outils_supplementaires" class="toc">1) Outils supplémentaires</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#sauvegarde_des_dessins" class="toc">2) Sauvegarde des dessins</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#v._conclusion" class="toc">V. Conclusion</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#telechargements" class="toc">Téléchargements</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+<noscript class="datambplugin_pageinfo">Activez JavaScript pour une utilisation optimale.</noscript>
+<div id="datambplugin_pageinfo"><div id="pageinfo__header"><a href="http://forums.mediabox.fr/wiki2/aide/compatibilite" class="wikiMarker" rel="lightbox"><img src="editeur-de-dessin_fichiers/as3.png" alt="Compatible ActionScript 3. Cliquer pour en savoir plus sur les compatibilités." title="Compatible ActionScript 3. Cliquer pour en savoir plus sur les compatibilités." width="27"></a><a href="http://forums.mediabox.fr/wiki2/aide/compatibilite" class="wikiMarker" rel="lightbox"><img src="editeur-de-dessin_fichiers/flashcs3.png" alt="Compatible Flash CS3. Cliquer pour en savoir plus sur les compatibilités." title="Compatible Flash CS3. Cliquer pour en savoir plus sur les compatibilités." width="27"></a><span>Par Stefbuet</span></div></div>
+
+<div class="level1">
+
+<p>
+Bonjour à tous. Vous avez sûrement déjà vu sur le net des éditeurs de 
+dessins en Flash. Aujourd'hui, nous allons apprendre à en créer un en 
+ActionScript 3 grâce à l'IDE Flash CS3. Pour suivre ce tutoriel, vous 
+devez connaître les bases de Flash, de l'AS3 et de la POO (Organisation 
+des packages, héritage, fonctions de l'IDE Flash). Alors, prêt pour 
+créer le futur Photoshop ? C'est parti !
+</p>
+
+</div>
+
+<h2><a name="notions_abordees_dans_ce_cours" id="notions_abordees_dans_ce_cours">Notions abordées dans ce cours</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Document class</div>
+</li>
+<li class="level1"><div class="li"> Graphics <acronym title="Application Programming Interface">API</acronym></div>
+</li>
+<li class="level1"><div class="li"> Filters Class</div>
+</li>
+<li class="level1"><div class="li"> BitmapData/Bitmap</div>
+</li>
+<li class="level1"><div class="li"> Événements</div>
+</li>
+<li class="level1"><div class="li"> Timers</div>
+</li>
+<li class="level1"><div class="li"> Tweens class</div>
+</li>
+</ul>
+
+<p>
+
+À la fin de ce tutoriel, vous obtiendrez un éditeur de dessin vectoriel 
+comme celui ci-dessous. À la fin du cours, les sources seront 
+disponibles sous forme d'un fichier ZIP pour ceux qui n'auraient pas 
+suivi jusqu'au bout <img src="editeur-de-dessin_fichiers/icon_wink.gif" class="middle" alt=";)">
+</p>
+
+<p>
+Animation finale :
+</p>
+
+<p>
+<!--[if !IE]> -->
+<object id="flashfirebug_1346232044643" class="media" type="application/x-shockwave-flash" data="editeur-de-dessin_fichiers/final.swf" height="480" width="640">
+<!-- <![endif]-->
+<!--[if IE]>
+<object class="media" width="640" height="480" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" >
+    <param name="movie" value="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/final.swf" />
+<!--><!-- -->
+  <param name="quality" value="high">
+L"extension <a href="http://www.adobe.com/products/flashplayer/">Adobe Flash Plugin</a> est nécessaire pour afficher ce contenu.
+<param value="true" name="allowFullScreen"><param value="all" name="AllowNetworking"><param value="always" name="allowScriptAccess"><param value="all" name="AllowNetworking"></object>
+<!-- <![endif]-->
+
+</p>
+
+</div>
+
+<h2><a name="i._preparation_de_l_animation" id="i._preparation_de_l_animation">I. Préparation de l'animation</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="le_cahier_des_charges" id="le_cahier_des_charges">1) Le cahier des charges</a></h3>
+<div class="level3">
+
+<p>
+
+Nous allons avant toute chose commencer par définir ce que nous allons 
+faire, ce que nous souhaitons. Tout d'abord globalement, c'est un 
+éditeur de dessin vectoriel que nous allons coder (étonnés? <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)"> ). Nous allons lister les fonctions qui devront être présentes :
+
+</p>
+<ul>
+<li class="level1"><div class="li">pouvoir dessiner librement</div>
+</li>
+<li class="level1"><div class="li">avoir une interface pas trop chargée</div>
+</li>
+<li class="level1"><div class="li">pouvoir choisir la taille du pinceau</div>
+</li>
+<li class="level1"><div class="li">pouvoir choisir la couleur de la peinture</div>
+</li>
+<li class="level1"><div class="li">pouvoir choisir la transparence de la peinture</div>
+</li>
+<li class="level1"><div class="li">avoir une application plutôt rapide</div>
+</li>
+</ul>
+
+<p>
+
+Maintenant que nous avons posé les objectifs, nous allons déterminer comment les atteindre.<br>
+
+Pour pouvoir sélectionner les options souhaitées (taille, couleur, 
+transparence) nous allons créer un panneau outil situé sur la droite qui
+ regroupera toutes ses options. On pourra régler chaque option 
+simplement à la souris grâce à des sliders (des boutons à faire 
+glisser). Pour que l'espace de travail soit libre, je propose d'intégrer
+ un bouton au panneau outil qui permettrait de faire quitter/entrer du 
+plan de travail le panneau des outils. On pourra utiliser des Tweens 
+pour cela. Pour finir au niveau de l'optimisation, elle se fera lorsque 
+toutes les autres fonctions marcheront. Cette optimisation consiste à 
+réduire les temps de calcul, et nous verrons à la fin quelles parties du
+ code peuvent êtres optimisées.
+</p>
+
+</div>
+
+<h3><a name="regler_quelques_parametres" id="regler_quelques_parametres">2) Régler quelques paramètres</a></h3>
+<div class="level3">
+
+<p>
+
+Avant de commencer à proprement parler les graphismes ou le code de 
+notre éditeur, nous allons faire quelques réglages de base à notre 
+animation. Tout d'abord, nous allons régler la taille et le framerate 
+(images par seconde) de l'animation.
+</p>
+
+<p>
+Créez un nouveau document Flash AS3, puis cliquez sur Modification/Document…<br>
+
+Un panneau apparaît, modifiez les dimensions à 640 par 480 pixels et la 
+cadence à 48 images par secondes. Pourquoi 48 img/s ? Flash aime les 
+cadences multiples de 12, ne me demandez pas pourquoi, mais c'est mieux 
+ainsi. Ceci fait, enregistrer votre animation dans un répertoire sous le
+ nom de Main.fla
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/01.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:01.png"><img src="editeur-de-dessin_fichiers/01.png" class="media" alt=""></a>
+</p>
+
+<p>
+Flash CS3 nous permet d'assimiler notre scène à une classe.  Nous allons
+ ici utiliser cette fonctionnalité de document class afin d'avoir un 
+projet plus lisible. Pour résumer cette fonctionnalité de Flash CS3, 
+nous allons pouvoir créer une classe qui représentera notre scène, et au
+ lieu de mettre notre code directement dans les frames de l'animation, 
+nous utiliserons notre classe. Dans l'onglet propriété 
+(Fenêtre/propriété si vous ne l'avez pas), indiquez en guise de classe 
+de Document la class “Main” (sans les guillemets).
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/02.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:02.png"><img src="editeur-de-dessin_fichiers/02.png" class="media" alt=""></a>
+</p>
+
+<p>
+ Maintenant il ne vous reste plus qu'à coder la structure de base de cette classe et nous aurons terminé la préparation <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+ Créez donc dans le même répertoire que votre fichier Main.fla un 
+fichier nommé Main.as qui contiendra votre class Main (Document Class). 
+Vous êtes censé connaître les bases de l'AS3 et cette classe ne devrait 
+pas poser de problème. Nous allons la faire hériter de Sprite pour gérer
+ les événements et contenir d'autres objets, sans pour autant avoir le 
+scénario gênant du MovieClip.
+</p>
+<pre class="code actionscript"><span class="co1">///////////////////////////////</span>
+package <span class="br0">{</span>
+&nbsp;
+	<span class="kw3">import</span> flash.<span class="me1">display</span>.<span class="me1">Sprite</span>;
+&nbsp;
+	<span class="kw3">public</span> <span class="kw2">class</span> Main <span class="kw3">extends</span> Sprite <span class="br0">{</span>
+&nbsp;
+		<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+		<span class="br0">}</span><span class="co1">//fin fonction Main</span>
+&nbsp;
+	<span class="br0">}</span><span class="co1">//fin class Main</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin package</span>
+<span class="co1">///////////////////////////////</span></pre>
+</div>
+
+<h2><a name="ii._les_bases_de_l_editeur" id="ii._les_bases_de_l_editeur">II. Les bases de l'éditeur</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="creer_un_contexte_visuel" id="creer_un_contexte_visuel">1) Créer un contexte visuel</a></h3>
+<div class="level3">
+
+<p>
+
+Avant de commencer toute sorte de programmation qu'il soit, nous allons 
+créer l'ensemble des graphismes nécessaires à notre animation. Cela 
+comporte les interfaces (fonds, titres, panneaux…), les boutons 
+(ouvrir/fermer panneau d'outil…) et les composants un peu plus complexes
+ (les sliders de réglages dans les outils).
+</p>
+
+<p>
+Commençons par le commencement. Vous n'êtes pas obligé de faire comme 
+moi, mais il vous faudra quelque chose qui se rapproche au niveau de la 
+structure.
+</p>
+
+<p>
+Nous allons créer une sorte de bannière en haut de l'animation avec un 
+titre, ici “Éditeur de dessin vectoriel AS3, dessinez vos rêves les plus
+ fous!”<img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+ Rien de trop compliqué pour le moment. Dans le même style, vous allez 
+créer sur la majeure partie de la gauche, un rectangle blanc, qui 
+représentera notre feuille de dessin. Convertissez ce rectangle en Clip 
+(clique droit/Convertir en symbole/Clip) et donner lui “feuille” comme 
+nom d'occurrence. Pour finir, créez un dernier rectangle qui prendra la 
+partie droite restante de l'animation et convertissez-le en Clip avec 
+“panneau” comme nom d'occurrence, ce sera notre panneau d'outils !
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/03.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:03.png"><img src="editeur-de-dessin_fichiers/03.png" class="media" alt=""></a>
+</p>
+
+<p>
+Certain de vous n'auront peut être pas la patience de faire ces 
+graphismes et avant d'attaque la deuxième phase de l'interface 
+graphique, je vous propose de télécharger le fichier Flash tout près, 
+tout chaud des graphismes de l'image ci-dessus.
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/01.zip" class="media mediafile mf_zip" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:01.zip">Telecharger le fichier ZIP du Fla contenant les graphismes</a>
+</p>
+
+<p>
+Très bien, maintenant nous allons attaquer la partie un peu plus “ardue”
+ de cette création graphique. Dans le clip du panneau d'outils, nous 
+allons créer les différents textes et sliders permettant de faire les 
+réglages, aller on y va <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)"> :
+</p>
+
+<p>
+Nous allons commencer par mettre en place les titres des différents 
+outils, repartis régulièrement de haut en bas de notre panneau, les 
+outils taille, couleur et transparence. Pour cela, utilisons l'outil 
+texte. Profitez-en pour créer un bouton qui permettra d'ouvrir ou fermer
+ votre panneau d'outil comme nous en avons parlé dans le cahier des 
+charges. Personnellement j'ai mis ce bouton de façon vertical à gauche, 
+mais rien ne vous empêche de le placer ailleurs <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+ Donner “bougerPanneau_bnt” comme nom d'occurrence à votre bouton. Une 
+petite astuce ici, on peut mettre à la fin d'un nom d'occurrence de 
+bouton le préfixe “_bnt” pour que lorsque nous éditerons notre code, 
+Flash nous propose toutes les propriétés et méthodes d'un objet de type 
+bouton. Cette astuce marche avec les clips avec “_mc” (MovieClip) ou les
+ textes avec le préfixe “_txt” et beaucoup d'autres objets (plus d'une 
+trentaine).
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/04.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:04.png"><img src="editeur-de-dessin_fichiers/04.png" class="media" alt=""></a>
+</p>
+
+<p>
+Maintenant nous allons créer un slider. Un slider est une sorte de 
+composant ou l'utilisateur peut déplacer une glissière de gauche à 
+droite, ce qui fera varier une valeur en conséquence.<br>
+
+Commencez par tracer une ligne plutôt épaisse (environ 3px d'épaisseur) 
+et qui tient dans la largeur du panneau d'outils. Convertissez cette 
+ligne en clip (clique droit/Convertir en symbole/Clip). Entrez dans ce 
+clip (double clique dessus) et sur un nouveau calque placé en première 
+position (vous pouvez modifier la position en cliquant/glissant les 
+calques) créez un nouveau bouton d'une forme rectangulaire arrondie, 
+c'est ce bouton que l'utilisateur déplacera. Donnez-lui comme nom 
+d'occurrence “slider_bnt”.
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/05.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:05.png"><img src="editeur-de-dessin_fichiers/05.png" class="media" alt=""></a>
+</p>
+
+<p>
+Maintenant, nous devrions avoir votre clip slider dans la bibliothèque 
+(Fenêtre/Bibliothèque si vous ne la voyez pas). Placez le premier slider
+ que vous avez produit juste en dessous du titre taille, puis 
+glissez/déposez de la bibliothèque sur la scène 4 autres sliders. Un en 
+dessous de transparence, et trois en dessous de couleur (pour les trois 
+composantes de la couleur : rouge, vert et bleu). Nous allons réduire un
+ peu la taille des sliders pour la couleur. Sélectionnez chaque slider 
+de la couleur, et dans la fenêtre transformer (Fenêtre/Transformer si 
+vous ne l'avez pas) cochez la case “conserver les proportions” et 
+indiquez 75% de la taille originale.<br>
+
+Donnez comme nom d'occurrence à vos sliders : “taille_slider”, 
+“rouge_slider”, “vert_slider”, “bleu_slider”, “alpha_slider”, les noms 
+sont assez explicites <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/06.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:06.png"><img src="editeur-de-dessin_fichiers/06.png" class="media" alt=""></a>
+</p>
+
+<p>
+Nous avons bientôt fini notre panneau d'outil et donc notre interface graphique <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+ Vous devez maintenant placer des textes dynamiques à côté (à droite) de
+ chaque sliders, ils indiqueront les valeurs des réglages en fonction de
+ la position des sliders. Créez vos textes dynamiques et mettez comme 
+texte par défaut 0 suivis de l'unité du réglage, par exemple 0px (pixel)
+ pour le réglage de taille. Donnez comme nom d'occurrence à vos textes 
+les suivant : “taille_txt”, “rouge_txt”, “vert_txt”, “bleu_txt”, 
+“transparence_txt”, je pense que les noms sont assez explicites encore 
+une fois <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+</p>
+
+<p>
+Pour finir, créez un petit rectangle noir d'environ 100*15px juste en 
+dessous des sliders pour la couleur, et convertissez-le en clip. Nous 
+changerons la couleur de ce clip directement depuis le code pour lui 
+appliquer la couleur des réglages de l'utilisateur. Donnez comme nom 
+d'occurrence “couleur_mc” à ce clip.
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_detail/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/07.png?id=tutoriaux%3Aflashplatform%3Agui%3Ainteractivite%3Aediteur-de-dessin" class="media" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:07.png"><img src="editeur-de-dessin_fichiers/07.png" class="media" alt=""></a>
+</p>
+
+<p>
+Et voilà, l'interface graphique est terminée, maintenant nous allons passer à la partie programmation de cet éditeur de dessins <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+ Avant tout, pour ceux à qui cette partie graphismes n'a rien donnée, 
+voici le fichier Fla contenant tous les éléments graphiques nécessaires,
+ avec les noms d'occurrence, etc. Comme sa tout le monde en est au même 
+point pour la suite <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">, aller c'est parti!
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/02.zip" class="media mediafile mf_zip" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:02.zip">Telecharger le fichier ZIP contenant le fichier Fla tout prêt pour la suite</a>
+</p>
+
+</div>
+
+<h3><a name="monter_la_structure_des_fonctions" id="monter_la_structure_des_fonctions">2) Monter la structure des fonctions</a></h3>
+<div class="level3">
+
+</div>
+
+<h4><a name="a_declaration_des_fonctions" id="a_declaration_des_fonctions">a) Déclaration des fonctions</a></h4>
+<div class="level4">
+
+<p>
+
+Nous allons créer toutes les fonctions dont nous avons besoin dans cet 
+éditeur. Il faudra une fonction qui s'exécute toute les x secondes afin 
+de mettre à jour le dessin, une autre fonction qui se déclenche lors 
+d'un clique sur la feuille ou un relâchement ce qui fera changer une 
+variable booléenne qui nous indiquera si l'utilisateur dessine ou non. 
+Il faudra aussi des fonctions qui se déclencheront lors de l'appui sur 
+les sliders qui permettront de changer les valeurs des réglages, une 
+fonction pour ouvrir/fermer le panneau d'outil, et peut être une petite 
+dernière qui se chargera avec les données RGB des sliders de donner une 
+couleur (en hexadécimal) au clip couleur_mc.
+</p>
+
+<p>
+Très bien, créons ses fonctions en les laissant vides pour le moment. 
+Attention, les fonctions pour les boutons reçoivent un événement de type
+ MouseEvent et la fonction d'update du dessin un événement TimerEvent. 
+N'oubliez pas avant d'écrire les fonctions et les variables d'importer 
+les packages nécessaires.
+</p>
+
+<p>
+Tout d'abord, voici les packages dont nous aurons besoin (code situé 
+entre ouverture du package et ouverture class Main), leur utilité est 
+détaillée dans les commentaires :
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="kw3">import</span> flash.<span class="me1">display</span>.<span class="me1">Sprite</span>; <span class="co1">//notre class en hérite</span>
+<span class="kw3">import</span> flash.<span class="me1">display</span>.<span class="kw3">MovieClip</span>; <span class="co1">//pas mal de mc dans notre scene</span>
+<span class="kw3">import</span> flash.<span class="me1">utils</span>.<span class="me1">Timer</span>; <span class="co1">//timer pour actualiser le dessin</span>
+<span class="kw3">import</span> flash.<span class="me1">events</span>.<span class="me1">TimerEvent</span>; <span class="co1">//les event du timer qui declanche l'update</span>
+<span class="kw3">import</span> flash.<span class="me1">events</span>.<span class="me1">MouseEvent</span>; <span class="co1">//event pour le clique des boutons</span>
+<span class="kw3">import</span> fl.<span class="me1">motion</span>.<span class="me1">easing</span>.<span class="me1">Elastic</span>; <span class="co1">//fonction elactique pour ouvrir/fermer panneau outils :)</span>
+<span class="kw3">import</span> fl.<span class="me1">transitions</span>.<span class="me1">Tween</span>; <span class="co1">//tween qui animera notre panneau outils</span>
+<span class="kw3">import</span> fl.<span class="me1">transitions</span>.<span class="me1">TweenEvent</span>; <span class="co1">//event qui nous permettra de savoir la fin d'un tween</span>
+<span class="co1">//////////////////</span></pre>
+<p>
+Maintenant voyons quelles variables nous pourrions avoir besoin ? Une 
+pour savoir si l'utilisateur dessine ou non, 5 autres pour la taille du 
+pinceau, la couleur (rouge, vert et bleu) et la transparence, un tween 
+pour bouger notre panneau d'outil sur l'axe des abscisses, une pour 
+savoir si le panneau d'affichage est ouvert ou fermé, une autre pour 
+savoir si le panneau d'affichage est en cour de déplacement, et je crois
+ que c'est tout ! Déclarons donc ces valeurs juste après l'ouverture de 
+la class Main :
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="kw3">private</span> <span class="kw2">var</span> isDrawing:<span class="kw3">Boolean</span>; <span class="co1">//l'utilisateur dessine ?</span>
+<span class="kw3">private</span> <span class="kw2">var</span> <span class="kw3">size</span>:<span class="kw3">Number</span>; <span class="co1">//taille du pinceau</span>
+<span class="kw3">private</span> <span class="kw2">var</span> redColor:<span class="kw3">Number</span>; <span class="co1">//composante rouge de la couleur</span>
+<span class="kw3">private</span> <span class="kw2">var</span> greenColor:<span class="kw3">Number</span>; <span class="co1">//composante vert de la couleur</span>
+<span class="kw3">private</span> <span class="kw2">var</span> blueColor:<span class="kw3">Number</span>; <span class="co1">//composante bleu de la couleur</span>
+<span class="kw3">private</span> <span class="kw2">var</span> alphaColor:<span class="kw3">Number</span>; <span class="co1">//transparence de la couleur</span>
+<span class="kw3">private</span> <span class="kw2">var</span> tween:Tween; <span class="co1">//tween qui animera notre panneau d'outils</span>
+<span class="kw3">private</span> <span class="kw2">var</span> timer:Timer; <span class="co1">//timer pour appelle la fonction update toute les x sec</span>
+<span class="kw3">private</span> <span class="kw2">var</span> toolBarOpened:<span class="kw3">Boolean</span>; <span class="co1">//true si ouvert, false sinon</span>
+<span class="kw3">private</span> <span class="kw2">var</span> toolBarMoving:<span class="kw3">Boolean</span>; <span class="co1">//true si bouge, false sinon</span>
+<span class="co1">/////////////////</span></pre>
+<p>
+Maintenant, créons les fonctions juste après les déclarations des 
+variables. Laissez ces fonctions vides, et lorsqu'elles sont censées 
+renvoyer une valeur, renvoyez une valeur bidon, par exemple pour un 
+Array faites : return(new Array()); pour passer à la compilation.
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//met à jour le dessin, mais aussi toutes les autres informations tel que les reglages</span>
+<span class="kw3">private</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//ouvre ou ferme via un tween le panneau d'affichage</span>
+<span class="kw3">private</span> <span class="kw2">function</span> moveToolsBar<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//analyse de quel slider vien l'evenement et change les valeurs necessaires</span>
+<span class="kw3">private</span> <span class="kw2">function</span> setSliderValue<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//passe de true à false ou inverce la variable isDrawing en fonction de l'evenement</span>
+<span class="kw3">private</span> <span class="kw2">function</span> changeDrawingState<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//changer la couleur clip couleur_mc</span>
+<span class="kw3">private</span> <span class="kw2">function</span> changeCoulor<span class="br0">(</span><span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+<span class="br0">}</span>
+<span class="co1">/////////////////////</span></pre>
+<p>
+Nous avons toutes nos fonctions. Avouez, il n'y en a pas beaucoup. Pour 
+la plupart vous pouvez deviner à quoi elles vont ressembler en jetant un
+ coup d'œil dans les commentaires. Mais je me dois de vous expliquer 
+quelques détails : il n'y à qu'une fonction pour analyser la valeur de 
+tous les sliders, en effet via la propriété target des événements 
+MouseEvent nous pourrons retrouver quel slider à appelé la fonction. 
+Dans le même genre il n'y à qu'une fonction pour changer l'état de la 
+variable isDrawing, nous analyserons quel type d'événement il s'agit et 
+agirons en conséquence. Voilà, maintenant il est temps de passer à 
+l'implémentation du système événementielle de l'éditeur.
+</p>
+
+</div>
+
+<h4><a name="b_gestion_des_evenements" id="b_gestion_des_evenements">b) Gestion des événements</a></h4>
+<div class="level4">
+
+<p>
+
+Nous allons rajouter des écouteurs à tous les éléments de la scène qui 
+ont besoin de déclencher des événements, soit les boutons des sliders 
+(ils déclenchent le même événement, mais ont tous besoin d'un écouteur 
+chacun), la feuille ou l'on dessinera, le bouton ouvrir/fermer du 
+panneau d'affichage, un Timer pour la fonction d'update, et c'est tout 
+pour le moment (c'est pas mal déjà non ? <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">)
+</p>
+
+<p>
+Nous allons donc mettre nos écouteurs et notre Timer dans le 
+constructeur de la class Main (fonction Main). Attention, les nous 
+devons écouter les sliders lors d'un clique (MOUSE_DOWN), un relâchement
+ (MOUSE_UP) et une sortie de surface (ROLL_OUT).
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//constructeur de la class Main :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//le timer qui appellera la function UpdateDrawing</span>
+	timer=<span class="kw2">new</span> Timer<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span>; <span class="co1">//raffraichissement tout les 1/100 se segonde</span>
+	timer.<span class="me1">addEventListener</span><span class="br0">(</span>TimerEvent.<span class="me1">TIMER</span>, updateDrawing<span class="br0">)</span>;
+	timer.<span class="kw3">start</span><span class="br0">(</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//gestion du clique sur bouton ouvrir/ferme panneau d'outils</span>
+	panneau.<span class="me1">bougerPanneau_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">CLICK</span>, moveToolsBar<span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//gestion du clique, du relachement, et de la sortie de surface (rollOut) pour les sliders</span>
+	panneau.<span class="me1">taille_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">rouge_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">vert_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">bleu_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">alpha_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">taille_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">rouge_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">vert_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">bleu_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">alpha_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">taille_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">rouge_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">vert_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">bleu_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, setSliderValue<span class="br0">)</span>;
+	panneau.<span class="me1">alpha_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, setSliderValue<span class="br0">)</span>;
+&nbsp;
+<span class="br0">}</span>
+<span class="co1">/////////////////</span></pre>
+</div>
+
+<h3><a name="implementer_le_systeme_de_l_editeur" id="implementer_le_systeme_de_l_editeur">3) Implémenter le système de l'éditeur</a></h3>
+<div class="level3">
+
+<p>
+
+Passons donc à quelque chose de plus sérieux, de plus costaud! Nous 
+allons coder toutes les fonctions de notre éditeur, rien que ça! <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":-)"> Nous laissons la partie dessin pour la suite, ici nous allons en quelque sorte implémenter les “petites” fonctions.
+</p>
+
+<p>
+Tout d'abord, nous allons commencer pas l'ouverture fermeture du panneau
+ d'affichage. On utilisera les tweens. Dans la fonction moveToolsBar 
+nous allons créer une tween en fonction de l'état du panneau (ouvert ou 
+fermé). D'un autre côté, dans la fonction updateDrawing, nous allons 
+centrer la feuille de dessin. Pour plus d'ergonomie, elle va se 
+recentrer en fonction de la position du panneau d'outils. Avant toute 
+chose on initialise les variables, dont nous allons nous servir, dans le
+ constructeur, c'est-à-dire toolBarOpened et toolBarMoving. Il faudra 
+aussi rajouter une fonction, tweenFinished, qui se déclenchera à la fin 
+d'un Tween pour mettre toolBarMoving à false. Aller on code tout sa <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)"> :
+</p>
+
+<p>
+Note: dans la fonction update, je bouge aussi le clip nommé “board”, 
+c'est un cadre bleu un petit peu plus grand que la feuille pour décorer 
+l'éditeur, il faut aussi le faire bouger. Si vous avez pris les sources 
+plus haut, convertissez le cadre bleu autour de la feuille en clip et 
+donnez-lui comme nom d'occurrence “board”.
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//dans le constructeur, on initialise la variable toolBarOpened</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	toolBarOpened=<span class="kw2">true</span>; <span class="co1">//au debut le panneua d'affichage est ouvert</span>
+	toolBarMoving=<span class="kw2">false</span>; <span class="co1">//fixe au debut</span>
+	<span class="co1">//le reste du code de la fonction...</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//la function moveToolBar permet d'ouvrir/fermer le panneau d'affichage</span>
+<span class="co1">//avec un style bien simpa grâce à la fonction Elactique</span>
+<span class="kw3">private</span> <span class="kw2">function</span> moveToolsBar<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>toolBarMoving<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si la panneau n'est pas deja en mouvement :</span>
+		toolBarMoving=<span class="kw2">true</span>;
+		<span class="kw1">if</span><span class="br0">(</span>toolBarOpened<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si le panneau est ouvert on le ferme</span>
+			<span class="co1">//on le ferme en 2s avec la fonction elastique à la fin du mouvement sur axe absices</span>
+			tween=<span class="kw2">new</span> Tween<span class="br0">(</span>panneau, <span class="st0">"x"</span>, Elastic.<span class="me1">easeOut</span>, panneau.<span class="me1">x</span>, <span class="kw3">stage</span>.<span class="me1">stageWidth</span>-panneau.<span class="me1">bougerPanneau_bnt</span>.<span class="kw3">width</span>, <span class="nu0">2</span>, <span class="kw2">true</span><span class="br0">)</span>;
+			<span class="co1">//on rajoute un ecouteur</span>
+			tween.<span class="me1">addEventListener</span><span class="br0">(</span>TweenEvent.<span class="me1">MOTION_FINISH</span>, tweenFinished<span class="br0">)</span>;
+			toolBarOpened=<span class="kw2">false</span>;<span class="co1">//on indique que le panneau sera ouvert</span>
+		<span class="br0">}</span>
+		<span class="kw1">else</span> <span class="br0">{</span> <span class="co1">//sinon on ouvre le panneau</span>
+			<span class="co1">//on l'ouvre en 2s avec la fonction elastique à la fin du mouvement sur les absices</span>
+			tween=<span class="kw2">new</span> Tween<span class="br0">(</span>panneau, <span class="st0">"x"</span>, Elastic.<span class="me1">easeOut</span>, panneau.<span class="me1">x</span>, <span class="kw3">stage</span>.<span class="me1">stageWidth</span>-panneau.<span class="me1">width</span>-<span class="nu0">10</span>, <span class="nu0">2</span>, <span class="kw2">true</span><span class="br0">)</span>;
+			<span class="co1">//on rajoute un ecouteur</span>
+			tween.<span class="me1">addEventListener</span><span class="br0">(</span>TweenEvent.<span class="me1">MOTION_FINISH</span>, tweenFinished<span class="br0">)</span>;
+			toolBarOpened=<span class="kw2">true</span>;<span class="co1">//on indique que le panneau sera fermé</span>
+		<span class="br0">}</span>			
+	<span class="br0">}</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//dans la function d'update on place la feuille de dessin en fonction du panneau d'affichage</span>
+<span class="co1">//en faite on la centre sur l'espace disponible :</span>
+<span class="kw3">private</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//mise à jour de la position de la feuille par rapport au panneau d'outil :</span>
+	feuille.<span class="me1">x</span>=panneau.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">2</span>-feuille.<span class="kw3">width</span><span class="sy0">/</span><span class="nu0">2</span>;
+	board.<span class="me1">x</span>=panneau.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">2</span>-board.<span class="kw3">width</span><span class="sy0">/</span><span class="nu0">2</span>;
+&nbsp;
+&nbsp;
+<span class="br0">}</span>
+<span class="co1">//////////////////</span></pre>
+<p>
+Nous allons attaquer une des parties les plus difficiles de ce tutoriel,
+ bien que ce ne soit pas la fonction principale de l'éditeur ^^. Nous 
+aurions pu à la place des sliders mettre de simples champs de texte de 
+saisie, mais cela aurait été bien moins joli qu'un beau slider <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.<br>
+
+Que va donc faire la fonction setSliderValue ?<br>
+
+Tout d'abord si l'événement perçut est un clique, mettre un variable 
+associé au slider cliqué sur true, lors d'un relâchement, une sortie de 
+zone, alors la variable sera mise sur false. Dans la fonction d'update, 
+en fonction de cette variable nous changerons les coordonnées du bouton 
+du slider. Cette fonction doit aussi transmettre la position x et y à 
+des variables lors du clique pour que nous déplacions correctement notre
+ bouton de slider dans la fonction update (le bouton doit suivre le 
+curseur de la sourie). Le rôle de la fonction est donc simplement de 
+changer les valeurs de variables : cliqué ? Position curseur x.
+</p>
+
+<p>
+Mais comment organiser ces variables puisqu'il y a 5 sliders ? Nous 
+allons faire 1 tableau (Array)  de 5 cases qui contiendront 5 objets 
+dynamiques avec nos variables pour chaque slider : tableau[0] = objet 
+pour le slider 1. Une variable lastSlider:Number contiendra le numéro du
+ dernier slider sélectionné dans le tableau slidersData car on n'y a pas
+ accès lors d'un événement ROLL_OUT via la propriété event.target 
+contrairement aux autres events. On le récupère (numéro du dernier 
+slider) lors d'un clique sur le slider en question.
+</p>
+
+<p>
+Ok, allons-y, regardez bien les commentaires dans le code pour vous aider <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//on ajoute lors de l'initialisation des variable un tableau.</span>
+<span class="co1">//rappel : initialisation des variables = après ouverture class Main</span>
+<span class="kw3">private</span> <span class="kw2">var</span> slidersData:<span class="kw3">Array</span>;
+<span class="kw3">private</span> <span class="kw2">var</span> lastSlider:<span class="kw3">Number</span>; <span class="co1">//numero de la case du dernier slider utilisé</span>
+&nbsp;
+<span class="co1">//dans le constructeur (fonction Main) on va initialiser se tableau de 5 cases :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	lastSlider=0; <span class="co1">//pour ne pas avoir d'erreur au debut si clique et relache sans rollOut</span>
+	slidersData=<span class="kw2">new</span> <span class="kw3">Array</span><span class="br0">(</span><span class="br0">)</span>;
+&nbsp;
+	<span class="kw1">for</span><span class="br0">(</span><span class="kw2">var</span> i:<span class="kw3">Number</span>=0;i<span class="sy0">&lt;</span><span class="nu0">5</span>;i++<span class="br0">)</span> <span class="br0">{</span>
+		slidersData<span class="br0">[</span>i<span class="br0">]</span>=<span class="kw2">new</span> <span class="kw3">Object</span><span class="br0">(</span><span class="br0">)</span>; <span class="co1">//un Object est  dynamique, on peut lui rajouter ce qu'on veux</span>
+		slidersData<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">isCliked</span>=<span class="kw2">false</span>;
+		slidersData<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">cursorX</span>=0;
+	<span class="br0">}</span>
+&nbsp;
+	<span class="co1">//le reste du code de la fonction Main...</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//maintenant nous allons nous interesser à la fonction update :</span>
+&nbsp;
+<span class="co1">//on parcours le tableau slidersData, et lorsque l'on trouve un isClicked=true on le traite</span>
+<span class="co1">//en fonction du numero de la case du tableau on retrouve le nom du slider</span>
+<span class="co1">//on bouge le bouton du slider sur le X du curseur (le y reste toujour le même)</span>
+<span class="co1">//si la nouvelle position du bouton est trop loin, on la ramene à l'extremitée.</span>
+<span class="co1">//pour finir on break le for car un seul slider peut etre modifier à la fois ;)</span>
+&nbsp;
+<span class="kw3">public</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	recherche: <span class="kw1">for</span><span class="br0">(</span><span class="kw2">var</span> i:<span class="kw3">Number</span>=0; i<span class="sy0">&lt;</span><span class="nu0">5</span>; i++<span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+		<span class="kw1">if</span><span class="br0">(</span>slidersData<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">isClicked</span><span class="br0">)</span> <span class="br0">{</span><span class="co1">//si on trouve un slider en cours d'utilisation :</span>
+&nbsp;
+			<span class="co1">//on recupere le nom du slider en fonction du numero de la case du tableau (i):</span>
+			<span class="kw2">var</span> sliderName:<span class="kw3">String</span>;
+			<span class="kw1">switch</span><span class="br0">(</span>i<span class="br0">)</span> <span class="br0">{</span>
+				<span class="kw1">case</span> 0:
+				sliderName=<span class="st0">"taille_slider"</span>;
+				<span class="kw1">break</span>;
+				<span class="kw1">case</span> <span class="nu0">1</span>:
+				sliderName=<span class="st0">"rouge_slider"</span>;
+				<span class="kw1">break</span>;
+				<span class="kw1">case</span> <span class="nu0">2</span>:
+				sliderName=<span class="st0">"vert_slider"</span>;
+				<span class="kw1">break</span>;
+				<span class="kw1">case</span> <span class="nu0">3</span>:
+				sliderName=<span class="st0">"bleu_slider"</span>;
+				<span class="kw1">break</span>;
+				<span class="kw1">case</span> <span class="nu0">4</span>:
+				sliderName=<span class="st0">"alpha_slider"</span>;
+				<span class="kw1">break</span>;
+			<span class="br0">}</span><span class="co1">//fin du switch</span>
+&nbsp;
+			<span class="co1">//on met une variable temporaire à la position du curseur + decalage</span>
+			<span class="kw2">var</span> newX:<span class="kw3">Number</span>=panneau<span class="br0">[</span>sliderName<span class="br0">]</span>.<span class="me1">mouseX</span>+slidersData<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">cursorX</span>;
+&nbsp;
+			<span class="co1">//si cette position est trop grande ou trop petite ou la mettre au valeur corects</span>
+			<span class="kw1">if</span><span class="br0">(</span>newX<span class="sy0">&gt;</span>panneau<span class="br0">[</span>sliderName<span class="br0">]</span>.<span class="kw3">width</span><span class="br0">)</span> <span class="br0">{</span>
+				newX=panneau<span class="br0">[</span>sliderName<span class="br0">]</span>.<span class="kw3">width</span>;
+			<span class="br0">}</span>
+			<span class="kw1">if</span><span class="br0">(</span>newX<span class="sy0">&lt;</span>0<span class="br0">)</span> <span class="br0">{</span>
+				newX=0;
+			<span class="br0">}</span>
+&nbsp;
+			<span class="co1">//finalement on a la nouvelle valeur, et on break le for (label recherche)</span>
+			panneau<span class="br0">[</span>sliderName<span class="br0">]</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span>=newX;
+			<span class="kw1">break</span> recherche;
+&nbsp;
+		<span class="br0">}</span><span class="co1">//fin du if</span>
+&nbsp;
+	<span class="br0">}</span><span class="co1">//fin du for</span>
+&nbsp;
+	<span class="co1">//le reste du code de la fonction updateDrawing...</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//maintenant la function setSliderValue, va simplement changer les valeurs isClicked et</span>
+<span class="co1">//cursorX lors d'un evenement de sourie sur les sliders.</span>
+&nbsp;
+<span class="kw3">private</span> <span class="kw2">function</span> setSliderValue<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//on definit quel case du tableau slidersData il va faloir modifier en identifiant</span>
+	<span class="co1">//le bouton qui a appellé l'evenement à partie de la propriété target :</span>
+&nbsp;
+	<span class="kw2">var</span> num:<span class="kw3">Number</span>=-<span class="nu0">1</span>; <span class="co1">//au debut -1, si est resté à -1 après switch alors on ne fait rien</span>
+&nbsp;
+	<span class="kw1">if</span><span class="br0">(</span><span class="kw3">e</span>.<span class="kw3">type</span><span class="sy0">!</span>=MouseEvent.<span class="me1">ROLL_OUT</span><span class="br0">)</span> <span class="br0">{</span><span class="co1">//le rollout ne renvoit pas le bouton slider en target</span>
+&nbsp;
+		<span class="kw1">switch</span><span class="br0">(</span><span class="kw3">e</span>.<span class="kw3">target</span>.<span class="me1">parent</span>.<span class="kw3">name</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">//e.target=bouton slider, son parent est le slider</span>
+			<span class="kw1">case</span> <span class="st0">"taille_slider"</span>:      <span class="co1">//la propriété name est le nom d'occurence</span>
+			num=0;
+			<span class="kw1">break</span>;
+			<span class="kw1">case</span> <span class="st0">"rouge_slider"</span>:
+			num=<span class="nu0">1</span>;
+			<span class="kw1">break</span>;
+			<span class="kw1">case</span> <span class="st0">"vert_slider"</span>:
+			num=<span class="nu0">2</span>;
+			<span class="kw1">break</span>;
+			<span class="kw1">case</span> <span class="st0">"bleu_slider"</span>:
+			num=<span class="nu0">3</span>;
+			<span class="kw1">break</span>;
+			<span class="kw1">case</span> <span class="st0">"alpha_slider"</span>:
+			num=<span class="nu0">4</span>;
+			<span class="kw1">break</span>;
+		<span class="br0">}</span><span class="co1">//fin du switch</span>
+		lastSlider=num;<span class="co1">//dernier slider utilisé est gardé en mémoire</span>
+	<span class="br0">}</span>
+	<span class="kw1">else</span> <span class="br0">{</span>
+		num=lastSlider;<span class="co1">//cas d'un rollOut : on sort du dernier slider utilisé</span>
+	<span class="br0">}</span>
+&nbsp;
+	<span class="co1">//maintenant en fonction de l'evenement on modifit ce qu'il faut dans slidersData[num] :</span>
+	<span class="kw1">switch</span><span class="br0">(</span><span class="kw3">e</span>.<span class="kw3">type</span><span class="br0">)</span> <span class="br0">{</span>
+		<span class="kw1">case</span> MouseEvent.<span class="me1">MOUSE_DOWN</span>: <span class="co1">//si c'est un clique</span>
+		slidersData<span class="br0">[</span>num<span class="br0">]</span>.<span class="me1">isClicked</span>=<span class="kw2">true</span>;
+		slidersData<span class="br0">[</span>num<span class="br0">]</span>.<span class="me1">cursorX</span>=<span class="kw3">e</span>.<span class="kw3">target</span>.<span class="me1">mouseX</span>;
+		<span class="kw1">break</span>;
+		<span class="kw1">case</span> MouseEvent.<span class="me1">MOUSE_UP</span>:<span class="co1">//mouseUp et rollOut font la même chose :</span>
+		<span class="kw1">case</span> MouseEvent.<span class="me1">ROLL_OUT</span>:<span class="co1">//on lache le bouton slider</span>
+			<span class="kw1">if</span><span class="br0">(</span>num<span class="sy0">&gt;</span>-<span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+				slidersData<span class="br0">[</span>num<span class="br0">]</span>.<span class="me1">isClicked</span>=<span class="kw2">false</span>;
+			<span class="br0">}</span>
+		<span class="kw1">break</span>;
+	<span class="br0">}</span><span class="co1">//fin du switch</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin function setSliderValue;</span>
+<span class="co1">/////////////////////</span></pre>
+<p>
+Vous noterez que la gestion du RollOut nous oblige à déplacer les 
+sliders boutons lentement sinon la sourie sort de la surface et le 
+mouvement est arrêté. Nous verrons dans la partie des optimisation et 
+améliorations possibles ce qui pourrait être fait pour éviter ça <img src="editeur-de-dessin_fichiers/icon_wink.gif" class="middle" alt=";)">
+</p>
+
+<p>
+Vous avez suivi ? Tant mieux ! <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)"><br>
+
+Pour vous reposer un peu nous allons maintenant coder une des fonctions 
+les plus simples, celle qui va faire changer de couleur le clip 
+couleur_mc dans le panneau d'outils. Cette fonction est appelée par la 
+fonction updateDrawing pour un affichage temps réel.
+</p>
+
+<p>
+Les couleurs dans Flash fonctionnent en hexadécimal. Il va donc nous 
+falloir transformer les valeurs RGB en hexadécimal pour flash. En gros, 
+on rajoute la valeur du rouge, puis celle du vert et enfin celle du bleu
+ à la suite sous forme de nombre hexadécimal. Pour cela, j'ai créé une 
+petite class nommée colorUtils. Elle permet de retrouver la valeur 
+hexadécimale depuis des valeurs RGB et vice versa. Téléchargez-la, et 
+mettez-la dans le même répertoire que votre fichier Main.fla.
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/colorutils.zip" class="media mediafile mf_zip" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:colorutils.zip">Telecharger le fichier ZIP de la class AS3 ColorUtils</a>
+</p>
+
+<p>
+Maintenant vous devez importer la class dans votre class Main avec import ColorUtils;<br>
+
+C'est bon, nous pouvons coder la fonction changeColor() ! Les fonctions 
+de la class ColorUtils sont statiques, pas besoin de créer d'objets de 
+type ColorUtils pour les utiliser. Pour modifier la couleur 
+dynamiquement du clip couleur_mc, il nous faudra aussi la class 
+ColorTransform. Importez-la donc avec import flash.geom.ColorTransform;.
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//la fonction  qui va modifier la couleur de couleur_mc :</span>
+<span class="kw3">private</span> <span class="kw2">function</span> changeColor<span class="br0">(</span><span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//on recupere la valeur hexa depuis la class ColorUtils</span>
+	<span class="co1">//on cast le resultat qui est un String vers un Number</span>
+	<span class="kw2">var</span> hexaColor:<span class="kw3">Number</span>=<span class="kw3">Number</span><span class="br0">(</span>ColorUtils.<span class="me1">getHexaFromRGB</span><span class="br0">(</span>redColor, greenColor, blueColor<span class="br0">)</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//on créé un nouveau objet de type ColorTransform pour colorer le clip couleur_mc</span>
+	<span class="kw2">var</span> myColor=<span class="kw2">new</span> ColorTransform<span class="br0">(</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//on definit la couleur de ce objet colorTransform</span>
+	myColor.<span class="kw3">color</span>=hexaColor;
+&nbsp;
+	<span class="co1">//on change la couleur de notre clip couleur_mc</span>
+	panneau.<span class="me1">couleur_mc</span>.<span class="me1">transform</span>.<span class="me1">colorTransform</span>=myColor;
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//le constructeur de la class Main (fonction Main) :</span>
+&nbsp;
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//code de la fonction Main...</span>
+&nbsp;
+	changeColor<span class="br0">(</span><span class="br0">)</span>; <span class="co1">//a appeler à la fin de la fonction, nous verrons pourquoi juste après ;)</span>
+&nbsp;
+<span class="br0">}</span>
+<span class="co1">/////////////////</span></pre>
+<p>
+Voilà, mais si vous testez, cela ne marchera pas. Pourquoi donc ? Et 
+bien nous n'avons pas encore défini les composantes RGB de la couleur! 
+Nous allons les calculer en fonction des sliders (encore eux <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">) dans la fonction updateDrawing.
+</p>
+
+<p>
+Sachant que lorsqu'un slider bouton est au bout du slider, la valeur est
+ à 100%, et que tout à gauche, elle est a 0%, on peut facilement 
+retrouver tous les réglages des sliders.<br>
+
+La formule à utiliser sera donc : pourcentage = position*100/80<br>
+
+Note : 80px = largeur d'un slider – largeur slider bouton.
+</p>
+
+<p>
+On va profiter de ce moment pour mettre la valeur de chaque réglage dans
+ les textes dynamiques prévus à cet effet juste après avoir défini les 
+variables de réglage dans la class Main, c'est parti <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)"> :
+</p>
+<pre class="code actionscript"><span class="co1">/////////////////////</span>
+<span class="co1">//constructeur de la class Main (fonction Main) :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span> :<span class="kw3">void</span><span class="br0">{</span>
+&nbsp;
+	<span class="co1">//reste du code de la fonction update sauf l'instruction changeColor() à la fin...</span>
+&nbsp;
+	<span class="co1">//recupération des valeurs des réglages :</span>
+	<span class="kw3">size</span>=panneau.<span class="me1">taille_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">80</span>; <span class="co1">// de la taille max soit 50 ?</span>
+	redColor=panneau.<span class="me1">rouge_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">80</span>; <span class="co1">// de 255</span>
+	greenColor=panneau.<span class="me1">vert_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">80</span>; <span class="co1">// de 255</span>
+	blueColor=panneau.<span class="me1">bleu_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">80</span>; <span class="co1">// de 255</span>
+	alphaColor=panneau.<span class="me1">alpha_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span><span class="sy0">/</span><span class="nu0">80</span>; <span class="co1">// de 1</span>
+&nbsp;
+	<span class="kw3">size</span><span class="sy0">*</span>=<span class="nu0">48</span>; <span class="co1">//la taille max sera de 50px</span>
+	<span class="kw3">size</span>+=<span class="nu0">2</span>; <span class="co1">// la taille min est de 2px</span>
+&nbsp;
+	redColor<span class="sy0">*</span>=<span class="nu0">255</span>;
+	greenColor<span class="sy0">*</span>=<span class="nu0">255</span>; <span class="co1">//une composante s'etalone de 0 à 255 (=FF en hexa)</span>
+	blueColor<span class="sy0">*</span>=<span class="nu0">255</span>;
+&nbsp;
+	<span class="co1">//changement des textes dynamiques :</span>
+	panneau.<span class="me1">taille_txt</span>.<span class="kw3">text</span>=<span class="kw3">String</span><span class="br0">(</span><span class="kw3">Math</span>.<span class="kw3">round</span><span class="br0">(</span><span class="kw3">size</span><span class="br0">)</span><span class="br0">)</span>+<span class="st0">"px"</span>;
+	panneau.<span class="me1">rouge_txt</span>.<span class="kw3">text</span>=<span class="st0">"R : "</span>+<span class="kw3">String</span><span class="br0">(</span><span class="kw3">Math</span>.<span class="kw3">round</span><span class="br0">(</span>redColor<span class="br0">)</span><span class="br0">)</span>;
+	panneau.<span class="me1">vert_txt</span>.<span class="kw3">text</span>=<span class="st0">"G : "</span>+<span class="kw3">String</span><span class="br0">(</span><span class="kw3">Math</span>.<span class="kw3">round</span><span class="br0">(</span>greenColor<span class="br0">)</span><span class="br0">)</span>;
+	panneau.<span class="me1">bleu_txt</span>.<span class="kw3">text</span>=<span class="st0">"B : "</span>+<span class="kw3">String</span><span class="br0">(</span><span class="kw3">Math</span>.<span class="kw3">round</span><span class="br0">(</span>blueColor<span class="br0">)</span><span class="br0">)</span>;
+	panneau.<span class="me1">transparence_txt</span>.<span class="kw3">text</span>=<span class="kw3">String</span><span class="br0">(</span><span class="kw3">Math</span>.<span class="kw3">round</span><span class="br0">(</span>alphaColor<span class="sy0">*</span><span class="nu0">100</span><span class="br0">)</span><span class="br0">)</span>+<span class="st0">"%"</span>;
+&nbsp;
+	<span class="co1">//instruction que vous devriez deja avoir mis, a la fin du constructeur :</span>
+	changeColor<span class="br0">(</span><span class="br0">)</span>;
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin fonction update</span>
+<span class="co1">/////////////////</span></pre>
+<p>
+Au besoin, vous pouvez agrandir un peu vos textes dynamiques en largeur 
+si tout le texte ne peut être affiché dans ceux-ci. Vous pouvez aussi 
+changer votre taille max et min de pinceau.<br>
+
+Vous n'allez peut-être pas le croire, mais nous avons terminé cette grande partie <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+</p>
+
+</div>
+
+<h2><a name="iii._le_fonctionnement_de_l_editeur" id="iii._le_fonctionnement_de_l_editeur">III. Le fonctionnement de l'éditeur</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="implementer_la_fonction_de_dessin" id="implementer_la_fonction_de_dessin">1) Implémenter la fonction de dessin</a></h3>
+<div class="level3">
+
+<p>
+
+Nous allons donc maintenant programmer la partie dessin de cet éditeur. 
+Quoi?! Seulement maintenant ? Eh oui, la création des fonctions 
+“basiques” de l'éditeur a prit un peu de temps, mais sachez que c'est 
+avec une bonne organisation que l'on peut créer plus rapidement et 
+simplement de grands projets. Ainsi, cet éditeur de dessin, plus tard, 
+pourra être repris et amélioré sans avoir à tout chambouler dans 
+l'organisation du code <img src="editeur-de-dessin_fichiers/icon_wink.gif" class="middle" alt=";)">
+</p>
+
+<p>
+Pour revenir à nos moutons, le principe est simple. On définit une 
+variable isDrawing sur true ou false selon les actions de l'utilisateur.
+ Lors d'un clique sur la feuille, ou un relâchement, lorsque le curseur 
+quitte la surface de la feuille, on va modifier cette variable grâce à 
+la fonction  changeDrawingState. Ensuite il suffira de relier via l'<acronym title="Application Programming Interface">API</acronym>
+ Graphics du MovieClip feuille la dernière position du curseur, avec la 
+position actuelle, avec les paramètres de couleur, taille et opacité 
+définis par l'utilisateur. Il nous faudra donc juste rajouter une seule 
+variable au code, sinon nous utiliserons les fonctions et variables déjà
+ présentes, la variable haveStarted:Boolean qui sera à false tant que 
+l'on à pas commencé à traiter le dessin, et qui deviendra true des que 
+l'on aura commencé, comme sa lorsque c'est false on fait un moveTo(x, 
+y), sinon des lineTo(x, y). moveTo(x, y) déplace le curseur d'un objet 
+de type Graphics en x, y tandis qu'un lineTo(x, y) fait une ligne depuis
+ la dernière position du curseur à x, y. Commençons par gérer les 
+événements :
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//dans la déclaration des variables, on rajoute une variable :</span>
+<span class="kw3">private</span> <span class="kw2">var</span> haveStarted:<span class="kw3">Boolean</span>; <span class="co1">//as-t-on fait le premier moveTo ?</span>
+&nbsp;
+<span class="co1">//constructeur de la class Main (fonction Main) :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//déclaration des écouteurs sur la feuille de dessin :</span>
+	feuille.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_DOWN</span>, changeDrawingState<span class="br0">)</span>;
+	feuille.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">MOUSE_UP</span>, changeDrawingState<span class="br0">)</span>;
+	feuille.<span class="me1">addEventListener</span><span class="br0">(</span>MouseEvent.<span class="me1">ROLL_OUT</span>, changeDrawingState<span class="br0">)</span>;
+&nbsp;
+&nbsp;
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin constructeur</span>
+&nbsp;
+<span class="co1">//passe de true à false ou inverce la variable isDrawing en fonction de l'evenement</span>
+<span class="kw3">private</span> <span class="kw2">function</span> changeDrawingState<span class="br0">(</span><span class="kw3">e</span>:MouseEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//en fonction de l'evenement, on change la valeur de isDrawing :</span>
+	<span class="kw1">switch</span><span class="br0">(</span><span class="kw3">e</span>.<span class="kw3">type</span><span class="br0">)</span> <span class="br0">{</span>
+		<span class="kw1">case</span> MouseEvent.<span class="me1">MOUSE_DOWN</span>:
+		isDrawing=<span class="kw2">true</span>;
+		haveStarted=<span class="kw2">false</span>;
+		<span class="kw1">break</span>;
+		<span class="kw1">case</span> MouseEvent.<span class="me1">MOUSE_UP</span>:
+		<span class="kw1">case</span> MouseEvent.<span class="me1">ROLL_OUT</span>:<span class="co1">//mouseOut fait pareil que MouseUp</span>
+		isDrawing=<span class="kw2">false</span>;
+		<span class="kw1">break</span>;
+	<span class="br0">}</span><span class="co1">//fin du switch</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin de la fonction changeDrawingState</span>
+<span class="co1">///////////////////</span></pre>
+<p>
+Maintenant il ne nous reste plus qu'à coder la partie qui affichera les 
+lignes, dans la fonction updateDrawing. C'est maintenant que nous allons
+ utiliser les lineTo et moveTo. Nous allons dessiner toutes les lignes 
+dans un Sprite à part (pas directement sur le clip feuille). Nous 
+dessinerons dans feuille.dessin. Il va donc falloir créer un Sprite 
+dessin dans le clip feuille depuis le constructeur de la class Main. Si 
+nous créons un nouveau Sprite, c'est pour voir ce que nous dessinons, en
+ effet en dessinant directement sur le clip feuille, le dessin serait en
+ dessous de la feuille de papier (pas très commode n'est ce pas ? ^^) :
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//nous allons créer les lignes necessaires dans la function UpdateDrawing</span>
+<span class="co1">//comme cette fonction est appellé par un timer toute les 1/100 de segonde</span>
+<span class="co1">//on aura l'impression de dessiner des courbes, mais se sera une succetion de lignes :</span>
+&nbsp;
+<span class="co1">//on rajoute notre nouveau Sprite dans la déclaration de variables :</span>
+<span class="kw2">var</span> dessin:Sprite;
+&nbsp;
+<span class="co1">//on le créer dans le constructeur de la class Main (fonction Main) :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	dessin=<span class="kw2">new</span> Sprite<span class="br0">(</span><span class="br0">)</span>;
+	feuille.<span class="me1">addChild</span><span class="br0">(</span>dessin<span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//le reste du code de la fonction...</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin fonction Main</span>
+&nbsp;
+&nbsp;
+<span class="kw3">private</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//tout le code de la fonction...</span>
+&nbsp;
+	<span class="kw1">if</span><span class="br0">(</span>isDrawing<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si l'utilisateur est en train de dessiner :</span>
+&nbsp;
+		<span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>haveStarted<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si c'est le premier traitement du trait qu'il fait :</span>
+			haveStarted=<span class="kw2">true</span>;
+			<span class="co1">//on déplace le curseur graphique sur le curseur de la sourie</span>
+			dessin.<span class="me1">graphics</span>.<span class="kw3">moveTo</span><span class="br0">(</span>feuille.<span class="me1">mouseX</span>, feuille.<span class="me1">mouseY</span><span class="br0">)</span>;
+			<span class="co1">//on personnalise le style de la ligne</span>
+			dessin.<span class="kw3">lineStyle</span><span class="br0">(</span><span class="kw3">size</span>,<span class="kw3">Number</span><span class="br0">(</span>ColorUtils.<span class="me1">getHexaFromRGB</span><span class="br0">(</span>redColor, greenColor, blueColor<span class="br0">)</span><span class="br0">)</span>,alphaColor,<span class="kw2">true</span><span class="br0">)</span>;
+		<span class="br0">}</span>
+&nbsp;
+		<span class="kw1">else</span> <span class="br0">{</span> <span class="co1">//il suffit de tracer la une ligne vers le curseur de la sourie :</span>
+&nbsp;
+			dessin.<span class="kw3">lineTo</span><span class="br0">(</span>feuille.<span class="me1">mouseX</span>, feuille.<span class="me1">mouseY</span><span class="br0">)</span>;
+&nbsp;
+		<span class="br0">}</span>
+&nbsp;
+	<span class="br0">}</span><span class="co1">//fin if(isDrawing)</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin fonction updateDrawing</span>
+<span class="co1">////////////////</span></pre>
+<p>
+Plutôt cool non ? Si vous ne voyez rien s'afficher lorsque vous 
+dessinez, vérifiez que vous avez mis la transparence à 100% qui est par 
+défaut a 0%. Nous allons rapidement mettre le slider bouton de la 
+transparence à 100% par défaut, il suffit de le déplacer à 
+l'initialisation de la class Main, dans le constructeur.
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//constructeur de la class Main (fonction Main)</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//on met le slider boutton par default à 100%</span>
+	panneau.<span class="me1">alpha_slider</span>.<span class="me1">slider_bnt</span>.<span class="me1">x</span>=<span class="nu0">80</span>; <span class="co1">//80 = abcisse max (largeur slider=88, largeur bouton=8)</span>
+&nbsp;
+	<span class="co1">//le reste du code la la fonction Main...</span>
+&nbsp;
+<span class="br0">}</span><span class="co1">//fin fonction Main</span>
+<span class="co1">////////////////</span></pre>
+</div>
+
+<h3><a name="optimiser_la_vitesse" id="optimiser_la_vitesse">2) Optimiser la vitesse</a></h3>
+<div class="level3">
+
+<p>
+
+Pour le moment, si vous dessinez, et que vous arrêtez votre sourie sans 
+relâcher le bouton de la sourie, ou que vous dessinez lentement, vu la 
+vitesse de rafraîchissement de la fonction updateDrawing (appelée tout 
+les 1/100 de seconde), le même point de l'écran va être coloré plusieurs
+ fois, cela est inutile et faire des lineTo aux mêmes coordonnées va 
+ralentir votre PC. Nous allons donc créer un objet de type Object qui 
+aura des propriétés x et y qui contiendront la dernière position du 
+curseur. Si lors du traitement des lignes dans la fonction d'update, les
+ coordonnées de la dernière position sont les même que la position 
+actuelle du curseur, alors on ne va rien dessiner. On prendra un Object 
+et non un Point (flash.geom.Point) pour la bonne et simple raison que 
+nous avons besoin simplement des propriétés x et y et non de toutes les 
+autres méthodes de la class Point.
+</p>
+<pre class="code actionscript"><span class="co1">////////////////////</span>
+<span class="co1">//dans les déclaration de variables on rajoute notre Object :</span>
+<span class="kw3">private</span> <span class="kw2">var</span> lastPosition:<span class="kw3">Object</span>;
+&nbsp;
+<span class="co1">//dans le constructeur on initialise cet Object :</span>
+<span class="kw3">public</span> <span class="kw2">function</span> Main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+	lastPosition=<span class="kw2">new</span> <span class="kw3">Object</span><span class="br0">(</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//reste du code de la fonction...</span>
+&nbsp;
+<span class="br0">}</span>
+&nbsp;
+<span class="co1">//dans la fonction d'update on rajoute une condition, et on modifi à chaque tour</span>
+<span class="co1">//les ancienne coordonnée par les actuelles pour le prochain appelle de la fonction :</span>
+&nbsp;
+<span class="kw3">private</span> <span class="kw2">function</span> updateDrawing<span class="br0">(</span><span class="kw3">e</span>:TimerEvent<span class="br0">)</span>:<span class="kw3">void</span> <span class="br0">{</span>
+&nbsp;
+	<span class="co1">//le debut du code de la fonction...</span>
+	<span class="co1">//jusqu'à la gestion du dessin, on reprend ici le code précedent que l'on complete</span>
+	<span class="co1">//via la condition avec lastPosition :</span>
+&nbsp;
+	<span class="co1">//gestion du dessin :</span>
+	<span class="kw1">if</span><span class="br0">(</span>isDrawing<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si l'utilisateur est en train de dessiner :</span>
+&nbsp;
+		<span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>haveStarted<span class="br0">)</span> <span class="br0">{</span> <span class="co1">//si c'est le premier traitement du trait qu'il fait :</span>
+			haveStarted=<span class="kw2">true</span>;
+			<span class="co1">//on déplace le curseur graphique sur le curseur de la sourie</span>
+			dessin.<span class="me1">graphics</span>.<span class="kw3">moveTo</span><span class="br0">(</span>feuille.<span class="me1">mouseX</span>, feuille.<span class="me1">mouseY</span><span class="br0">)</span>;
+			<span class="co1">//on personnalise le style de la ligne</span>
+			dessin.<span class="me1">graphics</span>.<span class="kw3">lineStyle</span><span class="br0">(</span><span class="kw3">size</span>,<span class="kw3">Number</span><span class="br0">(</span>ColorUtils.<span class="me1">getHexaFromRGB</span><span class="br0">(</span>redColor, greenColor, blueColor<span class="br0">)</span><span class="br0">)</span>,alphaColor,<span class="kw2">true</span><span class="br0">)</span>;
+		<span class="br0">}</span>
+&nbsp;
+		<span class="kw1">else</span> <span class="br0">{</span> <span class="co1">//il suffit de tracer la une ligne vers le curseur de la sourie :</span>
+&nbsp;
+		<span class="co1">//////////////////////////////////////</span>
+		<span class="co1">////// nouveautée du code - debut - //</span>
+		<span class="co1">//////////////////////////////////////</span>
+&nbsp;
+			<span class="co1">//on vérifit si le point à dessiner est differant de l'ancienne position :</span>
+			<span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>dessin.<span class="me1">mouseX</span><span class="sy0">!</span>=lastPosition.<span class="me1">x</span><span class="br0">)</span><span class="sy0">&amp;&amp;</span><span class="br0">(</span>dessin.<span class="me1">mouseY</span><span class="sy0">!</span>=lastPosition.<span class="me1">y</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+&nbsp;
+				dessin.<span class="me1">graphics</span>.<span class="kw3">lineTo</span><span class="br0">(</span>dessin.<span class="me1">mouseX</span>, dessin.<span class="me1">mouseY</span><span class="br0">)</span>;
+				<span class="co1">//on change la dernière position pour l'actuelle :</span>
+				lastPosition.<span class="me1">x</span>=dessin.<span class="me1">mouseX</span>;
+				lastPosition.<span class="me1">y</span>=dessin.<span class="me1">mouseY</span>;
+&nbsp;
+			<span class="br0">}</span><span class="co1">//fon du if</span>
+&nbsp;
+		<span class="co1">//////////////////////////////////////</span>
+		<span class="co1">///// nouveautée du code - fin - /////</span>
+		<span class="co1">//////////////////////////////////////</span>
+		<span class="br0">}</span>
+&nbsp;
+	<span class="br0">}</span><span class="co1">//fin if(isDrawing)</span>
+<span class="br0">}</span><span class="co1">//fin function updateDrawing</span>
+<span class="co1">////////////////</span></pre>
+<p>
+Et voilà, votre éditeur de dessin est terminé, et même un petit peu optimisé <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":-)">
+ . Mais ce serait dommage de s'arrêter en si bon chemin, il y a tant de 
+choses que vous pourriez faire en plus pour cet éditeur. Nous allons 
+voir dans la prochaine partie ce que vous pourriez améliorer dans cet 
+éditeur. Ne faites pas cette tête, je vous promets que c'est possible <img src="editeur-de-dessin_fichiers/icon_wink.gif" class="middle" alt=";)">
+</p>
+
+</div>
+
+<h2><a name="iv._ameliorations_possibles" id="iv._ameliorations_possibles">IV. Améliorations possibles</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="outils_supplementaires" id="outils_supplementaires">1) Outils supplémentaires</a></h3>
+<div class="level3">
+
+<p>
+
+Qui a dit qu'un éditeur de dessin devait simplement nous permettre de 
+faire des traits ? Certes nous pouvons choisir la taille, la couleur et 
+l'opacité des traits, mais cela ne permet pas de rivaliser avec notre 
+ami Photoshop <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">. Voilà quelques idées que vous pourriez implémenter :
+
+</p>
+<ul>
+<li class="level1"><div class="li">Permettre la création de formes 
+simples (cercles, rectangles) Cela est facilité par rapport à l'AS2, car
+ en AS3 vous avez des fonctions toutes prêtes pour réaliser cela : 
+drawRect et drawCircle. Vous pouvez imaginer d'autres formes, des 
+polygones réguliers par exemple…</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">Permettre de faire d'autres choses 
+que de dessiner : créer du texte. Oui je vous assure, créer un outil 
+texte ou l'on choisirait la police, taille des caractères et couleur du 
+texte, pour cela utilisez la class TextField pour le texte et TextFormat
+ pour sa mise en forme.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">Outre les formes, permettez la 
+réalisation d'actions simples : les lignes. Si vous le souhaitez, vous 
+pouvez aussi proposer la création de courbes. Pour les lignes vous avez 
+déjà la fonction lineTo, pour les courbes on utilise CurveTo.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">Une optimisation qui sera présente 
+dans les sources finales téléchargeables à la fin : au lieu d'arrêter de
+ déplacer un slider bouton au rollOut, on l'arrête lors d'un événement 
+MOUSE_UP sur le stage uniquement si il y a eu un ROLL_OUT avant. Ainsi, 
+on peut plus facilement et rapidement bouger les sliders.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">Utilisez les filtres de Flash pour 
+faire de beaux effets. Présents dans le package flash.display.filters, 
+vous pourrez proposer de rajouter du flou, des ombres portées, etc… bien
+ sympa non ?</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">Une petite dernière amélioration 
+graphique. Avez-vous remarqué que si vous prenez un gros pinceau 
+(exemple : taille 50)  et que vous dessinez près des bords, la peinture 
+va sortir des bords, pouah c'est moche sa. Pour y remédier, utilisez un 
+masque. Dans la version finale des sources téléchargeables, j'ai rajouté
+ un masque <img src="editeur-de-dessin_fichiers/icon_wink.gif" class="middle" alt=";)"> N'oubliez pas de prendre en compte le masque lorsque vous re-centrez la feuille via le code.</div>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="sauvegarde_des_dessins" id="sauvegarde_des_dessins">2) Sauvegarde des dessins</a></h3>
+<div class="level3">
+
+<p>
+
+Pour pouvoir réutiliser vos dessins plus tard, rien de tel qu'un 
+enregistrement, mais là, plusieurs questions peuvent se poser. La cause 
+de ces questions : Comment allez-vous vous servir de vos dessins par la 
+suite ? Nous allons voir trois façons différentes de les enregistrer et 
+leur utilisation particulière.
+</p>
+
+</div>
+
+<h4><a name="a_sous_forme_d_animation_vectorielle" id="a_sous_forme_d_animation_vectorielle">a) Sous forme d'animation (vectorielle)</a></h4>
+<div class="level4">
+
+<p>
+
+Cette méthode consiste à sauvegarder chaque action que l'utilisateur 
+aura faite. C'est-à-dire que l'on stocke chaque appelle de la fonction 
+moveTo, lineTo et lineStyle. On aura une sorte d'historique des actions 
+de l'utilisateur.<br>
+
+Cela peut vous servir si vous souhaitez créer un lecteur de dessin 
+vectoriel, il ira lire dans un fichier chaque commande que l'user à 
+fait, puis les reproduira à l'écran, et progressivement! L'inconvénient 
+de cette méthode est qu'elle est lourde, en effet pour un dessin 
+d'environ 3000 lignes (environ 2 min de dessin) la taille des données 
+pèse quelques méga-octets! Pour réduire la taille un maximum avant de 
+mettre les données par exemple dans une base de données Mysql, on peut 
+utiliser une notation courte : “a(x, y) b(x, y,) c(x, y)” avec a, b, et c
+ des fonction au lieu de mettre de grands noms de fonction. Ensuite des 
+librairies <acronym title="Hypertext Preprocessor">PHP</acronym> existe pour compresser ces données <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+</p>
+
+</div>
+
+<h4><a name="b_sous_forme_d_image" id="b_sous_forme_d_image">b) Sous forme d'image</a></h4>
+<div class="level4">
+
+<p>
+
+Pour cela c'est très simple, il suffit de récupérer la valeur de couleur
+ de chaque pixel du clip où l'on a dessiné et de les mettre dans un 
+BitmapData. Il existe pour cela la fonction 
+BitmapData.draw(IBitmapDrawable). On peut donc passer en paramètre un 
+clip, sprite, shape… Ensuite il suffit soit directement de créer une 
+image dans Flash et de la stocker dans un ByteArray puis de 
+l'enregistrer, ou bien de faire passer directement les données à <acronym title="Hypertext Preprocessor">PHP</acronym>
+ qui se chargera via des librairies de créer et enregistrer cette image.
+ Une image est fixe et pas animée, seul le résultat de votre dessin sera
+ visible.<br>
+
+Cette méthode est utile lorsque l'on recherche une solution légère 
+(faible poids des images) et plutôt pour enregistrer l'image sur son PC 
+que pour la revoir dans un lecteur. (Exemple : Photophop express 
+d'Adobe)
+</p>
+
+</div>
+
+<h4><a name="c_sous_forme_de_source_as3" id="c_sous_forme_de_source_as3">c) Sous forme de source AS3</a></h4>
+<div class="level4">
+
+<p>
+
+La méthode la plus simple, dans une variable de type String vous stockez
+ toutes les instructions que vous avez utilisées lors du dessin. Par 
+exemple, vous faites :<br>
+
+lineTo(x,y);<br>
+
+maVariable+=”/nlineTo(”+x+”, ”+y+”);”;<br>
+ 
+Ce qui rajoutera une nouvelle ligne avec la commande dans votre 
+variable. A la fin du dessin on sauvegarde le fichier en tant que 
+“fichier.as”. La personne qui a ce fichier peut maintenant l'utiliser 
+dans ses animations via un :<br>
+
+Include “fichier.as”<br>
+
+Le dessin se fera automatiquement. Vous pouvez aussi rajouter des effets
+ sympathiques tels qu’une animation progressive du dessin avec la mise 
+en place de Timers.
+</p>
+
+</div>
+
+<h2><a name="v._conclusion" id="v._conclusion">V. Conclusion</a></h2>
+<div class="level2">
+
+<p>
+
+Et voilà, ce tutoriel touche à sa fin. J'espère qu'il vous aura été 
+utile et que vous avez appris quelques petites choses. Je vous encourage
+ vivement à faire, où essayer au moins, les améliorations citées plus 
+haut, ou d'autre que vous pouvez imaginez bien sur. Je tien à souligner 
+pour terminer, que nous avons ici réaliser un éditeur de dessin 
+vectoriel, mais rien ne vous empêche de vous lancer dans un éditeur par 
+pixel (Bitmap &amp; BitmapData class), ainsi vous pourrez créer des 
+brushs, et des filtres comme dans Photoshop! Ne sous estimez pas la 
+documentation! Appuyez sur F1 avant de demander de l'aide à propos de ce
+ tuto!
+</p>
+
+</div>
+
+<h2><a name="telechargements" id="telechargements">Téléchargements</a></h2>
+<div class="level2">
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/final.zip" class="media mediafile mf_zip" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:final.zip">ZIP des fichiers sources : Main.fla, Main.as, ColorUtils.as</a>
+</p>
+
+<p>
+<a href="http://forums.mediabox.fr/wiki2/_media/tutoriaux/flashplatform/gui/interactivite/editeur-de-dessin/etapes.zip" class="media mediafile mf_zip" title="tutoriaux:flashplatform:gui:interactivite:editeur-de-dessin:etapes.zip">ZIP de toutes les étapes du code présenté dans le tutoriel</a>
+</p>
+
+<p>
+Merci de votre lecture, et à bientôt <img src="editeur-de-dessin_fichiers/icon_smile.gif" class="middle" alt=":)">.
+</p>
+
+<p>
+<strong>Stefbuet</strong>
+</p>
+
+</div>
+
+            <!-- wikipage stop -->
+        </div>
+    
+        <div class="clearer">&nbsp;</div>
+    
+            
+        <div class="stylefoot">
+    
+                
+            <div class="bar" id="bar__bottom">
+                <div class="bar-right" id="bar__bottomright">
+                <a class="nolink" href="#dokuwiki__top"><input class="button" value="Haut de page" onclick="window.scrollTo(0, 0)" title="Haut de page" type="button"></a>                </div>
+                <div class="clearer"></div>
+            </div>
+    
+        </div>
+
+    </div>
+    
+    <div class="forumLink"><div class="content"><a href="" target="_blank" class="bulle"><img src="editeur-de-dessin_fichiers/bulle-flash.gif" alt="En discuter sur le forum" title="En discuter sur le forum" style="vertical-align: middle"></a> Encore des questions? Besoin d'aide? Venez en discuter sur le forum <a href="http://flash.mediabox.fr/index.php?showforum=92">Programmation Actionscript</a>.</div></div><div class="licence"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr"><img src="editeur-de-dessin_fichiers/cc-by-nc-sa.png"></a></div>  
+    
+    
+<div class="footerinc">
+  
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="editeur-de-dessin_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-453483-24");
+pageTracker._trackPageview();
+} catch(err) {}</script> 
+
+</div>
+
+    <div class="no"><img src="editeur-de-dessin_fichiers/indexer.gif" alt="" height="1" width="1"></div>
+    
+        
+        
+</div>
+
+
+			<div class="clear"></div>
+		</div>
+						
+		<div id="footer">	
+			
+			<a href="http://www.facebook.com/mediabox.fr" id="backtotop" title="Suivez-nous sur Facebook"><img src="editeur-de-dessin_fichiers/facebook.png" alt=""></a>
+		<a href="https://twitter.com/#%21/forums_mediabox/mediabox" id="backtotop" title="Suivez-nous sur Twitter"><img src="editeur-de-dessin_fichiers/twitter.png" alt=""></a>
+		<a href="https://plus.google.com/u/0/b/110558023059228274886/110558023059228274886/posts" id="backtotop" title="Suivez-nous sur G+"><img src="editeur-de-dessin_fichiers/google.png" alt=""></a>
+		
+		
+		<div id="infoLegal">
+			<div id="footer-noir-gauche" class="footer-noir-degrade"></div>
+			<div id="LogoAdobeFooter">
+				<a href="http://www.mediabox.fr/adobe-et-mediabox.html" title="authorised training centre"><img src="editeur-de-dessin_fichiers/logo_adobe_footer.htm" alt="authorised training centre"></a>
+			</div>
+			<div id="LibLegal">
+				<p>Centre de Formation Mediabox - Adobe et Apple Authorised Training Center.</p>
+				<p>Déclaré auprès de la Direction du Travail et de la Formation Professionnelle. <a href="http://www.mediabox.fr/documents/cgv.pdf">Conditions Générales de Vente.</a></p>
+				<p>Mediabox : SARL au capital de 62.000€ - Numéro d'activité : 11 75 44555 75 - SIRET : 49371646800035</p>
+				<p>MEDIABOX, 23, rue de Bruxelles, 75009 PARIS - Tel. 01 72 76 16 15 - Fax. 01 72 70 31 38</p>
+			</div>
+			<div id="LogoFFPFooter">
+				<a href="http://www.mediabox.fr/charte.html" title="Charte qualité"><img src="editeur-de-dessin_fichiers/logonf-footer.htm" alt="FFP" height="50"></a>
+			</div>
+			<div id="footer-noir-droit" class="footer-noir-degrade"></div>
+			<div class="clear"></div>
+			<div itemscope="" itemtype="http://data-vocabulary.org/Organization" style="display:none;"> 
+				<span itemprop="name">Centre de formation Mediabox</span>
+				Adresse : 
+				<span itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address">
+					<span itemprop="street-address">23 rue de Bruxelles</span>, 
+					<span itemprop="locality">Paris</span>, 
+					<span itemprop="region">Île-de-France</span>.
+				</span>
+				Téléphone : <span itemprop="tel">01 72 76 16 15</span>.
+				<a href="http://www.mediabox.fr/" itemprop="url">http://www.mediabox.fr</a>.
+			</div>
+		</div>
+		</div>
+						
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-453483-7']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+						</div>		</div>	</div>	</body></html>
