@@ -1,0 +1,105 @@
+
+
+#primary_nav { 
+	min-width: 998px; 
+	font: normal 13px helvetica,arial,sans-serif;
+	
+}
+
+#primary_nav {
+	margin-top: 15px;
+	margin-bottom: -34px;
+}
+
+#primary_nav li { margin: 0px 9px 0 0; position: relative; }
+
+
+#primary_nav a {
+	color: #c5d5e2;
+	background: #1c3b5f;
+	display: block;
+	padding: 6px 15px 8px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	text-decoration: none;
+}
+
+#primary_nav a:hover, #primary_nav a.menu_active { background: #173455; color: #fff; }
+
+
+#primary_nav .active a {
+	background: #fff;
+	color: #0b5794;
+	font-weight: bold;
+	margin-top: 0;
+	text-shadow: none;
+}
+
+
+
+.clearfix:after { content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+
+
+.main_width {
+	margin: 0 auto;
+}
+
+#primary_nav .main_width { padding: 0 10px; }
+
+
+.ipsList_inline > li {
+	display: inline-block;
+	margin: 0 3px;
+}
+	.ipsList_inline > li:first-child { margin-left: 0; }
+	.ipsList_inline > li:last-child { margin-right: 0; }
+	.ipsList_inline.ipsList_reset > li:first-child { margin-left: 3px; }
+	.ipsList_inline.ipsList_reset > li:last-child { margin-right: 3px; }
+	.ipsList_inline.ipsList_nowrap { white-space: nowrap; }
+	
+	
+	.right { float: right; }
+.left { float: left; }
+
+
+#quickNavLaunch span { 
+	background: url(/public/style_images/master/icon_quicknav.png ) no-repeat top;
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+}
+#quickNavLaunch:hover span { background: url(/public/style_images/master/icon_quicknav.png ) no-repeat bottom; }
+#primary_nav #quickNavLaunch { padding: 6px 8px 8px; }
+
+
+#primary_nav {
+  font-size: 13px;
+  padding: 0 0 0 0;
+  top: 5px;
+  left: 0px;
+  position: relative;
+  height: 30px;
+}
+#primary_nav a {
+  color: #ffffff;
+  background: #400808;
+  display: block;
+  padding: 6px 15px 8px;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+#primary_nav a:hover, #primary_nav a.menu_active { 
+  background: #fff;
+  color: #000000;
+  margin-top: 0;
+  text-shadow: none;
+}
+	
+	
+#primary_nav .active a 
+{
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 0;
+  text-shadow: none;
+}

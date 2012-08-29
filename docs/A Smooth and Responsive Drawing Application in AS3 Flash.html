@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tutorial_onepage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta name="description" content="Smooth mouse drawing in AS3 Flash, Mouse drawing with brush-like effect in AS3 Flash, Marker-like mouse drawing in AS3, ActionScript 3 Flash drawing with the mouse, Exporting images from Flash in AS3, Flash CS4 mouse drawing, AS3 JPEG encoder in action, AS3 PNG encoder example, Draw images with varying stroke in Flash CS4, ActionScript 3 Flash tutorials and tips">
+
+<meta name="keyword" content="Smooth mouse drawing in AS3 Flash, Mouse drawing with brush-like effect in AS3 Flash, Marker-like mouse drawing in AS3, ActionScript 3 Flash drawing with the mouse, Exporting images from Flash in AS3, Flash CS4 mouse drawing, AS3 JPEG encoder in action, AS3 PNG encoder example, Draw images with varying stroke in Flash CS4, ActionScript 3 Flash tutorials and tips">
+
+<link rel="alternate" type="application/rss+xml" title="News from flashandmath.com" href="http://www.flashandmath.com/rss/flash_and_math.xml">
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>A Smooth and Responsive Drawing Application in AS3 Flash</title>
+
+
+<!-- InstanceEndEditable -->
+<link href="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/tutorial2012.css" rel="stylesheet" type="text/css">
+<!-- InstanceParam name="content" type="text" value="Smooth mouse drawing in AS3 Flash, Mouse drawing with brush-like effect in AS3 Flash, Marker-like mouse drawing in AS3, ActionScript 3 Flash drawing with the mouse, Exporting images from Flash in AS3, Flash CS4 mouse drawing, AS3 JPEG encoder in action, AS3 PNG encoder example, Draw images with varying stroke in Flash CS4, ActionScript 3 Flash tutorials and tips" -->
+
+</head>
+
+<body>
+
+<div id="header"><a href="http://www.flashandmath.com/"><span id="invis">Flash and Math</span></a>
+<!-- InstanceBeginEditable name="TutorialTitle" -->
+<h1>A Smooth and Responsive Drawing Application in AS3 Flash</h1>
+<!-- InstanceEndEditable --></div>
+
+<!-- InstanceBeginEditable name="PageTitle" -->
+<p class="title">The Application and Comments</p>
+<!-- InstanceEndEditable -->
+<table border="0" width="100%">
+  <tbody><tr valign="top">
+    <td><div id="content">
+
+<!-- InstanceBeginEditable name="PageContents" -->
+
+<p>
+We present here a drawing application which allows you to create smooth and dynamic lines with a very responsive feel.  
+The lines change thickness and color depending on how fast you move your mouse, resulting in subtle variations which give 
+the drawing a realistic look.  The overall effect is somewhat like drawing with thick markers or paint.  
+You can export your image from the Flash movie to either the jpg or png format when you are done. 
+Click on the screenshot below to open the application in a new window.  
+</p>
+
+ <p align="center">
+  
+   <a class="pic" href="http://www.flashandmath.com/advanced/smoothdraw/CurveDraw.html" target="_blank"><img src="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/draw1.jpg" height="396" width="480"></a>
+  
+  </p>  
+
+
+<p class="download2">Download</p>
+<ul>
+  <li>Download all source files corresponding to the applet above: <a class="source" href="http://www.flashandmath.com/advanced/smoothdraw/smoothdraw.zip">smoothdraw.zip</a></li>
+</ul>
+
+<p class="download2">Comments on the Code and Ideas Behind It</p>
+
+<p> 
+Designing an algorithm which interprets mouse movements to create smoothly drawn curves is a bit challenging.  
+Actual mouse movements can be much more jagged and jerky than the user may intend, and so the algorithm must 
+smooth out these motions.  But then by definition, the algorithm is not following the user&#8217;s requests exactly, 
+so care must be taken to balance smoothness with accuracy.
+</p>
+
+<p>
+The simple solution we use here is to only draw the curve a certain percentage (30%) 
+towards the mouse position every time the mouse moves.  This technique is similar to the smooth 
+dragging method presented in our tutorial <a href="http://www.flashandmath.com/howtos/ease/index.html" target="_blank">How to 
+Add Easing to Your Dragging without Tweens in AS3 Flash</a>.  In that example, however, continuous motion was 
+achieved using an ENTER_FRAME listener function, whereas here we only update the drawing 
+when the mouse changes position.
+</p>
+
+<p>
+The lines drawn by the application change their thickness and color depending on how fast the mouse moves.  
+Greater speed results in thicker and brighter lines.  (You may wish to experiment with the code so that greater 
+speed results in thinner lines, which gives a much different feel).  Measuring the speed of the 
+mouse is easy: we simply determine how far apart the present and previous mouse positions are.
+</p>
+
+<p>
+The curves which are drawn are actually composed of small four-sided segments which connect together to form the curve.  
+The picture below helps to explain this method, and the code can be examined for the precise details.
+</p>
+
+<p>
+Here is how it works: each time the mouse moves, a smoothed mouse position is calculated, and two corners for a new 
+segment are created by moving away from the smoothed mouse position in a perpendicular direction.  
+The four sided segment is drawn using these new points, plus the previous two points.
+</p>
+
+<p>
+To give the lines a little more curvature, the outer edges of these segments are drawn using the curveTo method in Flash.  
+This creates a curve whose shape is determined by the use of a control point.  The control points are chosen to be at 
+right angles to the inner edge.  Their distance away from the edge is set to one-third of the distance between 
+the last and current smoothed mouse position, a ratio that was decided upon through a bit of experimentation.  
+</p>
+
+<p align="center">
+<img src="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/segment.jpg" height="299" width="489">
+</p>
+
+<p>
+There is one issue with this method: since we are smoothing out the mouse position, the curve will not 
+extend all the way out to the present mouse position, which feels strange as you are drawing the curve.  
+To remedy this, an extra tip is drawn from the smoothed mouse position to the actual mouse position.  
+This tip is drawn with a quadrilateral segment plus a circle, as shown below.  This tip is not actually drawn 
+to the canvas until the mouse button is released.
+</p>
+
+<p align="center">
+<img src="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/tip.jpg" height="239" width="326">
+</p>
+
+<p>
+With the smoothing of the mouse position, the drawn curve can sometimes feel a bit too smooth, especially when 
+you make abrupt changes in the direction of the curve.  To add to the realism and responsiveness of the drawing, 
+the code analyzes mouse movement to see if an abrupt change has occurred, and if so, then a sharper point 
+is drawn by using the previous actual mouse position instead of the smoothed position.  Determining whether 
+the mouse makes an abrupt change is done by measuring the angle between the previous motion and the present motion.  
+If this angle change is more than 90 degrees, the sharp point method is used rather than the smooth method.
+</p>
+
+<p class="download2">Colors</p>
+
+<p>
+A small selection of colors is given below the canvas; a color can be selected by clicking on the corresponding "swatch".  
+Each color is in fact a gradient, which represents the range of colors to use.  Slow mouse movements will result in
+colors toward the bottom of the swatch, faster motion results in colors further up.  
+You can easily modify the code to create additional color swatches: the colors are contained 
+in the swatchColors Vector near the top of the code.
+</p>
+
+<p class="download2">Exporting Images</p>
+
+<p>
+Exporting images is handled by the JPGEncoder and PNGEncoder classes available as part of the <strong>as3corelib</strong> project, hosted 
+<a href="http://code.google.com/p/as3corelib/" target="_blank">here</a>.
+We have created a BitmapSaver class which provides a dialog box with buttons to click for the saving of images, 
+along with the necessary code for the image saving.  The BitmapSaver extends the Sprite class, and can easily be 
+reused in any application where the saving of a bitmap is desired.  For example, you can use the following 
+code to create a dialog for saving a bitmap called myBitmap:
+</p>
+
+<p>
+
+<span class="output">
+
+var bitmapSaver:BitmapSaver = new BitmapSaver(myBitmap);<br>
+this.addChild(bitmapSaver);
+
+</span>
+
+</p>
+
+<p>
+You may wish to add the BitmapSaver to the stage only when a button is clicked to bring up this dialog box.
+</p>
+
+
+
+<p class="download2">Have Fun!</p>
+
+<p>
+We hope you will have a lot of fun playing with this painting program!  You can customize it by resizing it, 
+changing the background or adding new colors to the collection of swatches.  
+You might also wish to create an eraser tool or other drawing tools.
+</p>
+
+<p>
+One more note: a hidden keyboard shortcut has been added for the undo function.  Simply press the "z" key to undo.  
+The key combination Ctrl-Z might feel a bit more familiar as an undo shortcut, 
+but unfortunately some browsers capture this key combination and do not send it on to Flash, 
+so something else had to be used.
+
+</p>
+
+
+<!-- InstanceEndEditable --></div>
+</td>
+  </tr>
+</tbody></table>
+
+<!-- InstanceBeginEditable name="NextPageLink" -->
+<p class="footer">&nbsp;</p>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="BottomNavigation" -->
+<p align="center"> <a href="http://www.flashandmath.com/advanced/">Back to Advanced &amp; Experimental</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.flashandmath.com/">Back to Flash and Math Home</a> </p>
+<!-- InstanceEndEditable -->
+
+<div id="bottomInfo">
+  
+    <p align="center">
+    We welcome your comments, suggestions, and contributions. Click the Contact Us link below
+    and email one of us.
+    </p>
+    
+  <ul>
+  
+    <li><a class="info" href="http://www.flashandmath.com/">Flash and Math Home</a></li>
+    
+    <li><a class="info" href="http://www.flashandmath.com/about/">About Us</a> </li>
+
+    <li><a class="info" href="http://www.flashandmath.com/rss/">Subscribe</a> 
+    <img src="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/smallchick.gif" alt="RSS Feed Link" align="absmiddle" height="16" width="16"> 
+    &nbsp; </li>
+    <li><a class="info" href="http://twitter.com/flashandmath" target="_blank">F&amp;M on Twitter</a> <img src="A%20Smooth%20and%20Responsive%20Drawing%20Application%20in%20AS3%20Flash_fichiers/twitter_small.jpg" alt="Twitter Link" align="absmiddle" height="16" width="16"> 
+    &nbsp; </li>
+    
+    <li><a class="info" href="http://www.flashandmath.com/about/terms.html">Terms of Use</a></li>
+    
+    <li><a class="info" href="http://www.flashandmath.com/about/contact.html">Contact Us</a></li>
+    
+    <li><a class="info" href="http://get.adobe.com/flashplayer/" target="_blank">Get Flash Player</a></li>
+    
+    </ul>
+    
+    <p align="center">
+    <font style="color: #666666; font-size:10px;">
+    Adobe®, Flash®, ActionScript®, Flex® are registered trademarks of Adobe Systems Incorporated.
+    </font>
+   </p>
+
+  </div>
+
+
+</body><!-- InstanceEnd --></html>

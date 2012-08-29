@@ -1,0 +1,162 @@
+#mbHeader{
+	width:990px;
+	margin:0 auto;
+}
+div#mbHeader .clear {
+	clear: both;
+}
+
+div#mbHeader img{
+border:0
+}
+div#mbHeader #HeaderLogo{
+margin-bottom:5px;
+width:990px;
+}
+
+div#mbHeader #menu{
+clear:both;
+height: 45px;
+width:990px;
+margin:0px 0px 50px 0px;
+}
+
+div#mbHeader #menu a,
+div#mbHeader #menu a:hover{
+text-decoration:none;
+font-weight:normal
+}
+
+div#mbHeader .rub{
+float:left;
+margin-right:30px
+}
+
+div#mbHeader .menuTitre{
+font-family:Arial,Helvetica,sans-serif;
+font-size:26px;
+text-decoration:none;
+font-weight:bold
+}
+div#fullPage.mediabox div#mbHeader .menuTitre { color:#660403; }
+div#fullPage.flash div#mbHeader .menuTitre { color:#660403; }
+div#fullPage.creative div#mbHeader .menuTitre { color:#541338; }
+div#fullPage.director div#mbHeader .menuTitre { color:#660403; }
+div#fullPage.apple div#mbHeader .menuTitre { color:#94867e; }
+
+div#mbHeader .menuTitreO,
+div#mbHeader .rub a:hover>.menuTitre{
+font-family:Arial,Helvetica,sans-serif;
+font-size:26px;
+text-decoration:none;
+font-weight:bold
+}
+div#fullPage.mediabox div#mbHeader .menuTitreO,
+div#fullPage.flash div#mbHeader .menuTitreO,
+div#fullPage.creative div#mbHeader .menuTitreO,
+div#fullPage.director div#mbHeader .menuTitreO {
+	color:#000;
+}
+div#fullPage.apple div#mbHeader .menuTitreO {
+	color: #FFF;
+}
+div#fullPage div#mbHeader .rub a:hover>.menuTitre {
+	color:#FFF;
+}
+
+div#mbHeader .menuBaseline {
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	display:block
+}
+div#fullPage.mediabox div#mbHeader .menuBaseline { color:#e17877; }
+div#fullPage.flash div#mbHeader .menuBaseline { color:#e17877; }
+div#fullPage.creative div#mbHeader .menuBaseline { color:#CE89B0; }
+div#fullPage.director div#mbHeader .menuBaseline { color:#e17877; }
+div#fullPage.apple div#mbHeader .menuBaseline { color:#94867e; }
+
+div#fullPage div#mbHeader .menuBaselineO,
+div#fullPage div#mbHeader .rub a:hover>.menuBaseline{
+font-family:Arial,Helvetica,sans-serif;
+font-size:12px;
+color:#FFF;
+text-decoration:none;
+display:block
+}
+
+div#mbHeader #Mediabox{
+display:block;
+float:right
+}
+
+div#mbHeader #Mediabox img{
+width:270px;
+margin-top:10px;
+/*height:82px*/
+}
+
+div#mbHeader #BanniereFlash{
+position:relative;
+margin-top:-60px;
+width:73%
+}
+
+div#mbHeader #BanniereResize{
+margin-bottom:-23px;
+height:150px
+}
+
+div#mbHeader #mbNav{
+position:absolute;
+width:750px;
+height:40px;
+top:145px;
+background:transparent url(images/header/bkg_flash_menu.png) no-repeat
+}
+
+div#mbHeader #mbNav span{
+display:none
+}
+
+div#mbHeader #mbNav a{
+display:block;
+float:left;
+width:40px;
+height:40px
+}
+
+div#mbHeader #mbNav a.dreamweaver { margin-left:26px }
+div#mbHeader #mbNav a.PHP{ margin-left:23px }
+div#mbHeader #mbNav a.photoshop{ margin-left:23px }
+div#mbHeader #mbNav a.aftereffects{ margin-left:23px }
+
+div#mbHeader #mbNav a:hover{
+background-color:transparent;
+background-image:url(images/header/bkg_flash_menu_hover.png);
+background-repeat:no-repeat;
+background-position:top left
+}
+
+div#mbHeader #mbNav a.flex:hover{ background-position:-40px 0 }
+div#mbHeader #mbNav a.apollo:hover{ background-position:-80px 0 }
+div#mbHeader #mbNav a.dreamweaver:hover{ background-position:-146px 0 }
+div#mbHeader #mbNav a.HTML:hover{ background-position:-186px 0 }
+div#mbHeader #mbNav a.CSS:hover{ background-position:-226px 0 }
+div#mbHeader #mbNav a.Javascript:hover{ background-position:-266px 0 }
+div#mbHeader #mbNav a.PHP:hover{ background-position:-329px 0 }
+div#mbHeader #mbNav a.DOTNET:hover{ background-position:-369px 0 }
+div#mbHeader #mbNav a.Java:hover{ background-position:-409px 0 }
+div#mbHeader #mbNav a.photoshop:hover{ background-position:-472px 0 }
+div#mbHeader #mbNav a.creative:hover{background-position:-512px 0 }
+div#mbHeader #mbNav a.illustrator:hover{ background-position:-552px 0 }
+div#mbHeader #mbNav a.aftereffects:hover{ background-position:-613px 0 }
+div#mbHeader #mbNav a.premiere:hover{ background-position:-653px 0 }
+div#mbHeader #mbNav a.director:hover{ background-position:-693px 0 }
+
+div#mbHeader iframe.ie6_blocker{
+position:absolute;
+z-index:999
+}
+
+
