@@ -112,8 +112,8 @@ package
 			else
 			{
 				//addChild(picture);
-				addChild(new TestLiquify(stage));
-				//addChild(new BrushLab(stage));
+				//addChild(new TestLiquify(stage));
+				addChild(new BrushLab(stage));
 			}
 		
 			//tf.appendText(" +++"+Facebook.login(onFacebookLogin));
