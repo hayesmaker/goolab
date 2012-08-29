@@ -45,7 +45,7 @@ package
 	import flash.display.BitmapDataChannel;
 	
 	import liquify.TestLiquify;
-	
+	import lab.BrushLab;
 	/**
 	 * ...
 	 * @author Duc-Tri VU
@@ -113,6 +113,7 @@ package
 			{
 				//addChild(picture);
 				addChild(new TestLiquify(stage));
+				//addChild(new BrushLab(stage));
 			}
 		
 			//tf.appendText(" +++"+Facebook.login(onFacebookLogin));

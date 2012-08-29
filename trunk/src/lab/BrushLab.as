@@ -1,4 +1,4 @@
-package
+package lab
 {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -29,7 +29,7 @@ package
 		private var targetImage:Bitmap; // PANEL de l'image (le damier)
 		private var gradientView:Sprite; // PANEL des gradients
 		
-		[Embed(source="checker.jpg")]
+		[Embed(source="../assets/checker.jpg")]
 		public var ImageClass:Class;
 		
 		public function BrushLab(_s:Stage)
@@ -44,13 +44,13 @@ package
 			gradientView.y = m_stage.stageHeight / 2;
 			
 			// GRADIENT VERTICAL ==================================================================
-			var gra1:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 90, [0, 0x0000ff], [1, 1], [0, 255]);
+			var gra1:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 90, [0x0000ff, 0], [1, 1], [0, 255]);
 			var tempBmd1:BitmapData = new BitmapData(gra1.width, gra1.height,false,0x808080);
 			tempBmd1.draw(gra1);
 			gradientView.addChild(gra1);
 			
 			// GRADIENT HORIZONTAL ================================================================
-			var gra2:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 0, [0, 0x00ff00], [1, 1], [0, 255]);
+			var gra2:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 0, [0x00ff00, 0], [1, 1], [0, 255]);
 			var tempBmd2:BitmapData = new BitmapData(gra2.width, gra2.height,false,0x808080);
 			tempBmd2.draw(gra2);
 			gradientView.addChild(gra2);
@@ -79,7 +79,7 @@ package
 			
 			// ENFIN, DISPLACEMENT MAP ============================================================
 			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_stage.stageWidth/8, m_stage.stageHeight/8), 
-			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 2, 2, DisplacementMapFilterMode.IGNORE);
+			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 10, 10, DisplacementMapFilterMode.COLOR,0xff0000,1);
 			
 			targetImage = new ImageClass();
 			addChild(targetImage);
