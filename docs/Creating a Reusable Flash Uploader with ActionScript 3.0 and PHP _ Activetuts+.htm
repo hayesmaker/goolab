@@ -1,0 +1,1570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script async="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/cbgapi.loaded_0"></script><script gapi_processed="true" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/plusone.js" async="" type="text/javascript"></script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+<title>Creating a Reusable Flash Uploader with ActionScript 3.0 and PHP | Activetuts+</title>
+
+<!-- Styles -->
+<link href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/style.css" rel="stylesheet" type="text/css" media="screen">
+<link href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/theme.css" rel="stylesheet" type="text/css" media="screen">
+ 
+<link href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/print.css" rel="stylesheet" type="text/css" media="print">
+<link href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/widget.css" rel="stylesheet" type="text/css" media="screen">
+
+<link rel="shortcut icon" href="http://active.tutsplus.com/wp-content/themes/tuts/images/theme/activetuts/favicon.ico">
+<link rel="apple-touch-icon" href="http://active.tutsplus.com/wp-content/themes/tuts/images/theme/activetuts/apple-touch-icon.png">
+<meta name="readability-verification" content="TFkD5vpEWLqYQnwM5qy3q2pqvYhsdqpNyXQ7bmht"> 
+
+<!-- Page Size CSS -->
+<link href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/large.css" rel="stylesheet" type="text/css" media="screen">
+
+<!-- Scripts -->
+<link rel="stylesheet" id="ratings-css" href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/wp-post-ratings.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/styles.css" type="text/css" media="all">
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jquery_004.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/wp-post-ratings.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://active.tutsplus.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://active.tutsplus.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Throwing Dice With the Jiglib Physics Engine and Away3D" href="http://active.tutsplus.com/tutorials/3d/throwing-dice-with-the-jiglib-physics-engine-and-away3d/">
+<link rel="next" title="An Introduction to Tweening with ActionScript 3.0" href="http://active.tutsplus.com/tutorials/actionscript/an-introduction-to-tweening-with-actionscript-3-0/">
+<link rel="shortlink" href="http://active.tutsplus.com/?p=1952">
+
+<!-- All in One SEO Pack - Pro Version 1.72 by Michael Torbert of Semper Fi Web Design[231,316] -->
+<meta name="description" content="In this tutorial I'll show you how to build a Flash uploader for uploading files from the user's computer. The result will be ideal for large file sizes as it">
+<meta name="keywords" content="actionscript">
+<link rel="canonical" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/">
+<!-- /all in one seo pack Pro Version-->
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/audio-player.js"></script>
+<script type="text/javascript">AudioPlayer.setup("http://active.tutsplus.com/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.1", {width:"290",animation:"yes",encode:"no",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"bc4620",text:"ffffff",leftbg:"bc4620",lefticon:"ffffff",volslider:"f0baa8",voltrack:"ffffff",rightbg:"bc4620",rightbghover:"de8c71",righticon:"ffffff",righticonhover:"FFFFFF",track:"bc4620",loader:"de8c71",border:"bc4620",tracker:"de8c71",skip:"ffffff",pagebg:"FFFFFF",transparentpagebg:"yes"});</script><style media="screen" type="text/css">p.audioplayer_container span {visibility:hidden;height:24px;overflow:hidden;padding:0;border:none;}</style>
+<script type="text/javascript">
+//<![CDATA[
+var _wpcf7 = { cached: 1 };
+//]]>
+</script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/swfobject.js"></script><link rel="stylesheet" href="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/orgSeries.css" type="text/css" media="screen"><meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3">
+
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jquery.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jquery_002.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jobs_002.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/marketplace-url-rewriter.js"></script>
+<script type="text/javascript"> $(function() { MarketplaceUrlRewriter.rewrite_urls({host: window.location.host, target: document}) }) </script>
+
+<script type="text/javascript">
+  var ipad = function () {
+    return navigator.userAgent.match('iPad') != null
+  }
+  if (!ipad()) {
+    document.write('<script type="text/javascript" src="http://active.tutsplus.com/wp-content/themes/tuts/js/lazyload.js">')
+    document.write("<\/script>")
+  }
+  
+  var plus_member_logged_in = function() {
+    return (document.cookie.match('amember_logged_in') != null)
+  }
+  
+  // fix flash z-index
+  $("embed").attr("wmode", "opaque");
+  
+    $(function() {
+    $("#social_networking").tabs();
+    $('#facebook_tab').html('<div class="facebook_wrap"><fb:like-box href="http://facebook.com/activetuts" width="296" height="300" stream="false" connections="10"></fb:like-box></div>');
+  });
+    
+  $(function() {
+    
+    // Extra Posts Div 
+    var left = 15;
+  	$('.extra_posts li div').each(function() {
+  		$(this).css('left', left);
+  		left += 114;
+  	});
+  	
+    // Subnavigation
+    $(".navigation li:has(ul)").addClass("parent");
+    
+    // Lazy Loading
+    if (!ipad()) {
+      $(".tutorial_image img").lazyload({
+        placeholder : "http://active.tutsplus.com/wp-content/themes/tuts/images/global/box.gif",
+        threshold : 200
+      });
+      $(".post_image img").lazyload({
+        placeholder : "http://active.tutsplus.com/wp-content/themes/tuts/images/global/box.gif",
+        threshold : 200
+      });
+      $(".comment_author img").lazyload({
+        placeholder : "http://active.tutsplus.com/wp-content/themes/tuts/images/global/box.gif",
+        threshold : 200
+      });
+    }
+    
+  });
+  
+  //External links 
+  $(function() {
+    $('a[rel~=external]').attr('target', '_blank');
+  });
+</script><script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/lazyload.js"></script>
+
+<!-- Webtrends Optimize: Place inside head element. -->
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/wt_capi.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Activetuts+ RSS Feed" href="http://active.tutsplus.com/feed">
+<link rel="pingback" href="http://active.tutsplus.com/xmlrpc.php">
+<meta name="google-site-verification" content="aoXTcdQJMMCGh8FUsMlj35Qw-2jK83Wpt7XnqUPB9KI">
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/single.js"></script>
+
+<script type="text/javascript">
+(function(){
+  var po = document.createElement("script");
+  po.type = "text/javascript"; 
+  po.async = true;
+  po.src = "http://apis.google.com/js/plusone.js";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+<script async="true" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/ga.js"></script><script src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/bsa.js" async="" type="text/javascript"></script><script src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/all.js" async="" type="text/javascript"></script><script defer="true" async="true" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/wt_lib.js" type="text/javascript"></script><script async="async" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/s_a509e7180eb9ec58e8f99780a6a662a0.js" id="_bsap_js_a509e7180eb9ec58e8f99780a6a662a0" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/x/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yc/x/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_iframe_widget span{position:relative;display:inline-block;vertical-align:text-bottom;text-align:justify}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yH/x/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size:24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size:13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size:11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size:10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size:10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size:22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yP/x/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size:10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size:11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}
+</style><script defer="true" async="true" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/WT3obR_tDtLpD8F70Nq0nySRuJtjMCFEGMdsSRXET8Y2mr0hdv5xPc-umMtc.htm" type="text/javascript"></script><script src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jobs.js" type="text/javascript"></script><style id="bsa_css" type="text/css">div.bsap_1245833{width:100%;display:block}div.bsap_1245833 a{width:728px}div.bsap_1245833 a img{padding:0}div.bsap_1245833 a em{font-style:normal}div.bsap_1245833 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1245833 img{border:0;clear:right;}div.bsap_1245833 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1245833 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1245833 a{line-height:100%}div.bsap_1245833 a.adhere{width:728px;height:90px;line-height:720%}html>body div.bsap_1245833 a.adhere{width:726px;height:88px}div.bsap_1245833 img.s{height:0;width:0}div.bsap_1245833{line-height:9px}div.bsap_1245833 .bsap_adhere2,div.bsap_1245833 iframe{float:left}div.bsap_1245833 .bsap_adhere2 a{height:90px;width:20px;background:url(http://s3.buysellads.com/ac/ah20x90_1.gif) no-repeat 0 0;text-indent:-9999px}div.bsap_1238193{width:100%;display:block}div.bsap_1238193 a{width:200px}div.bsap_1238193 a img{padding:0}div.bsap_1238193 a em{font-style:normal}div.bsap_1238193 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}div.bsap_1238193 img{border:0;clear:right;}div.bsap_1238193 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1238193 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1238193 a{line-height:100%}div.bsap_1238193 a.adhere{width:200px;height:125px;line-height:1000%}html>body div.bsap_1238193 a.adhere{width:198px;height:123px}div.bsap_1238193 img.s{height:0;width:0}</style></head>
+
+<body data-twttr-rendered="true" class="single single-post postid-1952 single-format-standard">
+
+<!-- Webtrends Optimize: Place immediately after opening body tag. -->
+<script type="text/javascript">
+if(window.WTOptimize && typeof wtObj != "undefined"){
+WTOptimize.setup(wtObj);
+}
+</script>
+
+<!-- Tracking Code -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(
+    ['_setAccount', 'UA-11792865-17'],
+    ['_trackPageview'],
+    ['b._setAccount', 'UA-11792865-19'],
+    ['b._trackPageview']
+  );
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 
+        'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+<!-- END Tracking Code -->
+
+<!-- BuySellAds.com Ad Code -->
+<script type="text/javascript">
+if (!plus_member_logged_in()) {
+  (function(){
+    var bsa = document.createElement('script');
+       bsa.type = 'text/javascript';
+       bsa.async = true;
+       bsa.src = '//s3.buysellads.com/ac/bsa.js';
+    (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+  })();
+}
+</script>
+<!-- END BuySellAds.com Ad Code -->
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/xd_arbiter.htm" name="fb_xdm_frame_http" id="fb_xdm_frame_http"></iframe><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/xd_arbiter_002.htm" name="fb_xdm_frame_https" id="fb_xdm_frame_https"></iframe></div><div></div></div></div>
+<!-- Facebook Code -->
+<script type="text/javascript">
+(function(){
+  var fb = document.createElement('script');
+  fb.type = 'text/javascript';
+  fb.async = true;
+  fb.src = document.location.protocol + '//connect.facebook.net/en_US/all.js#xfbml=1';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(fb);
+})();
+</script>
+<!-- END Facebook Code -->
+
+
+<!-- Header -->
+<div id="header_wrap">
+  <div id="header">
+	
+    <a href="http://active.tutsplus.com/" class="logo">Activetuts+</a>
+    
+    <ul class="top_navigation">
+      <li><a href="http://active.tutsplus.com/advertise/">Advertise</a></li>
+      <li><a href="http://active.tutsplus.com/about/write-a-tutorial/">Write for Us</a></li>
+      <li><a href="http://active.tutsplus.com/about/">About</a></li>
+      <li><a href="http://active.tutsplus.com/about/terms">Usage</a></li>
+      <li class="top-marketplace-ad ad-activeden"><a target="_blank" href="http://activeden.net/?WT.mc_id=TutsHeader&amp;ref=ActivePremium" rel="nofollow external">Buy &amp; Sell Stock Flash Files</a></li>    </ul>
+    
+    <div id="navigation">
+    	<ul class="navigation">
+    	  <li><a href="http://active.tutsplus.com/">Home</a></li>
+    	  <li class="parent"><a href="http://active.tutsplus.com/category/tutorials/">Tutorials</a><ul class="child-nav">	<li class="cat-item cat-item-32"><a href="http://active.tutsplus.com/category/tutorials/3d/" title="Papervision 3D, Away 3D and Flash's own native 3D engine">3D</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="http://active.tutsplus.com/category/tutorials/actionscript/" title="Resources for furthering your ActionScript 3.0 skills">ActionScript</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="http://active.tutsplus.com/category/tutorials/air/" title="Working with Adobe's &quot;out of the browser&quot; standalone application client">AIR</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://active.tutsplus.com/category/tutorials/animation/" title="Animation; timeline or code-based">Animation</a>
+</li>
+	<li class="cat-item cat-item-428"><a href="http://active.tutsplus.com/category/tutorials/browser-apps/" title="View all posts filed under Browser Apps">Browser Apps</a>
+</li>
+	<li class="cat-item cat-item-535"><a href="http://active.tutsplus.com/category/tutorials/browser-extensions/" title="View all posts filed under Browser Extensions">Browser Extensions</a>
+</li>
+	<li class="cat-item cat-item-547"><a href="http://active.tutsplus.com/category/tutorials/coding-concepts/" title="View all posts filed under Coding Concepts">Coding Concepts</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="http://active.tutsplus.com/category/tutorials/design/" title="Tutorials for using Flash and other tools as a Designer">Design</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://active.tutsplus.com/category/tutorials/effects/" title="When you're looking at giving your work that extra pizzazz">Effects</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://active.tutsplus.com/category/tutorials/flex/" title="Flash projects based on the Flex framework">Flex</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="http://active.tutsplus.com/category/tutorials/games/" title="Resources for game design and creation">Games</a>
+</li>
+	<li class="cat-item cat-item-325"><a href="http://active.tutsplus.com/category/tutorials/html5/" title="View all posts filed under HTML5">HTML5</a>
+</li>
+	<li class="cat-item cat-item-171"><a href="http://active.tutsplus.com/category/tutorials/lectures/" title="Videoed lectures, presentations, talks and keynotes from around the industry circuit">Lectures</a>
+</li>
+	<li class="cat-item cat-item-144"><a href="http://active.tutsplus.com/category/tutorials/media/" title="Video and audio">Media</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://active.tutsplus.com/category/tutorials/mobile/" title="Deploying to smartphones, tablets and other mobile devices">Mobile</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://active.tutsplus.com/category/tutorials/seo/" title="Accessibility and search engine optimization">S.E.O.</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://active.tutsplus.com/category/tutorials/screencasts/" title="View all posts filed under Screencasts">Screencasts</a>
+</li>
+	<li class="cat-item cat-item-62"><a href="http://active.tutsplus.com/category/tutorials/silverlight/" title="Working with Microsoft's Rich Internet Application framework">Silverlight</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="http://active.tutsplus.com/category/tutorials/tools-tips/" title="The tools of the trade">Tools</a>
+</li>
+	<li class="cat-item cat-item-202"><a href="http://active.tutsplus.com/category/tutorials/unity/" title="View all posts filed under Unity">Unity</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://active.tutsplus.com/category/tutorials/web-design/" title="When targeting the web browser">Web Design</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="http://active.tutsplus.com/category/tutorials/workflow/" title="Organization, preparation, processes and working with your applications">Workflow</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://active.tutsplus.com/category/tutorials/xml/" title="Working with XML in your applications">XML</a>
+</li>
+</ul></li>
+    	  <li class="parent"><a href="http://active.tutsplus.com/category/articles/">Articles</a><ul class="child-nav">	<li class="cat-item cat-item-249"><a href="http://active.tutsplus.com/category/articles/ask-the-editors/" title="View all posts filed under Ask the Editors">Ask the Editors</a>
+</li>
+	<li class="cat-item cat-item-593"><a href="http://active.tutsplus.com/category/articles/challenge/" title="View all posts filed under Challenge">Challenge</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://active.tutsplus.com/category/articles/competitions-and-giveaways/" title="Chances to win awesome prizes!">Competitions and Giveaways</a>
+</li>
+	<li class="cat-item cat-item-578"><a href="http://active.tutsplus.com/category/articles/critique/" title="View all posts filed under Critique">Critique</a>
+</li>
+	<li class="cat-item cat-item-528"><a href="http://active.tutsplus.com/category/articles/explanatory/" title="View all posts filed under Explanatory">Explanatory</a>
+</li>
+	<li class="cat-item cat-item-467"><a href="http://active.tutsplus.com/category/articles/game-design/" title="View all posts filed under Game Design">Game Design</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="http://active.tutsplus.com/category/articles/general/" title="Articles relating to Activetuts+ and the Tuts+ network">General</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://active.tutsplus.com/category/articles/interviews/" title="Interviews with prominent industry figures, developers and designers">Interviews</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://active.tutsplus.com/category/articles/news/" title="Updates regarding Activetuts+ and industry developments">News</a>
+</li>
+	<li class="cat-item cat-item-63"><a href="http://active.tutsplus.com/category/articles/open-mike/" title="Discussion posts where readers vote and voice their opinions">Open Mike</a>
+</li>
+	<li class="cat-item cat-item-318"><a href="http://active.tutsplus.com/category/articles/quizzes/" title="View all posts filed under Quizzes">Quizzes</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://active.tutsplus.com/category/articles/reviews/" title="Reviews of relevant products, events and learning materials">Reviews</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://active.tutsplus.com/category/articles/roundups/" title="Roundup articles where the most noteworthy examples of any given topic are piled together for your consumption">Roundups</a>
+</li>
+	<li class="cat-item cat-item-602"><a href="http://active.tutsplus.com/category/articles/workshop-articles/" title="View all posts filed under Workshop">Workshop</a>
+</li>
+</ul></li>
+    	  <li class="parent"><a href="http://active.tutsplus.com/tag/tips/">Tips</a><ul class="child-nav"><li><a href="http://active.tutsplus.com/category/tutorials/html5/?tag=tips" title="HTML5">HTML5</a></li><li><a href="http://active.tutsplus.com/category/tutorials/workflow/?tag=tips" title="Workflow">Workflow</a></li><li><a href="http://active.tutsplus.com/category/tutorials/effects/?tag=tips" title="Effects">Effects</a></li><li><a href="http://active.tutsplus.com/category/tutorials/actionscript/?tag=tips" title="ActionScript">ActionScript</a></li><li><a href="http://active.tutsplus.com/category/tutorials/games/?tag=tips" title="Games">Games</a></li></ul></li>    	      	  <li><a href="http://active.tutsplus.com/sessions/">Sessions</a></li>    	  <li class="parent"><a href="http://active.tutsplus.com/tag/basix/">Basix</a><ul class="child-nav"><li><a href="http://active.tutsplus.com/category/articles/explanatory/?tag=basix" title="Explanatory">Explanatory</a></li><li><a href="http://active.tutsplus.com/category/tutorials/actionscript/?tag=basix" title="ActionScript">ActionScript</a></li><li><a href="http://active.tutsplus.com/category/tutorials/games/?tag=basix" title="Games">Games</a></li><li><a href="http://active.tutsplus.com/category/tutorials/html5/?tag=basix" title="HTML5">HTML5</a></li></ul></li>    	  <li class="parent"><a href="http://active.tutsplus.com/tag/videos/">Videos</a><ul class="child-nav"><li><a href="http://active.tutsplus.com/category/tutorials/games/?tag=videos" title="Games">Games</a></li><li><a href="http://active.tutsplus.com/category/tutorials/html5/?tag=videos" title="HTML5">HTML5</a></li><li><a href="http://active.tutsplus.com/category/articles/game-design/?tag=videos" title="Game Design">Game Design</a></li><li><a href="http://active.tutsplus.com/category/tutorials/lectures/?tag=videos" title="Lectures">Lectures</a></li><li><a href="http://active.tutsplus.com/category/tutorials/animation/?tag=videos" title="Animation">Animation</a></li></ul></li>              <li>
+          <a href="http://tutsplus.com/tutorials/?q=true&amp;filter_topic=69" target="_blank">Premium</a>
+        </li>
+      </ul>
+      <a href="http://tutsplus.com/tutorials/?q=true&amp;filter_topic=69" class="small_plus" target="_blank">Plus Premium</a>
+          </div>
+    
+    <div class="site_switcher">
+      <ul>
+        <li class="link-hub"><a href="http://hub.tutsplus.com/">Tuts+ Hub <span>The Latest Tuts+ Updates</span></a></li>
+        <li class="link-psd"><a href="http://psd.tutsplus.com/">Psdtuts+ <span>Adobe Photoshop</span></a></li>
+        <li class="link-net"><a href="http://net.tutsplus.com/">Nettuts+ <span>Web Development</span></a></li>
+        <li class="link-vector"><a href="http://vector.tutsplus.com/">Vectortuts+ <span>Illustrator and Vector</span></a></li>
+        <li class="link-audio"><a href="http://audio.tutsplus.com/">Audiotuts+ <span>Audio and Production</span></a></li>
+        <li class="link-ae"><a href="http://ae.tutsplus.com/">Aetuts+ <span>Adobe After Effects</span></a></li>
+        <li class="link-cg"><a href="http://cg.tutsplus.com/">Cgtuts+ <span>Computer Graphics</span></a></li>
+        <li class="link-photo"><a href="http://photo.tutsplus.com/">Phototuts+ <span>Photography</span></a></li>
+        <li class="link-mobile"><a href="http://mobile.tutsplus.com/">Mobiletuts+ <span>Mobile Development</span></a></li>
+        <li class="link-webdesign"><a href="http://webdesign.tutsplus.com/">Webdesigntuts+ <span>Web Design</span></a></li>
+        <li class="link-wp"><a href="http://wp.tutsplus.com/">Wptuts+ <span>WordPress</span></a></li>
+        <li class="link-mac"><a href="http://mac.tutsplus.com/">Mactuts+ <span>Mac &amp; OS X</span></a></li>
+        <li class="link-gamedev"><a href="http://gamedev.tutsplus.com/">Gamedevtuts+ <span>Game Development</span></a></li>
+      </ul>
+      <a href="javascript:void();" class="site_switcher_button">Toggle</a>
+    </div>
+    
+    <ul class="rss_subscribe">
+      <li><a href="http://feedproxy.google.com/flashtuts" class="header_subscribe">Subscribe</a>
+        <ul>
+          <li><a href="http://feedproxy.google.com/flashtuts">Full Post RSS</a></li>
+          <li><a href="http://feedproxy.google.com/flashtuts-summary">Summary RSS</a></li>
+          <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=Flashtuts&amp;loc=en_U">Subscribe via Email</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <ul class="twitter_subscribe">
+      <li><a href="http://twitter.com/envatoactive" class="header_twitter">Twitter Updates</a>
+        <ul>
+          <li><a href="http://twitter.com/envatoactive">Activetuts+</a></li>
+          <li><a href="http://twitter.com/tutsplus">Plus Network</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="search_form">
+      <form method="get" action="http://active.tutsplus.com">
+        <fieldset>
+          <input id="search_term" onclick="if(this.value == 'Search...') this.value='';" onblur="if(this.value.length == 0) this.value='Search...';" value="Search..." name="s" type="text">
+          <input class="submit_button" value="Search" type="submit">
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+</div>
+<!-- [END] Header -->
+
+<!-- Content Wrap -->
+<div id="content_wrap">
+  
+  <!-- Content -->
+  <div id="content" class="clearfix">
+
+    <!-- Page Wrap -->
+    <div class="page_wrap">
+      
+      <!-- Leader Board -->
+<div id="leader-board-wrap" style="">
+    <div class="leader_board">
+    <a href="http://active.tutsplus.com/advertise/" class="LB_advert">Advertise Here</a>
+    <div class="lb_inner">
+      <div id="bsap_1245833" class="bsap_1245833 bsap"><iframe id="backfill_1245833_frame" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/backfill1.htm" class="bsap_backfillframe" frameborder="0" height="90" scrolling="no" width="728"></iframe></div>    </div>
+  </div>
+  </div>
+<script type="text/javascript">
+  if (!plus_member_logged_in()) {
+    $('#leader-board-wrap').show()
+  }
+</script>
+<!-- [END] Leader Board -->
+
+      <!-- Page -->
+      <div id="page" class="single_post">
+      
+        <div class="page_inner">
+          
+                    
+            <div class="post post_inner" id="post-1952">
+  
+  <div class="tut_top">
+    
+    <!-- Post Image -->
+    <div class="post_image">
+      <a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/"><img original="http://flashtuts.s3.amazonaws.com/093_flashPHPUploader/preview/preview.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/preview.jpg" alt=""></a>    </div>
+    
+    <div class="preview">
+    
+      <!-- Post Taxonomies -->
+      <div class="post_taxonomy">
+        <ul><li><a href="http://active.tutsplus.com/category/tutorials/">Tutorials</a><span>\</span></li><li><a href="http://active.tutsplus.com/category/tutorials/actionscript/">ActionScript</a></li></ul><div id="tuts-rating" class=""><p><span> \</span>Rating:</p><ul id="">  <li><a href="javascript:void(0)" class="rate-this one active">1</a></li>  <li><a href="javascript:void(0)" class="rate-this two active">2</a></li>  <li><a href="javascript:void(0)" class="rate-this three active">3</a></li>  <li><a href="javascript:void(0)" class="rate-this four active">4</a></li>  <li><a href="javascript:void(0)" class="rate-this five active half">5</a></li></ul></div>      </div>
+      
+      <!-- Post Title -->
+      <h1 class="post_title">
+        Creating a Reusable Flash Uploader with ActionScript 3.0 and PHP      </h1>
+      
+      <!-- Post Meta -->
+      <div class="post_meta">
+        <a href="http://active.tutsplus.com/author/bratu-sebastian/" title="Posts by Sebastian Bratu" rel="author">Sebastian Bratu</a> on Oct 7th 2009 with <a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/#comments" title="Comment on Creating a Reusable Flash Uploader with ActionScript 3.0 and PHP">64 comments</a>      </div>
+    
+    </div>
+  
+  </div>
+  
+</div>
+
+<div class="tut_bottom">
+
+    
+    
+  <!-- Social Media -->
+  <div class="article_social_media">
+    
+    <div class="tweetmeme_btn">
+      <iframe data-twttr-rendered="true" title="Twitter Tweet Button" style="width: 58px; height: 20px;" class="twitter-share-button twitter-count-none" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/tweet_button.htm" allowtransparency="true" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/widgets.js"></script>
+    </div>
+    
+    <div class="facebook_send_btn">
+      <div id="___plusone_0" style="height: 20px; width: 32px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline;"><iframe title="+1" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/fastbutton.htm" name="I0_1346713922216" id="I0_1346713922216" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" frameborder="0" scrolling="no" width="100%"></iframe></div>
+    </div>
+    
+        
+    <div class="facebook_btn">
+      <fb:like class=" fb_edge_widget_with_comment fb_iframe_widget" layout="button_count" width="90" height="21"><span style="height: 20px; width: 71px;"><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/like.htm" class="fb_ltr " title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 20px; width: 71px;" name="f15d8f68af2c432" id="fc3bd642dbd356" scrolling="no"></iframe></span></fb:like>
+    </div>
+  
+  </div>
+  <!-- [END] Social Media -->
+  
+    
+</div>
+
+
+
+<div class="post post_inner_article">
+
+    
+  <script type="text/javascript">
+//<![CDATA[
+(function($) { $(function() { WpPostRatings({context: $('#post-1952'), post_id: 1952, rpc: 'http://active.tutsplus.com/wp-admin/admin-ajax.php', base_url: 'http://active.tutsplus.com', allow_voting: true}).init() })})(jQuery)
+//]]&gt;
+</script><p>In this tutorial I’ll show you how to build a Flash uploader
+ for uploading files from the user’s computer. The result will be ideal 
+for large file sizes as it will display a progress bar and the 
+percentage left to upload. We’ll even show the user the number of bytes 
+uploaded per second.</p>
+<p><span id="more-1952"></span></p>
+<div class="tutorial_image">
+<a href="http://flashtuts.s3.amazonaws.com/093_flashPHPUploader/flash_tutorial_sources.zip" target="_blank"><br>
+<img original="http://Flashtuts.s3.amazonaws.com/source.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/source.jpg" alt="" style="border:none"></a>
+</div>
+<p>Folder icon by <a href="http://icontoaster.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','icontoaster.com']);" target="_blank">Michael Ludwig</a>.</p>
+<p><b>Editor’s note:</b> I’m afraid there’s no demo for this tut – you’ll have to download the source.zip and play around with uploading files to your <em>own</em> server :)</p>
+<h2>Step 1: Button Design</h2>
+<p>Create a new ActionScript 3.0 Flash file and set the dimensions to 
+500 x 100 pixels. We’ll begin by creating a select button. Draw a 
+rounded rectangle, I’ve made mine with a 5px round corner, a blue 
+gradient and a 2px gray stroke.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/1.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/1.jpg" alt=""></div>
+<p>Press F8 to turn it into a button and give it the instance name “select”. Name the button on the stage “select_btn”.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/2.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/2.jpg" alt=""></div>
+<p>Inside the button, fill the 3 states with a slightly different 
+gradient. Create another layer above the first and add a static text 
+field with the text “SELECT FILE”. It’s best to separate the assets 
+because it’s easier to edit them later.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/3.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/3.jpg" alt=""></div>
+<h2>Step 2: Progress Bar Design</h2>
+<p>Back to the main stage, create another rounded box with a white 
+colour and a gray stroke. This will be the progress bar. I did mine like
+ this:</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/4.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/4.jpg" alt=""></div>
+<p>Again, press F8 and turn it into a movieclip with the name 
+“progress”. Inside the progress movieclip, create 2 more layers above 
+the first and move the white fill into the third, leaving only the 
+stroke on the first layer.. Rename the first layer “margin”, the second 
+“bar” and the third “mask”. We’re going to turn the third layer into a 
+mask.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/5.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/5.jpg" alt="" height="220" width="353"></div>
+<p>On the “bar” layer, create a blue rectange with the same dimensions 
+as the fill layer, but be carefull to make it slightly bigger so that 
+when we apply the mask we don’t have holes. Place it at 0,0 and turn it 
+into a movieclip with the instance name “bar”. This will be the bar that
+ will show the progress.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/6.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/6.jpg" alt="" height="168" width="542"></div>
+<p>Right-click the third layer and select “Mask” from the menu. You should have something like this:</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/7.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/7.jpg" alt="" height="220" width="401"></div>
+<h2>Step 3: Duplicate Button</h2>
+<p>In the library, right-click on the select button we created earlier 
+and select “Duplicate”. Name the duplicate “cancel” and in the button 
+change the textfield’s text to “CANCEL”. We’re making a duplicate of the
+ select button that will be the cancel button. We’ll later show only one
+ of them in the stage.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/8.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/8.jpg" alt="" height="428" width="600"></div>
+<p>In the main scene, create another layer above the first and place the
+ newly created cancel button exacly at the same position as the select 
+button.</p>
+<h2>Step 4: Dynamic Label</h2>
+<p>We’re almost done with the assets. Create another text field, this 
+time a dynamic text field and give it the instance name “label_txt”. 
+This will show the user the success message, the error message, or the 
+progress percent. Make sure the text is not selectable.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/9.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/9.jpg" alt="" height="338" width="600"></div>
+<p>Test the file, to see how it’s going.</p>
+<div class="tutorial_image">
+<div role="button" tabindex="0" dataattribute="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/preview1.swf" title="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/preview1.swf" style="background: url(&quot;chrome://flashblock/content/flash.png&quot;) no-repeat scroll center center transparent ! important; min-width: 32px ! important; min-height: 32px ! important; width: 500px; height: 100px; border: 1px solid rgb(223, 223, 223); cursor: pointer; overflow: hidden; display: inline-block; visibility: visible ! important; -moz-box-sizing: border-box; margin-right: auto; margin-left: auto;" bgactive="url(chrome://flashblock/content/flashplay.png) no-repeat center" bginactive="url(chrome://flashblock/content/flash.png) no-repeat center"></div>
+</div>
+<h2>Step 5: Document Class</h2>
+<p>We have only one more thing to do before we begin coding; set the document class to “Uploader”.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/10.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/10.jpg" alt="" height="138" width="600"></div>
+<h2>Step 6: The cCoding</h2>
+<p>In the same folder as the Flash file, create a new ActionScript file 
+with the name “Uploader.as”. The name is important for the class to be 
+found. Begin coding the default package and import the required classes.
+ I’ve used “import Flash.display.*” for speed, but once we’re done, we 
+can include only the required classes to make the file smaller.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.display.*;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.events.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.text.*;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileReference;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileReferenceList;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileFilter;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.URLRequest;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.utils.Timer;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.events.TimerEvent;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Uploader&nbsp;</span><span class="keyword">extends</span><span>&nbsp;MovieClip&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">package {
+	
+	import Flash.display.*;
+	import Flash.events.*;
+	import Flash.text.*;
+	
+	import Flash.net.FileReference;
+	import Flash.net.FileReferenceList;
+	import Flash.net.FileFilter;
+	import Flash.net.URLRequest;
+	import Flash.utils.Timer;
+	import Flash.events.TimerEvent;
+	
+	
+	public class Uploader extends MovieClip {
+		
+	}	
+}
+</pre>
+<h2>Step 7: Variables</h2>
+<p>We’ll begin by setting a few variables:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Uploader&nbsp;</span><span class="keyword">extends</span><span>&nbsp;MovieClip&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;file:FileReference;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;filefilters:Array;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;req:URLRequest;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tm:Timer;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;speed:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;currbytes:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;lastbytes:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">public class Uploader extends MovieClip {
+		
+		var file:FileReference;
+		var filefilters:Array;
+		var req:URLRequest;
+		var tm:Timer;
+		var speed:Number = 0;
+		var currbytes:Number = 0;
+		var lastbytes:Number = 0;
+		
+		
+		
+	}
+</pre>
+<h3>Step 8: Constructor Function</h3>
+<p>Create the constructor function and add the following:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;Uploader(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;req&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;URLRequest();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;req.url&nbsp;=&nbsp;(&nbsp;stage.loaderInfo.parameters.f&nbsp;)?&nbsp;stage.loaderInfo.parameters.f&nbsp;:&nbsp;<span class="string">'http://www.cbesslabs.com'</span><span>;&nbsp;//</span><span class="string">'http://cbess.ro/templates/Flashtuts/Flash_uploader/upload.php'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;FileReference();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;setup(&nbsp;file&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;select_btn.addEventListener(&nbsp;MouseEvent.CLICK,&nbsp;browse&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.addEventListener(&nbsp;MouseEvent.CLICK,&nbsp;cancelUpload&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">	public function Uploader(){
+		req = new URLRequest();
+		req.url = ( stage.loaderInfo.parameters.f )? stage.loaderInfo.parameters.f : 'http://www.cbesslabs.com'; //'http://cbess.ro/templates/Flashtuts/Flash_uploader/upload.php';
+		file = new FileReference();
+		setup( file );
+		select_btn.addEventListener( MouseEvent.CLICK, browse );
+		progress_mc.bar.scaleX = 0;
+		cancel_btn.addEventListener( MouseEvent.CLICK, cancelUpload );
+		cancel_btn.visible = false;
+	}
+</pre>
+<p>Let me explain what’s going on here:</p>
+<p>We’re creating a new URLRequest class and set the url to the upload php file.</p>
+<p>The line <em>“( stage.loaderInfo.parameters.f )? stage.loaderInfo.parameters.f : ‘http://www.google.com’”</em> is a conditional, meaning that if we provide the movie the parameter <em>f</em>, it will set the url to the <em>f</em> parameter. Otherwise it will use the string hardcoded here, good ol’ Google, for testing only. </p>
+<p>We’re doing the conditional so we can reuse the file. This way, we can change only the <em>f</em> parameter with a path to the url and it will upload to the specified url.</p>
+<p>Next we’re creating a new FileReference Object, the class handling 
+the upload process. We’re passing the FileReference Object to the 
+function setup() which we’ll later code to set up the various listeners.</p>
+<p>Finally, we add click listeners to the select and cancel buttons, set
+ the scale of the progressbar to 0 and hide the cancel button.</p>
+<h2>Step 9: Events</h2>
+<p>We’re now creating the setup() function.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;setup(&nbsp;file:FileReference&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.CANCEL,&nbsp;cancel_func&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.COMPLETE,&nbsp;complete_func&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;IOErrorEvent.IO_ERROR,&nbsp;io_error&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.OPEN,&nbsp;open_func&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;ProgressEvent.PROGRESS,&nbsp;progress_func&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.SELECT,&nbsp;selectHandler&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;DataEvent.UPLOAD_COMPLETE_DATA,&nbsp;show_message&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function setup( file:FileReference ){
+	file.addEventListener( Event.CANCEL, cancel_func );
+	file.addEventListener( Event.COMPLETE, complete_func );
+	file.addEventListener( IOErrorEvent.IO_ERROR, io_error );
+	file.addEventListener( Event.OPEN, open_func );
+	file.addEventListener( ProgressEvent.PROGRESS, progress_func );
+	file.addEventListener( Event.SELECT, selectHandler );
+	file.addEventListener( DataEvent.UPLOAD_COMPLETE_DATA, show_message );		
+}
+</pre>
+<p>We could omit the Event.COMPLETE and Event.CANCEL event, but I have 
+added them just for testing. We’re setting up a CANCEL event for when 
+the user cancels the selection dialog. We have:</p>
+<ul>
+<li>an IO_ERROR event in case the file cannot be uploaded</li>
+<li>an OPEN event for when the upload begins</li>
+<li>the PROGRESS event that will update the percent uploaded</li>
+<li>the SELECT event for when the user has selected a file and we automatically begin uploading</li>
+<li>and an UPLOAD_COMPLETE_DATA event, which is a custom event triggered
+ when the file has been uploaded and the php file has responded to the 
+request.</li>
+</ul>
+<p>Make sure you create all the event functions otherwise you’ll get an error compiling.</p>
+<h2>Step 10: Browse</h2>
+<p>We’re continuing with the browse function, triggered when the select 
+button has been clicked. We have to show the dialog box so the user can 
+select a file:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;browse(&nbsp;e:MouseEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;filefilters&nbsp;=&nbsp;[&nbsp;<span class="keyword">new</span><span>&nbsp;FileFilter(</span><span class="string">'Images'</span><span>,&nbsp;</span><span class="string">'*.jpg'</span><span>)&nbsp;];&nbsp;</span><span class="comment">//&nbsp;add&nbsp;other&nbsp;file&nbsp;filters</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;file.browse(&nbsp;filefilters&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">public function browse( e:MouseEvent ){
+	filefilters = [ new FileFilter('Images', '*.jpg') ]; // add other file filters
+	file.browse( filefilters );
+}
+</pre>
+<p>Notice that I’ve added a FileFilter object inside an array and added the array to the FileReference’s <em>browse</em>
+ method. You can add another file type by adding another FileFilter 
+object with a different extension. This will filter the file extensions 
+on the select dialog so the user can only select correct file types. 
+This is only a filename check and doesn’t check whether the image file 
+is indeed an image.</p>
+<h2>Step 11: Upload</h2>
+<p>When the user has selected a file to upload, the SELECT event is triggered. We’re now calling FileReference’s <em>upload()</em> method to upload the file to the php file on the server with the url request argument.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;selectHandler(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.upload(&nbsp;req&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function selectHandler( e:Event ){
+	file.upload( req );
+}</pre>
+<h2>Step 12: Button Visibility</h2>
+<p>Les’s create the open_func function. This function is triggered when 
+the upload begins. We’ll hide the select button and show the cancel 
+button.</p><div class="tutorial_image"><script type="text/javascript"><!--
+google_ad_client = "pub-9093712935949486";
+/* 300x250 activetuts middle tutsads */
+google_ad_slot = "5548342356";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="backfill1_data/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins>
+</div>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;open_func(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function open_func( e:Event ){
+	cancel_btn.visible = true;
+	select_btn.visible = false;
+}
+</pre>
+<h2>Step 13: Progress</h2>
+<p>Create the progress function:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;progress_func(&nbsp;e:ProgressEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;e.bytesLoaded&nbsp;/&nbsp;e.bytesTotal;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0x000000;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;Math.round(&nbsp;(e.bytesLoaded/e.bytesTotal)*100)+<span class="string">'%&nbsp;uploaded'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function progress_func( e:ProgressEvent ){
+	progress_mc.bar.scaleX = e.bytesLoaded / e.bytesTotal;
+	var tf = new TextFormat();
+	tf.color = 0x000000;
+	label_txt.defaultTextFormat = tf;
+	label_txt.text = Math.round( (e.bytesLoaded/e.bytesTotal)*100)+'% uploaded';
+}
+</pre>
+<p>Let me explain what’s going on here. We’re setting the scale of the 
+bar movieclip showing the percent uploaded. This is accomplished by 
+dividing the bytesLoaded to bytesTotal properties of the event object. 
+The progress event provides us with the amount of uploaded bytes and 
+total bytes of the file.</p>
+<p>Next, we create a TextFormat object and set the colour to black ( 
+0×000000 ) for the text label. We’ll need this step because later we’ll 
+change the colour of the text to green or red according to the message.</p>
+<p>Finally, we set the text field’s text with the percentage uploaded.
+</p>
+<h2>Step 14: Error</h2>
+<p>We’ll create the error function:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;io_error(&nbsp;e:IOErrorEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0xff0000;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;could&nbsp;not&nbsp;be&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function io_error( e:IOErrorEvent ){
+	var tf = new TextFormat();
+	tf.color = 0xff0000;
+	label_txt.defaultTextFormat = tf;
+	label_txt.text = 'The file could not be uploaded.';
+	cancel_btn.visible = false;
+	select_btn.visible = true;
+}
+</pre>
+<p>Basically, we change the colour of the label text, set it to an error message and then swap the cancel and select buttons again.</p>
+<h2>Step 15: Show Message</h2>
+<p>Let’s create the <em>show_message</em> function which will check whether the upload has been successful:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;show_message(&nbsp;e:DataEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;e.data&nbsp;==&nbsp;</span><span class="string">'ok'</span><span>&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0x009900;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;has&nbsp;been&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;</span><span class="keyword">if</span><span>(&nbsp;e.data&nbsp;==&nbsp;</span><span class="string">'error'</span><span>){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0xff0000;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;could&nbsp;not&nbsp;be&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function show_message( e:DataEvent ){
+	var tf = new TextFormat();
+	if( e.data == 'ok' ){
+		tf.color = 0x009900;
+		label_txt.defaultTextFormat = tf;
+		label_txt.text = 'The file has been uploaded.';
+	} else if( e.data == 'error'){
+		tf.color = 0xff0000;
+		label_txt.defaultTextFormat = tf;
+		label_txt.text = 'The file could not be uploaded.';
+	}
+}
+</pre>
+<p>Here, we’re testing if the data property of the UPLOAD_COMPLETE_DATA 
+event is ‘ok’ or ‘error’ and show a message appropriately. The data 
+property of this event contains the server response from the php script.</p>
+<h2>Step 16: Cancel</h2>
+<p>This is the last function which will be triggered when the cancel button is clicked. This calls the FileReference’s <em>cancel()</em> function to cancel the upload. We’re also calling reset() to clean up.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;cancelUpload(&nbsp;e:MouseEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;file.cancel();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;reset();&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function cancelUpload( e:MouseEvent ){
+	file.cancel();
+	reset();
+}
+</pre>
+<p>We trigger a reset() function to clean up the assets, set the text to "" and swap the cancel and select buttons:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;reset(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">''</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function reset(){
+	cancel_btn.visible = false;
+	select_btn.visible = true;
+	label_txt.text = '';
+	progress_mc.bar.scaleX = 0;
+}
+</pre>
+<p>Go ahead and test the file in Flash.</p>
+<p>For now, the upload works, but at the end we get the error message. 
+This is because we haven’t provided the path parameter, so the swf takes
+ the hardcoded google page. As that page doesn’t return us ‘ok’ , we get
+ the error. We have to build the php file..</p>
+<h2>Step 17: Upload Speed – Timer</h2>
+<p>Let’s show the user the speed he is uploading with. In the constructor function add the lines:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span>tm&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Timer(&nbsp;1000&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>tm.addEventListener(&nbsp;TimerEvent.TIMER,&nbsp;updateSpeed&nbsp;);&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">tm = new Timer( 1000 );
+tm.addEventListener( TimerEvent.TIMER, updateSpeed );
+</pre>
+<p>We’re creating a timer that will run every second and will check the speed.</p>
+<h3>Step 18: Upload Speed – Method</h3>
+<p>In the open_func() function add this line:</p>
+<div class="dp-highlighter"><ol class="dp-c" start="1"><li class="alt"><span><span>tm.start();&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="javascript">tm.start();
+</pre>
+<p>This will start the timer when the upload begins. We’ll now create the updateSpeed() method:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;updateSpeed(&nbsp;e:TimerEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;speed&nbsp;=&nbsp;Math.floor(&nbsp;(currbytes&nbsp;-&nbsp;lastbytes)/1024&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;lastbytes&nbsp;=&nbsp;currbytes;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">private function updateSpeed( e:TimerEvent ){
+	speed = Math.floor( (currbytes - lastbytes)/1024 );
+	lastbytes = currbytes;
+}
+</pre>
+<p>This is what happens here: we’re calculating the speed by subtracting the variable <em>lastbytes</em> from <em>currbytes</em>. The <em>lastbytes</em> variable is afterwards set to the <em>currbytes</em>.
+ So, when both variables are 0, the speed is 0. The currbytes variable 
+will hold the current number of bytes uploaded. We cannot access this 
+directly, that’s why we’ve created the currbytes variable. This variable
+ will be set from our PROGRESS event where we can access the bytesLoaded
+ property.</p>
+<p>Lastly, we divide everything by 1024 to get the result in kilobytes and round the value for display with Math.floor().</p>
+<h2>Step 19: Final Modification</h2>
+<p>Let’s add the last modification so we can go on to the php script. In the progress_func() modify the line:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span>label_txt.text&nbsp;=&nbsp;Math.round(&nbsp;(e.bytesLoaded/e.bytesTotal)*100)+</span><span class="string">'%&nbsp;uploaded'</span><span>;&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="javascript">label_txt.text = Math.round( (e.bytesLoaded/e.bytesTotal)*100)+'% uploaded';
+</pre>
+<p>with this:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span>label_txt.text&nbsp;=&nbsp;Math.round(&nbsp;(e.bytesLoaded/e.bytesTotal)*100)+</span><span class="string">'%&nbsp;uploaded&nbsp;'</span><span>+speed+</span><span class="string">'&nbsp;kb/s'</span><span>;&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="javascript">label_txt.text = Math.round( (e.bytesLoaded/e.bytesTotal)*100)+'% uploaded '+speed+' kb/s';</pre>
+<h2>Step 20: Full Code</h2>
+<p>Here is the full code for the Flash uploader:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.display.*;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.events.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.text.*;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileReference;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileReferenceList;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.FileFilter;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.net.URLRequest;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.utils.Timer;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">import</span><span>&nbsp;Flash.events.TimerEvent;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Uploader&nbsp;</span><span class="keyword">extends</span><span>&nbsp;MovieClip&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;file:FileReference;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;filefilters:Array;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;req:URLRequest;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tm:Timer;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;speed:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;currbytes:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;lastbytes:Number&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;Uploader(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;URLRequest();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req.url&nbsp;=&nbsp;(&nbsp;stage.loaderInfo.parameters.f&nbsp;)?&nbsp;stage.loaderInfo.parameters.f&nbsp;:&nbsp;<span class="string">'http://www.google.com'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;FileReference();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setup(&nbsp;file&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select_btn.addEventListener(&nbsp;MouseEvent.CLICK,&nbsp;browse&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tm&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;Timer(&nbsp;1000&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tm.addEventListener(&nbsp;TimerEvent.TIMER,&nbsp;updateSpeed&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.addEventListener(&nbsp;MouseEvent.CLICK,&nbsp;cancelUpload&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;browse(&nbsp;e:MouseEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filefilters&nbsp;=&nbsp;[&nbsp;<span class="keyword">new</span><span>&nbsp;FileFilter(</span><span class="string">'Images'</span><span>,&nbsp;</span><span class="string">'*.jpg'</span><span>)&nbsp;];&nbsp;</span><span class="comment">//&nbsp;add&nbsp;other&nbsp;file&nbsp;filters</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.browse(&nbsp;filefilters&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;setup(&nbsp;file:FileReference&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.CANCEL,&nbsp;cancel_func&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.COMPLETE,&nbsp;complete_func&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;IOErrorEvent.IO_ERROR,&nbsp;io_error&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.OPEN,&nbsp;open_func&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;ProgressEvent.PROGRESS,&nbsp;progress_func&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;Event.SELECT,&nbsp;selectHandler&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.addEventListener(&nbsp;DataEvent.UPLOAD_COMPLETE_DATA,&nbsp;show_message&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;cancel_func(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trace(&nbsp;<span class="string">'canceled&nbsp;!'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;complete_func(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trace(&nbsp;<span class="string">'complete&nbsp;!'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;io_error(&nbsp;e:IOErrorEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0xff0000;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;could&nbsp;not&nbsp;be&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tm.stop();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;open_func(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//trace(&nbsp;'opened&nbsp;!'&nbsp;);</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tm.start();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;progress_func(&nbsp;e:ProgressEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;e.bytesLoaded&nbsp;/&nbsp;e.bytesTotal;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0x000000;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;Math.round(&nbsp;(e.bytesLoaded/e.bytesTotal)*100)+<span class="string">'%&nbsp;uploaded&nbsp;'</span><span>+speed+</span><span class="string">'&nbsp;kb/s'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currbytes&nbsp;=&nbsp;e.bytesLoaded;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;selectHandler(&nbsp;e:Event&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.upload(&nbsp;req&nbsp;);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;show_message(&nbsp;e:DataEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tm.stop();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span><span>&nbsp;tf&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;TextFormat();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;e.data&nbsp;==&nbsp;</span><span class="string">'ok'</span><span>&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0x009900;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;has&nbsp;been&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;</span><span class="keyword">if</span><span>(&nbsp;e.data&nbsp;==&nbsp;</span><span class="string">'error'</span><span>){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tf.color&nbsp;=&nbsp;0xff0000;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.defaultTextFormat&nbsp;=&nbsp;tf;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">'The&nbsp;file&nbsp;could&nbsp;not&nbsp;be&nbsp;uploaded.'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;updateSpeed(&nbsp;e:TimerEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed&nbsp;=&nbsp;Math.round(&nbsp;(currbytes&nbsp;-&nbsp;lastbytes)/1024&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastbytes&nbsp;=&nbsp;currbytes;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;cancelUpload(&nbsp;e:MouseEvent&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.cancel();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reset();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">function</span><span>&nbsp;reset(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_btn.visible&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select_btn.visible&nbsp;=&nbsp;<span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label_txt.text&nbsp;=&nbsp;<span class="string">''</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress_mc.bar.scaleX&nbsp;=&nbsp;0;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="javascript">package {
+	
+	import Flash.display.*;
+	import Flash.events.*;
+	import Flash.text.*;
+	
+	import Flash.net.FileReference;
+	import Flash.net.FileReferenceList;
+	import Flash.net.FileFilter;
+	import Flash.net.URLRequest;
+	import Flash.utils.Timer;
+	import Flash.events.TimerEvent;
+	
+	
+	public class Uploader extends MovieClip {
+		
+		var file:FileReference;
+		var filefilters:Array;
+		var req:URLRequest;
+		var tm:Timer;
+		var speed:Number = 0;
+		var currbytes:Number = 0;
+		var lastbytes:Number = 0;
+		
+		public function Uploader(){
+			req = new URLRequest();
+			req.url = ( stage.loaderInfo.parameters.f )? stage.loaderInfo.parameters.f : 'http://www.google.com';
+			file = new FileReference();
+			setup( file );
+			select_btn.addEventListener( MouseEvent.CLICK, browse );
+			progress_mc.bar.scaleX = 0;
+			tm = new Timer( 1000 );
+			tm.addEventListener( TimerEvent.TIMER, updateSpeed );
+			cancel_btn.addEventListener( MouseEvent.CLICK, cancelUpload );
+			cancel_btn.visible = false;
+		}
+		
+		public function browse( e:MouseEvent ){
+			filefilters = [ new FileFilter('Images', '*.jpg') ]; // add other file filters
+			file.browse( filefilters );
+		}
+		
+		private function setup( file:FileReference ){
+			file.addEventListener( Event.CANCEL, cancel_func );
+			file.addEventListener( Event.COMPLETE, complete_func );
+			file.addEventListener( IOErrorEvent.IO_ERROR, io_error );
+			file.addEventListener( Event.OPEN, open_func );
+			file.addEventListener( ProgressEvent.PROGRESS, progress_func );
+			file.addEventListener( Event.SELECT, selectHandler );
+			file.addEventListener( DataEvent.UPLOAD_COMPLETE_DATA, show_message );		
+		}
+		
+		private function cancel_func( e:Event ){
+			trace( 'canceled !' );
+		}
+		
+		private function complete_func( e:Event ){
+			trace( 'complete !' );
+		}
+		
+		private function io_error( e:IOErrorEvent ){
+			var tf = new TextFormat();
+			tf.color = 0xff0000;
+			label_txt.defaultTextFormat = tf;
+			label_txt.text = 'The file could not be uploaded.';
+			tm.stop();
+			cancel_btn.visible = false;
+			select_btn.visible = true;
+		}
+		
+		private function open_func( e:Event ){
+			//trace( 'opened !' );
+			tm.start();
+			cancel_btn.visible = true;
+			select_btn.visible = false;
+		}
+		
+		private function progress_func( e:ProgressEvent ){
+			progress_mc.bar.scaleX = e.bytesLoaded / e.bytesTotal;
+			var tf = new TextFormat();
+			tf.color = 0x000000;
+			label_txt.defaultTextFormat = tf;
+			label_txt.text = Math.round( (e.bytesLoaded/e.bytesTotal)*100)+'% uploaded '+speed+' kb/s';
+			currbytes = e.bytesLoaded;
+		}
+		
+		private function selectHandler( e:Event ){
+			file.upload( req );
+			
+		}
+		
+		private function show_message( e:DataEvent ){
+			tm.stop();
+			var tf = new TextFormat();
+			if( e.data == 'ok' ){
+				tf.color = 0x009900;
+				label_txt.defaultTextFormat = tf;
+				label_txt.text = 'The file has been uploaded.';
+			} else if( e.data == 'error'){
+				tf.color = 0xff0000;
+				label_txt.defaultTextFormat = tf;
+				label_txt.text = 'The file could not be uploaded.';
+			}
+		}
+		
+		private function updateSpeed( e:TimerEvent ){
+			speed = Math.round( (currbytes - lastbytes)/1024 );
+			lastbytes = currbytes;
+		}
+		
+		private function cancelUpload( e:MouseEvent ){
+			file.cancel();
+			reset();
+		}
+		
+		private function reset(){
+			cancel_btn.visible = false;
+			select_btn.visible = true;
+			label_txt.text = '';
+			progress_mc.bar.scaleX = 0;
+		}
+		
+	}	
+}
+</pre>
+<h2>Step 21: The PHP Script</h2>
+<p>Let’s build our php script quickly:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span>&lt;?php&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="vars">$uploads_dir</span><span>&nbsp;=&nbsp;</span><span class="string">'./uploads/'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">if</span><span>(&nbsp;</span><span class="vars">$_FILES</span><span>[</span><span class="string">'Filedata'</span><span>][</span><span class="string">'error'</span><span>]&nbsp;==&nbsp;0&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="keyword">if</span><span>(&nbsp;move_uploaded_file(&nbsp;</span><span class="vars">$_FILES</span><span>[</span><span class="string">'Filedata'</span><span>][</span><span class="string">'tmp_name'</span><span>],&nbsp;</span><span class="vars">$uploads_dir</span><span>.</span><span class="vars">$_FILES</span><span>[</span><span class="string">'Filedata'</span><span>][</span><span class="string">'name'</span><span>]&nbsp;)&nbsp;){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">'ok'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="func">exit</span><span>();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">'error'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="func">exit</span><span>();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>?&gt;&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">&lt;?php
+
+$uploads_dir = './uploads/';
+
+if( $_FILES['Filedata']['error'] == 0 ){
+
+  if( move_uploaded_file( $_FILES['Filedata']['tmp_name'], $uploads_dir.$_FILES['Filedata']['name'] ) ){
+
+  echo 'ok';
+
+  exit();
+
+  }
+
+  }
+
+  echo 'error';
+
+  exit();
+
+?&gt;
+</pre>
+<p>I’ll just quickly sum this up (PHP isn’t strictly within the scope of
+ this tut). We define a path where we will put the file, then we check 
+whether the $_FILES['Filedata']['error'] is 0 ( if there are no errors 
+). We then check if move_uploaded_file() has successfully transferred 
+the file in the folder and we show “ok” or “error” depending on the 
+result.</p>
+<p>One last point: you’ll have to make sure that the folder exists and it is writable before running the script.</p>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/final1.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/final1.jpg" alt=""></div>
+<div class="tutorial_image"><img style="display: inline;" original="http://Flashtuts.s3.amazonaws.com/093_flashPHPUploader/tutorial/final2.jpg" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/final2.jpg" alt=""></div>
+<p>This is the end of our tutorial. Thank you for reading, I hope you learned something!</p>
+<div style="clear:both;padding-bottom:20px;"><fb:like class=" fb_edge_widget_with_comment fb_iframe_widget" layout="standard" width="450" height="30"><span style="height: 28px; width: 450px;"><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/like_002.htm" class="fb_ltr " title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 28px; width: 450px;" name="f2c08507617a33c" id="f3a85894cc407de" scrolling="no"></iframe></span></fb:like></div>
+<p style="text-align: center;"></p><div class="tutorial_image"><script type="text/javascript"><!--
+google_ad_client = "pub-9093712935949486";
+/* 300x250 Activetuts Week 2 Btm */
+google_ad_slot = "5770688674";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="backfill1_data/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></div><p></p>  
+    
+</div>
+            
+                        
+                        
+            <div class="post_footer" style="padding-bottom: 170px;">
+            
+              <div class="enjoyed_post">
+                <span class="thumb_icon">&nbsp;</span>
+                <h5>Enjoyed this Post?</h5>
+                <p>Subscribe to our <a href="http://feedproxy.google.com/flashtuts">RSS Feed</a>, <a href="http://twitter.com/envatoactive">Follow us on Twitter</a> or simply recommend us to friends and colleagues!</p>
+                <!-- Social Media -->
+                <div class="article_social_media">
+                  <div class="tweetmeme_btn">
+                    <iframe data-twttr-rendered="true" title="Twitter Tweet Button" style="width: 58px; height: 20px;" class="twitter-share-button twitter-count-none" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/tweet_button_002.htm" allowtransparency="true" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/widgets.js"></script>
+                  </div>
+                  <div class="facebook_send_btn left">
+                    <div id="___plusone_1" style="height: 20px; width: 32px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline;"><iframe title="+1" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/fastbutton_002.htm" name="I1_1346713922639" id="I1_1346713922639" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" frameborder="0" scrolling="no" width="100%"></iframe></div>
+                  </div>
+                                    <div class="facebook_btn">
+                    <fb:like class=" fb_edge_widget_with_comment fb_iframe_widget" layout="button_count" width="100" height="21"><span style="height: 20px; width: 71px;"><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/like_003.htm" class="fb_ltr " title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 20px; width: 71px;" name="f2a6dd3b546fd46" id="f30cbb63040b32e" scrolling="no"></iframe></span></fb:like>
+                  </div>
+                </div>
+                <!-- [END] Social Media -->
+              </div>
+              
+              <div class="the_author">
+                <img alt="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/927625ad84e0ce1e108bc0d72fe23510.png" class="avatar avatar-40 photo" height="40" width="40">                <h5>By <a href="http://active.tutsplus.com/author/bratu-sebastian/" title="Posts by Sebastian Bratu" rel="author">Sebastian Bratu</a></h5>
+                <p class="the_author_p">Rollover to read this author's bio or click through to see a full list of posts by this author.</p>
+                <div class="autor_div">
+                  I am a 22 year old web developer and musician from 
+Romania. I love php,jquery,flash,as3 and lose 80% of my nights with 
+them. I also have a lot of business ideas that I never get to build. I 
+like to build lots of websites.                  <span class="arrow">&nbsp;</span>
+                </div>
+              </div>
+              
+              <br class="clear">
+              
+                            <div class="plus_membership">
+                <div class="plus_membership_text">
+                  <a href="" class="plus_icon">Plus Premium</a>
+                  
+                  <div id="logged-in-plus-footer" style="display: none;">
+
+                    <div class="plus_content wide">
+                      <h3>Hello!</h3>
+                      <p>You can grab source files and bonus tutorials from the <a href="http://tutsplus.com/">members area</a>.</p>
+                                          </div>
+                    <div class="plus_form">
+            
+                    </div>
+                  </div>
+                  
+                  <div id="logged-out-plus-footer" style="">
+                  
+                    <div class="plus_content">
+                      <h3>Premium Members</h3>
+                      <p>Source Files, Bonus Tutorials &amp; More for all relevant Tuts+ sites in one subscription. <a href="http://tutsplus.com/amember/signup.php">Join Now</a></p>
+                    </div>
+                    <div class="plus_form">
+                      <form name="login" method="post" action="http://tutsplus.com/amember/login.php?amember_redirect_url=http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/" id="signIn">
+                        <fieldset>
+                        <input name="amember_login" id="username" class="input" type="text">
+                        <input name="amember_pass" id="password" class="input" type="password">
+                        <input id="submit_plus" class="submit_plus" value="Sign In" type="submit">
+                        </fieldset>
+                      </form>
+                    </div>
+
+                  </div>
+                  
+                </div>
+                <div class="left_corner">&nbsp;</div>
+                <div class="right_corner">&nbsp;</div>
+              </div>
+
+              
+              <script type="text/javascript">
+                if (plus_member_logged_in()) {
+                  $('#logged-in-plus-footer').show()
+                } else {
+                  $('#logged-out-plus-footer').show()
+                }
+              </script>
+              
+            </div>
+            
+            <div class="post extra_posts single">
+              <!--
+              <h3>Related Posts</h3>
+                            -->
+            </div>
+            
+            <div class="comments">  
+              
+<!-- You can start editing here. -->
+<a href="#respond" name="comments" class="add_comment_link">Add Comment</a>
+<h1 class="comments-header">Discussion <span>64 Comments</span></h1>
+
+  <div class="pagination-wrap"><div class="wp-pagenavi"><span class="pages">Comment Page 2 of 2</span><a class="prev page" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-1/#comments">«</a>
+<a class="page" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-1/#comments">1</a>
+<span class="current">2</span></div></div>  
+  <ol class="commentlist">
+  			<li class="comment even thread-even depth-1" id="comment-52976">
+				<div id="div-comment-52976" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/e34047ed1136d71cb2483fc2fb4582d6.jpg" class="avatar avatar-80 photo" height="80" width="80">		<cite class="fn">nico</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-2/#comment-52976">
+			April 24, 2012 at 8:54 am</a>		</div>
+
+		<p>Hey !<br>
+Thanx for the tutorial, it was looking for a simple flash uploader with progress bar for a long time !</p>
+<p>But i have a small question, everything works, but when the upload is
+ done, is there any way to be redirected from the index.html (where the 
+swf is) to for example target.php, where i can do whatever i want with 
+the uploaded file ?</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/?replytocom=52976#respond" onclick='return addComment.moveForm("div-comment-52976", "52976", "respond", "1952")'>Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-53135">
+				<div id="div-comment-53135" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/8e55a646ce72be60640b83558f3201b3.jpg" class="avatar avatar-80 photo" height="80" width="80">		<cite class="fn"><a target="_blank" href="http://files4free.org/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','files4free.org']);" rel="external nofollow" class="url">Mathias Nervik</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-2/#comment-53135">
+			April 29, 2012 at 7:31 pm</a>		</div>
+
+		<p>Have uploaded the .swf .php .as and .html to a folder, and made a folder within that folder called uploads.</p>
+<p>But still when I try to use the uploader I click Select 
+file–&gt;select a sample picture–&gt;click open—-&gt;….and nothing 
+happends!</p>
+<p>Please help?!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/?replytocom=53135#respond" onclick='return addComment.moveForm("div-comment-53135", "53135", "respond", "1952")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-57338">
+				<div id="div-comment-57338" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/2b0ad33210bfdc51902beb6722957690.jpg" class="avatar avatar-80 photo" height="80" width="80">		<cite class="fn">AnthonyP</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-2/#comment-57338">
+			August 30, 2012 at 12:32 am</a>		</div>
+
+		<p>@Mathias Nervik… how did you fix your problem?  I have the same issue where I select a file and nothing happends :(</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/?replytocom=57338#respond" onclick='return addComment.moveForm("div-comment-57338", "57338", "respond", "1952")'>Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="comment odd alt thread-even depth-1" id="comment-53153">
+				<div id="div-comment-53153" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/8e55a646ce72be60640b83558f3201b3.jpg" class="avatar avatar-80 photo" height="80" width="80">		<cite class="fn"><a target="_blank" href="http://files4free.org/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','files4free.org']);" rel="external nofollow" class="url">Mathias Nervik</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-2/#comment-53153">
+			April 30, 2012 at 9:43 am</a>		</div>
+
+		<p>Finally, it works :D</p>
+<p>…by the way, what exactly should I do to be able to upload videos as well?!</p>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/?replytocom=53153#respond" onclick='return addComment.moveForm("div-comment-53153", "53153", "respond", "1952")'>Reply</a>		</div>
+				</div>
+		</li>
+  </ol>
+  
+  <div class="pagination-wrap"><div class="wp-pagenavi"><span class="pages">Comment Page 2 of 2</span><a class="prev page" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-1/#comments">«</a>
+<a class="page" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/comment-page-1/#comments">1</a>
+<span class="current">2</span></div></div>	
+
+
+<div id="respond">
+  
+  <a name="respond"></a>
+	<h1>Add a Comment</h1>
+
+		
+		<form action="http://active.tutsplus.com/wp-comments-post.php" method="post" id="commentform">
+
+		
+			<p class="input_block">
+		    <label for="author">Name</label>
+				<input name="author" class="txt" id="author" size="22" tabindex="1" type="text">
+			</p>
+
+			<p class="input_block">
+		    <label for="email">Email Address</label>
+				<input name="email" class="txt" id="email" size="22" tabindex="2" type="text">
+			</p>
+
+			<p class="input_block">
+		    <label for="url">URL</label>
+				<input name="url" class="txt" id="url" size="22" tabindex="3" type="text">
+			</p>
+
+		
+		<p class="textarea_block">
+		  <label for="comment">Your Comments</label>
+		  <textarea name="comment" id="comment" rows="15" cols="50" tabindex="4"></textarea>
+		</p>
+		
+				<p class="textarea_block">
+		  To add a code snippet to your comment, please wrap your code like 
+so: &lt;pre name="code" class="html"&gt;YOUR CODE&lt;/pre&gt;. You can 
+replace the class name with "js," "css," "sql," or "php." If there are 
+any "&lt;" or "&gt;" within your code, please search and replace them 
+with: &amp;lt; and &amp;gt; respectively. 
+		</p>
+				
+		<div class="cancel-comment-reply">
+		  <a rel="nofollow" id="cancel-comment-reply-link" href="http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/#respond" style="display:none;">Click here to cancel reply.</a>    </div>
+
+		<input name="submit" id="add_comment" tabindex="5" value="Add Comment" type="submit">
+		<input name="comment_post_ID" value="1952" type="hidden">
+		
+		<input name="comment_post_ID" value="1952" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+		<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="ca0467f582" type="hidden"></p>
+		</form><!-- /#commentform -->
+
+	
+</div><!-- /#respond -->
+
+            </div>
+          
+            	
+            
+              		  
+        </div>
+        
+      </div>
+      <!-- [END] Page -->
+
+    </div>
+    <!-- [END] Page Wrap -->
+		
+    <!-- sidebar -->
+    <div id="sidebar">
+
+      <!-- Subscriptions -->
+<div class="sidebar_subscribe">
+
+  <ul class="get_updates">
+    <li class="sm_rss"><a href="http://feedproxy.google.com/flashtuts">RSS Updates</a></li>
+    <li class="sm_facebook"><a href="http://facebook.com/activetuts">Facebook</a></li>
+    <li class="sm_twitter"><a href="http://twitter.com/envatoactive">Twitter</a></li>
+        <li class="sm_email"><a href="http://feedburner.google.com/fb/a/mailverify?uri=Flashtuts&amp;loc=en_U">Email Updates</a></li>
+  </ul>
+  
+    <div class="feedburner_count s_count">
+    <span class="side-link"><em>RSS Subscribers</em> 
+      <a href="http://feedproxy.google.com/flashtuts">
+        7,785      </a>
+    </span>
+  </div>
+    
+    <div class="twitter_count s_count">
+    <span class="side-link"><em>Twitter Followers</em> 
+      <a href="http://twitter.com/envatoactive">
+        10,280      </a>
+    </span>
+  </div>
+    
+    <div class="facebook_count s_count">
+    <span class="side-link"><em>Facebook Fans</em> 
+      <a href="http://facebook.com/activetuts">
+        8,754      </a>
+    </span>
+  </div>
+    
+</div>
+<!-- [END] Subscriptions -->
+
+<!-- Sidebar Ad Zone -->
+<div id="ads" style="">
+  <div id="bsap_1238193" class="bsap_1238193 bsap"><a href="http://stats.buysellads.com/click.go?z=1238193&amp;b=553857&amp;g=&amp;s=&amp;sw=1280&amp;sh=800&amp;br=firefox,14,win&amp;r=0.8675316861988804&amp;link=http://www.payloadz.com/go/jump?id=1492809&amp;aff_id=3372822" onmouseover="window.status = 'http://www.payloadz.com/go/jump?id=1492809&amp;aff_id=3372822'; return true;" onmouseout="window.status=''; return true;" class="ad1 odd" title="CartoonSmart.com Free HD Video Tutorials for Flash, iPhone and more" id="bsa_553857" target="_blank"><img src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/114283-1341513541.jpg" alt="CartoonSmart.com Free HD Video Tutorials for Flash, iPhone and more" height="125" width="200"></a><a href="http://stats.buysellads.com/click.go?z=1238193&amp;b=568598&amp;g=&amp;s=&amp;sw=1280&amp;sh=800&amp;br=firefox,14,win&amp;r=0.24016276426861594&amp;link=http://www.digicrafts.com.hk/components/JSPolaroidGallery" onmouseover="window.status = 'http://www.digicrafts.com.hk/components/JSPolaroidGallery'; return true;" onmouseout="window.status=''; return true;" class="ad2 even" title="Polaroid Gallery jQuery plugin" id="bsa_568598" target="_blank"><img src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/84524-1322030722.jpg" alt="Polaroid Gallery jQuery plugin" height="125" width="200"></a><a href="http://stats.buysellads.com/click.go?z=1238193&amp;b=801493&amp;g=&amp;s=&amp;sw=1280&amp;sh=800&amp;br=firefox,14,win&amp;r=0.44128037486572524&amp;link=http://activeden.net/?ref=bsa&amp;utm_source=ad&amp;utm_medium=banner&amp;utm_campaign=activetuts" onmouseover="window.status = 'http://activeden.net/?ref=bsa&amp;utm_source=ad&amp;utm_medium=banner&amp;utm_campaign=activetuts'; return true;" onmouseout="window.status=''; return true;" class="ad3 odd" title="ActiveDen" id="bsa_801493" target="_blank"><img src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/50201-1297177644.jpg" alt="ActiveDen" height="125" width="200"></a><a href="http://stats.buysellads.com/click.go?z=1238193&amp;b=1273284&amp;g=&amp;s=&amp;sw=1280&amp;sh=800&amp;br=firefox,14,win&amp;r=0.8954965556954836&amp;link=http://pages.sencha.com/web-apps-come-of-age.html?ls=Advertisement&amp;ss=ActiveTuts" onmouseover="window.status = 'http://pages.sencha.com/web-apps-come-of-age.html?ls=Advertisement&amp;ss=ActiveTuts'; return true;" onmouseout="window.status=''; return true;" class="ad4 even" title="Free White Paper - Web Apps Come of Age" id="bsa_1273284" target="_blank"><img src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/68462-1310751221.png" alt="Free White Paper - Web Apps Come of Age" height="125" width="200"></a><a href="http://buysellads.com/buy/detail/4504/zone/1238193?utm_source=site_4504&amp;utm_medium=website&amp;utm_campaign=adhere&amp;utm_content=zone_1238193" title="Advertise Here" class="adhere ad5 odd" target="_blank">Advertise Here</a></div>  <a href="http://active.tutsplus.com/advertise/" class="side_advert_here">Advertise Here</a>
+</div>
+<script type="text/javascript">
+  if (!plus_member_logged_in()) {
+    $('#ads').show()
+  }
+</script>
+<!-- [END] Sidebar Ad Zone -->
+
+
+
+<!-- Plus Members -->
+<div id="premium-logged-out" style="">
+          <div class="variant_g">
+          <div>
+            <a target="_blank" href="http://tutsplus.com/?WT.mc_id=activetuts_g" class="premium-button" rel="external">Find out more about Tuts+ Premium</a>
+          </div>
+          <p class="link-out">Already a member? <a href="http://tutsplus.com/amember/login.php?amember_redirect_url=http://active.tutsplus.com/tutorials/actionscript/creating-a-reusable-flash-uploader-with-actionscript-3-0-and-php/">Sign In</a></p>
+        </div></div> 
+  <div class="plus_member" id="plus-sidebar-logged-in" style="display: none">
+    <div class="plus_icon">
+      Plus Icon
+    </div>
+    <div class="plus_text">
+      <h3>Hello!</h3>
+      <p>Source Files, Bonus Tutorials &amp; More for all relevant Tuts+ sites in one subscription</p>
+      <ul>
+        <li><a href="http://tutsplus.com/">Visit Tuts+ Premium</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+  if ( plus_member_logged_in() ) {
+    $('#plus-sidebar-logged-in').show();
+  } else {
+    $('#premium-logged-out').show();
+    $('#plus-sidebar-logged-out').show();
+  }
+  </script>
+
+<!-- [END] Plus Members -->
+
+<!-- Rockable Book -->
+<!-- [END] Rockable Book -->
+
+<!-- Series/Session -->
+<!-- [END] Series/Session -->
+
+<!-- Snipplr -->
+<!-- [END] Snipplr -->
+
+<!-- Social Networking -->
+<div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="social_networking">
+
+  <ul class="tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#facebook_tab" class="tab_2">Facebook</a></li>
+		<li class="ui-state-default ui-corner-top"><a href="#twitter_tab" class="tab_1">Twitter</a></li>					</ul>
+  
+  <!-- Facebook -->  
+  <div id="facebook_tab" class="tab_div ui-tabs-panel ui-widget-content ui-corner-bottom"><div class="facebook_wrap"><fb:like-box class=" fb_iframe_widget " href="http://facebook.com/activetuts" width="296" height="300" stream="false" connections="10"><span style="height: 300px; width: 296px;"><iframe src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/likebox.htm" class="fb_ltr" style="border: medium none; overflow: hidden; height: 300px; width: 296px;" name="f7a62b79913d2e" id="f117320a4a2bf5a" scrolling="no"></iframe></span></fb:like-box></div></div>
+  <!-- [END] Facebook -->
+  
+  <!-- Twitter -->
+    <div id="twitter_tab" class="tab_div ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+    <h3>Follow <a href="http://twitter.com/envatoactive">Activetuts+</a> and <a href="http://twitter.com/tutsplus">Tuts+</a> on Twitter</h3>
+    <ul><li>Did you attend the Tuts+ meetup in New York recently? Live vicariously through those who did by checking out our Flickr!...</li><li>In case you missed the news - Envato Support is hiring a new team member!! Come work with us :) <a href="http://t.co/S3h3Orip">http://t.co/S3h3Orip</a> ^JM</li><li>☆ Drawing Activetuts+ to a Close <a href="http://t.co/LW5Wazp9">http://t.co/LW5Wazp9</a></li><li>☆ Intro to Dart: Creating a Marquee <a href="http://t.co/o7HYWVVr">http://t.co/o7HYWVVr</a></li></ul>  </div>
+    <!-- [END] Twitter -->
+  
+  <!-- Flickr -->
+    <!-- [END] Flickr -->
+  
+  
+</div>
+<!-- [END] Social Networking -->
+
+<!-- MailChimp -->
+<!-- [END] MailChimp -->
+
+
+
+<!-- Sessions -->
+<!-- [END] Sessions -->
+
+
+<!-- Jobs -->
+<div id="fsjobs">
+   
+	<div id="fsjobs_header">
+		Freelance Jobs
+	</div>
+	<div id="fsjobs_body">
+    <ul id="fsjobs_list"><li class="fsjobs_job" id="fsjobs_id_7389"><a href="http://jobs.freelanceswitch.com/jobs/20261">Senior Android developer (Melbourne only ... <span>Australia</span></a> </li><li class="fsjobs_job" id="fsjobs_id_9835"><a href="http://jobs.freelanceswitch.com/jobs/20260">Junior front-end developer (Melbourne on ... <span>Melbourne Australia</span></a> </li><li class="fsjobs_job" id="fsjobs_id_5095"><a href="http://jobs.freelanceswitch.com/jobs/20259">Freelance bootstrap front-end developer  ... <span>Anywhere</span></a> </li><li class="fsjobs_job" id="fsjobs_id_6329"><a href="http://jobs.freelanceswitch.com/jobs/20258">Simple iPhone/Android App Dev <span>Anywhere</span></a> </li><li class="fsjobs_job" id="fsjobs_id_5014"><a href="http://jobs.freelanceswitch.com/jobs/20253">Freelance WordPress Designer/Developer <span>Anywhere</span></a> </li></ul>
+    <span class="side_job_number"> </span>
+    <a href="http://jobs.freelanceswitch.com/" class="more_jobs" title="Freelance Job Board">More Freelance Jobs...</a>
+  </div>
+</div>
+<!-- [END] Jobs -->
+
+
+<!-- Write For Us -->
+<div class="write_for_us">
+
+  <h3 class="side-link"><a href="http://active.tutsplus.com/about/write-a-tutorial/">Create a Tutorial, Get Paid!</a></h3>
+  <p>Have something to teach the world? Want to earn money doing it? 
+Tutorials, screencasts, and articles published here on Activetuts+ are 
+largely contributed by readers just like you! We'll pay you great money 
+for good content. <a href="http://active.tutsplus.com/about/write-a-tutorial/">Find Out More</a></p>
+  
+</div>
+<!-- [END] Write For Us -->
+
+      
+    </div>
+    <!-- [END] Sidebar -->
+	
+  </div>
+  <!-- [END] Content -->
+  
+</div>
+<!-- [END] Content Wrap -->
+
+<!-- Footer -->
+<div id="footer_wrap">
+  <div id="footer">
+    <div class="footer_inner">
+    
+      <div class="power_up">
+        <a href="http://active.tutsplus.com/" class="footer_logo">Activetuts+</a>
+        <p class="plus_network">Part of the Plus education network</p>
+        <a href="http://envato.com/" class="powered_by">Powered by: Envato</a>
+      </div>
+      
+      <ul class="get_updates">
+        <li class="sm_rss"><a href="http://feedproxy.google.com/flashtuts">RSS Updates</a></li>
+        <li class="sm_facebook"><a href="http://facebook.com/activetuts">Facebook</a></li>
+        <li class="sm_twitter"><a href="http://twitter.com/envatoactive">Twitter</a></li>
+                <li class="sm_email"><a href="http://feedburner.google.com/fb/a/mailverify?uri=Flashtuts&amp;loc=en_U">Email Updates</a></li>
+      </ul>
+      
+      <ul class="footer_links">
+        <li class="first">Copyright © 2012 <a href="http://envato.com/">Envato</a></li>
+        <li><a href="http://active.tutsplus.com/advertise/">Advertise</a></li>
+        <li><a href="http://www.formstack.com/forms/envato-tuts__contact_form">Suggestions</a></li>
+        <li><a href="http://active.tutsplus.com/about/">About Us</a></li>
+        <li><a target="_blank" href="http://wefunction.com/" rel="nofollow external">Icons by WeFunction</a></li>
+              </ul>
+      
+    </div>
+  </div>
+</div>
+<!-- [END] Footer -->
+
+<script type="text/javascript">
+  
+  // comment-ribbon 
+  $(function() {
+    $('.is-staff, .is-author').addClass('highlighted').children('div').wrapInner('<div class="wrap-comment" />');
+  });
+  
+  ;(function($) {
+    $('.site_switcher').click(function(e) {
+      $(this).toggleClass('active');
+      e.stopPropagation();
+    });
+    $(document).bind('click', function(e) {
+      if (!$(e.target).parents().hasClass('site_switcher')) {
+        $('.site_switcher').removeClass('active');
+      }
+    });
+  })(jQuery);
+
+  // session list text
+	/*
+$('.session-list li').hover(function(){
+    $(".session-block", this).slideDown('fast');
+	}, function() {
+		$(".session-block", this).stop(true, true).slideUp('fast');
+	});
+*/
+  (function($) {
+    $(document).ready(function() {
+      var list_count = $('.single-post .session-list ul').children().length;
+      if ( list_count > 1 ) {
+        $('.single-post .session-post em').append(' - <a href="JavaScript:void(0);" class="show-all">Show All</a>');
+      }
+      $('a.show-all').click(function() {
+        $('.session-list').toggle();
+      });
+    });
+  })(jQuery);
+</script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/widget.js"></script>
+				<script type="text/javascript"><!--
+			var seriesdropdown = document.getElementById("orgseries_dropdown");
+			if (seriesdropdown) { 
+			 function onSeriesChange() {
+					if ( seriesdropdown.options[seriesdropdown.selectedIndex].value != ( 0 || -1 ) ) {
+						location.href = "http://active.tutsplus.com/series/"+seriesdropdown.options[seriesdropdown.selectedIndex].value;
+					}
+				}
+				seriesdropdown.onchange = onSeriesChange;
+			}
+			--></script>
+			<script class="javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/shCore.js"></script>
+<script class="javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/shBrushAll.js"></script>
+	<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://active.tutsplus.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+<!-- MathJax Latex Plugin installed: Disabled as no shortcodes on this page --><script type="text/javascript">
+/* <![CDATA[ */
+var mcapi = {"url":"http:\/\/active.tutsplus.com\/wp-content\/themes\/tuts\/functions\/mc\/mail-chimp.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/mail-chimp.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/jquery_003.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/scripts.js"></script>
+<script type="text/javascript" src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/comment-reply.js"></script>
+<!-- 185 queries. 2.403 seconds -->
+
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/41/eum/rum.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrf2","beacon-1.newrelic.com","fcf8d519de",195964,"YAQBNkNVV0JQVUwMXllOIBdCQFZcHhw=",0,2903,new Date().getTime()]);</script>
+
+
+
+
+<div style="display: none;" id="envato-widget" class="widget-reset"><div id="envato-widget-switcher-wrap"><div id="envato-widget-switcher"><ul class="switcher-list-left"><li><a href="http://envato.com/" rel="nofollow"><span class="widget-icon icon-envato">&nbsp;</span>Envato</a></li><li><a href="http://themeforest.net/" rel="nofollow"><span class="widget-icon icon-themeforest">&nbsp;</span>ThemeForest</a></li><li><a href="http://graphicriver.net/" rel="nofollow"><span class="widget-icon icon-graphicriver">&nbsp;</span>GraphicRiver</a></li><li><a href="http://videohive.net/" rel="nofollow"><span class="widget-icon icon-videohive">&nbsp;</span>VideoHive</a></li><li><a href="http://audiojungle.net/" rel="nofollow"><span class="widget-icon icon-audiojungle">&nbsp;</span>AudioJungle</a></li><li><a href="http://codecanyon.net/" rel="nofollow"><span class="widget-icon icon-codecanyon">&nbsp;</span>CodeCanyon</a></li><li><a href="http://activeden.net/" rel="nofollow"><span class="widget-icon icon-activeden">&nbsp;</span>ActiveDen</a></li><li><a href="http://3docean.net/" rel="nofollow"><span class="widget-icon icon-3docean">&nbsp;</span>3DOcean</a></li><li><a href="http://marketplace.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-tutsmarketplace">&nbsp;</span>Tuts+ Marketplace</a></li><li><a href="http://photodune.net/" rel="nofollow"><span class="widget-icon icon-photodune">&nbsp;</span>PhotoDune</a></li><li><a href="http://mac.appstorm.net/" rel="nofollow"><span class="widget-icon icon-mac">&nbsp;</span>Mac.Appstorm</a></li><li><a href="http://web.appstorm.net/" rel="nofollow"><span class="widget-icon icon-web">&nbsp;</span>Web.Appstorm</a></li><li><a href="http://iphone.appstorm.net/" rel="nofollow"><span class="widget-icon icon-iphone">&nbsp;</span>iPhone.Appstorm</a></li><li><a href="http://android.appstorm.net/" rel="nofollow"><span class="widget-icon icon-android">&nbsp;</span>Android.Appstorm</a></li><li><a href="http://ipad.appstorm.net/" rel="nofollow"><span class="widget-icon icon-ipad">&nbsp;</span>iPad.Appstorm</a></li><li><a href="http://windows.appstorm.net/" rel="nofollow"><span class="widget-icon icon-windows">&nbsp;</span>Windows.Appstorm</a></li><li><a href="http://creattica.com/" rel="nofollow"><span class="widget-icon icon-creattica">&nbsp;</span>Creattica</a></li></ul><ul class="switcher-list-right"><li><a href="http://freelanceswitch.com/" rel="nofollow"><span class="widget-icon icon-freelanceswitch">&nbsp;</span>FreelanceSwitch</a></li><li><a href="http://jobs.freelanceswitch.com/" rel="nofollow"><span class="widget-icon icon-freelanceswitch-jobs">&nbsp;</span>Freelance Jobs</a></li><li><a href="http://rockablepress.com/" rel="nofollow"><span class="widget-icon icon-rockablepress">&nbsp;</span>Rockable Press</a></li><li><a href="http://tutsplus.com/" rel="nofollow"><span class="widget-icon icon-tutsplus">&nbsp;</span>Tuts+ Premium</a></li><li><a href="http://hub.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-tutsplus">&nbsp;</span>Tuts+ Hub</a></li><li><a href="http://psd.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-psdtuts">&nbsp;</span>Psdtuts+</a></li><li><a href="http://net.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-nettuts">&nbsp;</span>Nettuts+</a></li><li><a href="http://vector.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-vectortuts">&nbsp;</span>Vectortuts+</a></li><li><a href="http://audio.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-audiotuts">&nbsp;</span>Audiotuts+</a></li><li><a href="http://ae.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-aetuts">&nbsp;</span>Aetuts+</a></li><li><a href="http://cg.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-cgtuts">&nbsp;</span>Cgtuts+</a></li><li><a href="http://photo.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-phototuts">&nbsp;</span>Phototuts+</a></li><li><a href="http://mobile.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-mobiletuts">&nbsp;</span>Mobiletuts+</a></li><li><a href="http://webdesign.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-webdesigntuts">&nbsp;</span>Webdesigntuts+</a></li><li><a href="http://wp.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-wptuts">&nbsp;</span>Wptuts+</a></li><li><a href="http://mac.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-mactuts">&nbsp;</span>Mactuts+</a></li><li><a href="http://gamedev.tutsplus.com/" rel="nofollow"><span class="widget-icon icon-gamedevtuts">&nbsp;</span>Gamedevtuts+</a></li></ul></div><span class="switcher-arrow"></span></div><div id="envato-support-wrap"><div id="envato-support"><span class="envato-widget-title">Envato Support</span><ul class="support-list"><li><a href="http://support.envato.com/index.php" rel="nofollow"><span class="widget-icon icon-envato-support-center">&nbsp;</span>Envato Support Center</a></li><li><a href="http://twitter.com/envato_support" rel="nofollow"><span class="widget-icon icon-envato-support-twitter">&nbsp;</span>Envato Support Twitter</a></li></ul></div><span class="switcher-arrow"></span></div><div id="envato-community-wrap"><div id="envato-community"><span class="envato-widget-title">Envato Community</span><ul class="community-list"><li><a href="http://notes.envato.com/" rel="nofollow"><span class="widget-icon icon-envato-notes">&nbsp;</span>Envato Notes</a></li><li><a href="http://extras.envato.com/" rel="nofollow"><span class="widget-icon icon-envato-extras">&nbsp;</span>Envato Extras</a></li><li><a href="http://notes.envato.com/newsletter/" rel="nofollow"><span class="widget-icon icon-envato-newsletter">&nbsp;</span>Envato Newsletter</a></li><li><a href="http://notes.envato.com/category/podcasts/" rel="nofollow"><span class="widget-icon icon-envato-podcast">&nbsp;</span>Envato Podcast</a></li><li><a href="http://wp.envato.com/" rel="nofollow"><span class="widget-icon icon-wp-envato">&nbsp;</span>WP.Envato</a></li><li><a href="http://elite.envato.com/" rel="nofollow"><span class="widget-icon icon-envato-elite">&nbsp;</span>Envato Elite</a></li><li><a href="http://zoo.envato.com/" rel="nofollow"><span class="widget-icon icon-envato-zoo">&nbsp;</span>Envato Zoo</a></li><li><a href="http://www.flickr.com/photos/we-are-envato" rel="nofollow"><span class="widget-icon icon-envato-flickr">&nbsp;</span>Envato Flickr</a></li><li><a href="http://twitter.com/envato" rel="nofollow"><span class="widget-icon icon-envato-twitter">&nbsp;</span>Envato Twitter</a></li><li><a href="http://www.facebook.com/envato" rel="nofollow"><span class="widget-icon icon-envato-facebook">&nbsp;</span>Envato Facebook</a></li><li><a href="http://www.slideshare.net/envato" rel="nofollow"><span class="widget-icon icon-envato-slideshare">&nbsp;</span>Envato Slideshare</a></li><li><a href="http://dribbble.com/envato" rel="nofollow"><span class="widget-icon icon-envato-dribbble">&nbsp;</span>Envato Dribbble</a></li><li><a href="https://github.com/envato" rel="nofollow"><span class="widget-icon icon-envato-github">&nbsp;</span>Envato Github</a></li></ul></div><span class="switcher-arrow"></span></div><a href="javascript:void(0);" class="widget-button envato" rel="nofollow">envato</a><a href="javascript:void(0);" class="widget-button support" rel="nofollow">support</a><a href="javascript:void(0);" class="widget-button community" rel="nofollow">community</a></div><script src="Creating%20a%20Reusable%20Flash%20Uploader%20with%20ActionScript%203.0%20and%20PHP%20_%20Activetuts+_fichiers/rum.js" async="" type="text/javascript"></script></body></html>
+<!-- Dynamic Page Served (once) in 2.773 seconds -->
