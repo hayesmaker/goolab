@@ -79,7 +79,7 @@ package lab
 			
 			// ENFIN, DISPLACEMENT MAP ============================================================
 			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_stage.stageWidth/8, m_stage.stageHeight/8), 
-			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 10, 10, DisplacementMapFilterMode.COLOR,0xff0000,1);
+			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 10, 10, DisplacementMapFilterMode.IGNORE);
 			
 			targetImage = new ImageClass();
 			addChild(targetImage);
