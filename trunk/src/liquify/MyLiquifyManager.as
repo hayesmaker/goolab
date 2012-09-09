@@ -1,4 +1,6 @@
-﻿package liquify
+﻿// http://anymaking.com/fun-liquify-photo-maker-effects
+
+package liquify
 {
 	//import fl.controls.*;
 	//import fl.events.*;

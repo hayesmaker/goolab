@@ -1,3 +1,4 @@
+// http://anymaking.com/fun-liquify-photo-maker-effects
 package lab
 {
 	import flash.display.Bitmap;
@@ -17,6 +18,7 @@ package lab
 	import com.bit101.components.ComboBox;
 	import flash.events.MouseEvent;
 	import flash.events.Event;
+	import flash.filters.BitmapFilterQuality;
 	
 	/**
 	 * ...
@@ -32,6 +34,8 @@ package lab
 		
 		[Embed(source="../assets/checker.jpg")]
 		public var ImageClass:Class;
+		[Embed(source="../assets/keira.jpg")]
+		public var ImageClass1:Class;
 		
 		/**
 		 * 
@@ -61,8 +65,8 @@ package lab
 			graHor.x = m_stage.stageWidth / 4;
 			
 			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
-			var gra3:Shape = createGradient(GradientType.RADIAL, GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [0.1, 0], [0, 255]);
-			var smoothBMD:BitmapData = new BitmapData(GRAD_SIZE, GRAD_SIZE, true,0xff808080); // 0xff808080 IMPORTANT !!!
+			var gra3:Shape = createGradient(GradientType.RADIAL, GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [0, 0], [0, 255]);
+			var smoothBMD:BitmapData = new BitmapData(GRAD_SIZE, GRAD_SIZE, true,0xff808080); // false 0x808080 IMPORTANT !!!
 			smoothBMD.draw(gra3);
 			var smoothBM:Bitmap = new Bitmap(smoothBMD);
 			gradientView.addChild(smoothBM);
@@ -72,15 +76,15 @@ package lab
 			smoothBMD.copyChannel(tempBmd2, tempBmd2.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
 			//randomize(bmd);
 			/////////////////////////////
-			var blf:BlurFilter = new BlurFilter(8, 8, 4);
+			var blf:BlurFilter = new BlurFilter(8,8 ,BitmapFilterQuality.HIGH);
 			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), blf);
 			
 			// DISPLACEMENT MAP ============================================================
-			const SCALE:uint = 40;
-			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_stage.stageWidth/8, m_stage.stageHeight/8), 
+			const SCALE:uint = 20;
+			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(150, m_stage.stageHeight/8), 
 			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, SCALE, SCALE, DisplacementMapFilterMode.IGNORE);
 			
-			targetImage = new ImageClass();
+			targetImage = new ImageClass1();
 			addChild(targetImage);
 			targetImage.x = targetImage.y = 0;
 			targetImage.filters = [disMap];
@@ -115,7 +119,7 @@ package lab
 			mat.createGradientBox(_w, _h, _angle * (Math.PI / 180));
 			var graph:Graphics = sh.graphics;
 			graph.beginGradientFill(_type, _colors, _alphas, _ratios, mat);
-			graph.drawCircle(_w / 2, _h / 2, 0.8*_w / 2);
+			graph.drawCircle(_w / 2, _h / 2, _w / 2);
 			graph.endFill();
 			
 			return sh;
