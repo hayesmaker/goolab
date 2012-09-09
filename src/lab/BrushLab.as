@@ -6,6 +6,7 @@ package lab
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.display.Stage;
+	import flash.filters.BlurFilter;
 	import flash.filters.DisplacementMapFilter;
 	import flash.geom.Matrix;
 	import flash.display.GradientType;
@@ -32,54 +33,52 @@ package lab
 		[Embed(source="../assets/checker.jpg")]
 		public var ImageClass:Class;
 		
+		/**
+		 * 
+		 * @param	_s
+		 */
 		public function BrushLab(_s:Stage)
 		{
 			m_stage = _s;
-			
-			gui = new MainGUI(this, m_stage.stageWidth / 2, 0, m_stage.stageWidth / 2, m_stage.stageHeight / 2);
 			const GRAD_SIZE:uint = m_stage.stageWidth / 4;
 			gradientView = new Sprite();
 			addChild(gradientView);
 			gradientView.x = 0;
-			gradientView.y = m_stage.stageHeight / 2;
+			gradientView.y = m_stage.stageHeight / 2;			
+			gui = new MainGUI(this, m_stage.stageWidth / 2, 0, m_stage.stageWidth / 2, m_stage.stageHeight / 2);
 			
 			// GRADIENT VERTICAL ==================================================================
-			var gra1:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 90, [0x0000ff, 0], [1, 1], [0, 255]);
-			var tempBmd1:BitmapData = new BitmapData(gra1.width, gra1.height,false,0x808080);
-			tempBmd1.draw(gra1);
-			gradientView.addChild(gra1);
+			var graVer:Shape = createGradient(GradientType.LINEAR,GRAD_SIZE, GRAD_SIZE, 90, [0x0000ff, 0], [1, 1], [0, 255]);
+			var tempBmd1:BitmapData = new BitmapData(graVer.width, graVer.height,false,0x808080);
+			tempBmd1.draw(graVer);
+			gradientView.addChild(graVer);
 			
 			// GRADIENT HORIZONTAL ================================================================
-			var gra2:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 0, [0x00ff00, 0], [1, 1], [0, 255]);
-			var tempBmd2:BitmapData = new BitmapData(gra2.width, gra2.height,false,0x808080);
-			tempBmd2.draw(gra2);
-			gradientView.addChild(gra2);
-			gra2.x = m_stage.stageWidth / 4;
-			
+			var graHor:Shape = createGradient(GradientType.LINEAR,GRAD_SIZE, GRAD_SIZE, 0, [0x00ff00, 0], [1, 1], [0, 255]);
+			var tempBmd2:BitmapData = new BitmapData(graHor.width, graHor.height,false,0x808080);
+			tempBmd2.draw(graHor);
+			gradientView.addChild(graHor);
+			graHor.x = m_stage.stageWidth / 4;
 			
 			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
-			var gra3:Shape = createGradient(GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [1, 0], [0, 255]);
-			var smoothBMD:BitmapData = new BitmapData(GRAD_SIZE, GRAD_SIZE, true,0);
+			var gra3:Shape = createGradient(GradientType.RADIAL, GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [0.1, 0], [0, 255]);
+			var smoothBMD:BitmapData = new BitmapData(GRAD_SIZE, GRAD_SIZE, true,0xff808080); // 0xff808080 IMPORTANT !!!
 			smoothBMD.draw(gra3);
 			var smoothBM:Bitmap = new Bitmap(smoothBMD);
 			gradientView.addChild(smoothBM);
 			smoothBM.x = 0;
 			smoothBM.y = m_stage.stageHeight / 4;
-			
 			smoothBMD.copyChannel(tempBmd1, tempBmd1.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
 			smoothBMD.copyChannel(tempBmd2, tempBmd2.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
 			//randomize(bmd);
+			/////////////////////////////
+			var blf:BlurFilter = new BlurFilter(8, 8, 4);
+			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), blf);
 			
-			/*
-			var bm:Bitmap = new Bitmap(bmd);
-			gradientView.addChild(bm);
-			bm.x = m_stage.stageWidth/4;
-			bm.y = m_stage.stageHeight / 4;
-			*/
-			
-			// ENFIN, DISPLACEMENT MAP ============================================================
+			// DISPLACEMENT MAP ============================================================
+			const SCALE:uint = 40;
 			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_stage.stageWidth/8, m_stage.stageHeight/8), 
-			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 10, 10, DisplacementMapFilterMode.IGNORE);
+			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, SCALE, SCALE, DisplacementMapFilterMode.IGNORE);
 			
 			targetImage = new ImageClass();
 			addChild(targetImage);
@@ -98,20 +97,31 @@ package lab
 			}
 		}
 		
-		private function createGradient(_w:uint, _h:uint, _angle:Number, _colors:Array, _alphas:Array, _ratios:Array):Shape
+		/**
+		 * 
+		 * @param	_type
+		 * @param	_w
+		 * @param	_h
+		 * @param	_angle
+		 * @param	_colors
+		 * @param	_alphas
+		 * @param	_ratios
+		 * @return
+		 */
+		private function createGradient(_type:String, _w:uint, _h:uint, _angle:Number, _colors:Array, _alphas:Array, _ratios:Array):Shape
 		{
 			var sh:Shape = new Shape();
 			var mat:Matrix = new Matrix();
 			mat.createGradientBox(_w, _h, _angle * (Math.PI / 180));
 			var graph:Graphics = sh.graphics;
-			graph.beginGradientFill(GradientType.LINEAR, _colors, _alphas, _ratios, mat);
-			graph.drawCircle(_w / 2, _h / 2, _w / 2);
+			graph.beginGradientFill(_type, _colors, _alphas, _ratios, mat);
+			graph.drawCircle(_w / 2, _h / 2, 0.8*_w / 2);
 			graph.endFill();
 			
 			return sh;
 		}
 		
-		private function initDisplacementMap():void
+		private function initDisplacementMap2():void
 		{
 			var bm:Bitmap = new ImageClass();
 			var bmd:BitmapData = new BitmapData(bm.width, bm.height, true, 0x808080);

@@ -86,8 +86,8 @@ package liquify
 		
 		public function createZoomBrush(param1:String = "max"):void
 		{
-			var gradients:Array;
-			var gradientsPos:Array;
+			var gradHor:Array;
+			var gradVer:Array;
 			var radius:Number = this.cRadius;
 			
 			
@@ -105,16 +105,16 @@ package liquify
 			mat2.createGradientBox(radius, radius, 0);
 			if (param1 == "min")
 			{
-				gradients = [0, 65280];
-				gradientsPos = [0, 255];
+				gradHor = [0, 65280];
+				gradVer = [0, 255];
 			}
 			else
 			{
-				gradients = [65280, 0];
-				gradientsPos = [255, 0];
+				gradHor = [65280, 0];
+				gradVer = [255, 0];
 			}
 			var shape2:Shape = new Shape();
-			shape2.graphics.beginGradientFill(GradientType.LINEAR, gradients, [1, 1], [0, 255], mat2, SpreadMethod.PAD, InterpolationMethod.RGB);
+			shape2.graphics.beginGradientFill(GradientType.LINEAR, gradHor, [1, 1], [0, 255], mat2, SpreadMethod.PAD, InterpolationMethod.RGB);
 			shape2.graphics.drawCircle(radius / 2, radius / 2, radius / 2);
 			shape2.graphics.endFill();
 			var bmd2:BitmapData = new BitmapData(radius, radius, false, 0x808080);
@@ -124,7 +124,7 @@ package liquify
 			var mat3:Matrix = new Matrix();
 			mat3.createGradientBox(radius, radius, Math.PI / 2);
 			var shape3:Shape = new Shape();
-			shape3.graphics.beginGradientFill(GradientType.LINEAR, gradientsPos, [1, 1], [0, 255], mat3, SpreadMethod.PAD, InterpolationMethod.RGB);
+			shape3.graphics.beginGradientFill(GradientType.LINEAR, gradVer, [1, 1], [0, 255], mat3, SpreadMethod.PAD, InterpolationMethod.RGB);
 			shape3.graphics.drawCircle(radius / 2, radius / 2, radius / 2);
 			shape3.graphics.endFill();
 			var bmd3:BitmapData = new BitmapData(radius, radius, false, 0x808080);
