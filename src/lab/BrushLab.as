@@ -65,22 +65,21 @@ package lab
 			graHor.x = m_stage.stageWidth / 4;
 			
 			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
-			var gra3:Shape = createGradient(GradientType.RADIAL, GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [0, 0], [0, 255]);
+			var gra3:Shape = createGradient(GradientType.RADIAL, GRAD_SIZE, GRAD_SIZE, 0, [0, 0], [0.5, 0], [0, 255]);
 			var smoothBMD:BitmapData = new BitmapData(GRAD_SIZE, GRAD_SIZE, true,0xff808080); // false 0x808080 IMPORTANT !!!
 			smoothBMD.draw(gra3);
 			var smoothBM:Bitmap = new Bitmap(smoothBMD);
-			gradientView.addChild(smoothBM);
 			smoothBM.x = 0;
 			smoothBM.y = m_stage.stageHeight / 4;
 			smoothBMD.copyChannel(tempBmd1, tempBmd1.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
 			smoothBMD.copyChannel(tempBmd2, tempBmd2.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
 			//randomize(bmd);
 			/////////////////////////////
-			var blf:BlurFilter = new BlurFilter(8,8 ,BitmapFilterQuality.HIGH);
+			var blf:BlurFilter = new BlurFilter(4,4 ,BitmapFilterQuality.HIGH);
 			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), blf);
 			
-			// DISPLACEMENT MAP ============================================================
-			const SCALE:uint = 20;
+			// DISPLACEMENT MAP ===================================================================
+			const SCALE:uint = 50;
 			var disMap:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(150, m_stage.stageHeight/8), 
 			BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, SCALE, SCALE, DisplacementMapFilterMode.IGNORE);
 			
@@ -88,6 +87,7 @@ package lab
 			addChild(targetImage);
 			targetImage.x = targetImage.y = 0;
 			targetImage.filters = [disMap];
+			gradientView.addChild(smoothBM);
 		}
 		
 		private function randomize(b:BitmapData):void
