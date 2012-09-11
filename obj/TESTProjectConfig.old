@@ -30,7 +30,7 @@
   <file-specs>
     <path-element>D:\_WORK\SVN_goolab\src\Main.as</path-element>
   </file-specs>
-  <default-background-color>#191919</default-background-color>
+  <default-background-color>#800000</default-background-color>
   <default-frame-rate>120</default-frame-rate>
   <default-size>
     <width>600</width>
