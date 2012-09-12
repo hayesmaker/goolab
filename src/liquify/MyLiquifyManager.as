@@ -37,12 +37,12 @@ package liquify
 		private var mouse_pressed:Boolean = false;
 		//private var gui:gGui;
 		private var workingArea:Array;
-		private var slCursor:Object;
+		//private var slCursor:Object;
 		private var file_loaded:Boolean = false;
 		private var ctrlPressed:Boolean = false;
 		private var shiftPressed:Boolean = false;
-		private var flashVars:Object;
-		private var flashVarsLoaded:Boolean = false;
+		//private var flashVars:Object;
+		//private var flashVarsLoaded:Boolean = false;
 		private var image:Bitmap;
 		private var stageLink:Stage;
 		private var yOffset:Number = 54;
@@ -60,8 +60,8 @@ package liquify
 			//this.cursor = new gCursor();
 			this.myLiquifyBrush = new MyLiquifyBrush();
 			this.currentImg = new Sprite();
-			this.slCursor = new Object();
-			this.flashVars = new Object();
+			//this.slCursor = new Object();
+			//this.flashVars = new Object();
 			this.currentImg.name = "curImage";
 		} // end function
 		

@@ -28,7 +28,7 @@ package liquify
 	 */
 	public class TestLiquify extends Sprite
 	{
-		[Embed(source="../assets/checker.jpg")]
+		[Embed(source="../assets/keira.jpg")]
 		private var Picture:Class;
 		private var picture:Bitmap = new Picture();
 		private var gBrush:MyLiquifyBrush = new MyLiquifyBrush();
