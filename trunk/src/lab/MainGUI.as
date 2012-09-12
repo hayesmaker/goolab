@@ -33,16 +33,13 @@ package lab
 
 			
 			var slSize:HUISlider = new HUISlider(this, 10, 15, "Size",onSlideSize);
-			slSize.setSliderParams(1, 300, 0);
+			slSize.setSliderParams(1, 200, 0);
 			addChild(slSize);
 
-			
 			var sl01:HUISlider = new HUISlider(this, 10, 25, "Scale",onSlide);
-			sl01.setSliderParams(0, 255, 0);
+			sl01.setSliderParams(1, 200, 0);
 			addChild(sl01);
 
-			
-			
 			slX = new HUISlider(this, 10, 35, "X",onSlideXY);
 			slX.setSliderParams(0, 300, 0);
 			addChild(slX);

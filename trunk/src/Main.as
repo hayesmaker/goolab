@@ -14,6 +14,8 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import lab.BrushLab;
+	import liquify.TestLiquify;
+	
 	/**
 	 * ...
 	 * @author Duc-Tri VU
