@@ -1,4 +1,7 @@
 // http://anymaking.com/fun-liquify-photo-maker-effects
+
+// MetaTools Kia's Power Goo Realtime Liquid Image Funware Graphic Software
+
 package lab
 {
 	import flash.display.Bitmap;
@@ -35,6 +38,7 @@ package lab
 		private var m_blurFilter:BlurFilter;
 		
 		private var m_brush:Bitmap;
+		private var mouse_pressed:Boolean;
 		
 		private var gui:MainGUI; // PANEL des commandes
 		private var gradientView:Sprite; // PANEL des gradients
@@ -61,7 +65,8 @@ package lab
 			gui.view = this;
 			
 			m_targetImage = new ImageClass1();
-			m_stage.addEventListener(MouseEvent.MOUSE_DOWN, onImageMouseDown);
+			m_stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			m_stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 			addChild(m_targetImage);
 			m_targetImage.x = m_targetImage.y = 0;
 			m_targetImage.smoothing = true;
@@ -83,17 +88,38 @@ package lab
 			//var disMapF:DisplacementMapFilter = 
 
 			//m_targetImage.filters = [];
+			mouse_pressed = false;
+			m_stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			makeDisplacementBrush();
 		}
 		
-		private function onImageMouseDown(e:MouseEvent):void
+		
+		private function onEnterFrame(e:Event):void
 		{
-			trace(e.target + "::" + e.stageX + " / " + e.stageY);
-			if (e.stageX < m_targetImage.width && e.stageY < m_targetImage.height)
+			if (mouse_pressed)
+			{
+				
+				onMouseDown();
+			}
+		}
+
+		private function onMouseUp(e:MouseEvent):void
+		{
+			//trace(e.target + "::" + e.stageX + " / " + e.stageY);
+			mouse_pressed = false;
+		}
+		
+		
+		private function onMouseDown(e:MouseEvent=null):void
+		{
+			//trace(e.target + "::" + e.stageX + " / " + e.stageY);
+			mouse_pressed = true;
+			if (m_stage.mouseX < m_targetImage.width && m_stage.mouseY < m_targetImage.height)
 			{
 				//setApplyPos(e.stageX - m_brushSize / 2, e.stageY - m_brushSize / 2);
-				makeDisplacementBrush();
-				m_brush.x = e.stageX - m_brushSize / 2;
-				m_brush.y = e.stageY - m_brushSize / 2;
+				//makeDisplacementBrush();
+				m_brush.x = m_stage.mouseX - m_brushSize / 2;
+				m_brush.y = m_stage.mouseY - m_brushSize / 2;
 				applyMap();
 			}
 		}
@@ -131,8 +157,8 @@ package lab
 			
 			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
 			var gra3:Shape = createGradient(GradientType.RADIAL, m_brushSize, m_brushSize, [0, 0], [1, 0]);
-			var brush:BitmapData = new BitmapData(m_brushSize, m_brushSize, true, 0xFFFFFF); 
-			// false, 0x808080 pour une application immédiate / true, 0xFFFFFF pour un draw() plus tard
+			var brush:BitmapData = new BitmapData(m_brushSize, m_brushSize, true, 0); 
+			// false et 0x808080 pour une application immédiate / true pour un draw() plus tard
 			brush.draw(gra3);
 			brush.copyChannel(graVer, graVer.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
 			brush.copyChannel(graHor, graHor.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
@@ -151,8 +177,6 @@ package lab
 			//dbgBM.x = 0;
 			//dbgBM.y = 0; // m_stage.stageHeight / 4;
 			gradientView.addChild(m_brush);
-			
-			
 			
 			return brush;
 		}
