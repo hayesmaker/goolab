@@ -14,7 +14,7 @@ package lab
 	 */
 	public class MainGUI extends Sprite
 	{
-		private var m_view:BrushLab;
+		private var m_brushlab:BrushLab;
 		
 		private var slY:HUISlider;
 		private var slX:HUISlider;
@@ -30,8 +30,6 @@ package lab
 			this.width = _w;
 			this.height = _h;
 			
-
-			
 			var slSize:HUISlider = new HUISlider(this, 10, 15, "Size",onSlideSize);
 			slSize.setSliderParams(1, 200, 0);
 			addChild(slSize);
@@ -40,46 +38,43 @@ package lab
 			sl01.setSliderParams(1, 200, 0);
 			addChild(sl01);
 
-			slX = new HUISlider(this, 10, 35, "X",onSlideXY);
-			slX.setSliderParams(0, 300, 0);
-			addChild(slX);
+			//slX = new HUISlider(this, 10, 35, "X",onSlideXY);
+			//slX.setSliderParams(0, 300, 0);
+			//addChild(slX);
 
-			slY = new HUISlider(this, 10, 45, "Y",onSlideXY);
-			slY.setSliderParams(0, 300, 0);
-			addChild(slY);
+			//slY = new HUISlider(this, 10, 45, "Y",onSlideXY);
+			//slY.setSliderParams(0, 300, 0);
+			//addChild(slY);
 			
-						/*
-			var cb:ComboBox = new ComboBox(this, 0, 0, "gradient", ["gradient 1", "gradient 2"]);
-			cb.addEventListener(Event.SELECT, onComboSelect);
-			addChild(cb);
-			*/
-
+			//var cb:ComboBox = new ComboBox(this, 0, 0, "gradient", ["gradient 1", "gradient 2"]);
+			//cb.addEventListener(Event.SELECT, onComboSelect);
+			//addChild(cb);
 		}
 		
-		public function set view(_b:BrushLab)
+		public function set view(_b:BrushLab):void
 		{
-			m_view = _b;
+			m_brushlab = _b;
 		}
 
 		
 		private function onSlideXY(e:Event):void
 		{
 			//trace("-------------------- " + e.target.value);
-			m_view.setApplyPos(slX.value, slY.value);
+			m_brushlab.setApplyPos(slX.value, slY.value);
 		}
 
 		
 		private function onSlide(e:Event):void
 		{
 			//trace("-------------------- " + e.target.value);
-			m_view.setDisplacementScale(e.target.value);
+			m_brushlab.setDisplacementScale(e.target.value);
 		}
 
 		
 		private function onSlideSize(e:Event):void
 		{
 			//trace("-------------------- " + e.target.value);
-			m_view.setDisplacementSize(e.target.value);
+			m_brushlab.setDisplacementSize(e.target.value);
 		}
 
 		
