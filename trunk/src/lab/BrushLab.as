@@ -181,7 +181,7 @@ package lab
 			m_targetImage.filters = [m_displacementMapFilter];
 		}
 		
-		private var m_disScale:Number = 50; // scale in DisplacementMapFilter
+		private var m_disScale:Number = 40; // scale in DisplacementMapFilter
 		private var m_targetX:Number = 20;
 		private var m_targetY:Number = 20;
 		private var m_brushSize:Number = 10;
@@ -249,6 +249,12 @@ package lab
 			//dbgBM.y = 0; // m_stage.stageHeight / 4;
 			gradientView.addChild(m_brush);
 			
+			
+//m_displacementMapFilter = 
+
+
+m_targetImage.filters.push(new DisplacementMapFilter(m_blurredDisplaceMap, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.WRAP));
+
 			return brush;
 		}
 		
@@ -262,40 +268,7 @@ package lab
 		
 		
 		
-		private function testDisplaceBrush2():DisplacementMapFilter
-		{
-			// GRADIENT VERTICAL ==================================================================
-			var s1:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x0000ff, 0], [1, 1], 90);
-			var graVer:BitmapData = new BitmapData(s1.width, s1.height, false, 0x808080);
-			graVer.draw(s1);
-			
-			// GRADIENT HORIZONTAL ================================================================
-			var s2:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x00ff00, 0], [1, 1]);
-			var graHor:BitmapData = new BitmapData(s2.width, s2.height, false, 0x808080);
-			graHor.draw(s2);
-			
-			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
-			var gra3:Shape = createGradient(GradientType.RADIAL, m_brushSize, m_brushSize, [0, 0], [0.1, 0]);
-			var smoothBMD:BitmapData = new BitmapData(m_brushSize, m_brushSize, false, 0x808080); // false 0x808080 IMPORTANT !!!
-			smoothBMD.draw(gra3);
-			smoothBMD.copyChannel(graVer, graVer.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
-			smoothBMD.copyChannel(graHor, graHor.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
-			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), new BlurFilter(20, 20, BitmapFilterQuality.HIGH));
-			
-			// DISPLACEMENT MAP ===================================================================
-			var disMapF:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_targetX, m_targetY), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.IGNORE);
-			
-			// FOR DEBUG ==========================================================================
-			gradientView.addChild(s1);
-			s2.x = m_stage.stageWidth / 4;
-			gradientView.addChild(s2);
-			var dbgBM:Bitmap = new Bitmap(smoothBMD);
-			dbgBM.x = 0;
-			dbgBM.y = m_stage.stageHeight / 4;
-			gradientView.addChild(dbgBM);
-			
-			return disMapF;
-		}
+		
 		
 		/**
 		 *
@@ -330,7 +303,7 @@ package lab
 			while (gradientView.numChildren != 0)
 				gradientView.removeChildAt(0);
 			
-			m_disScale = 2; // _s
+			m_disScale = _s;
 			updateGooBrush();
 		}
 		
@@ -368,7 +341,8 @@ package lab
 			}
 		}
 		
-		private function initDisplacementMap222():void
+		/*
+		private function initDisplacementMap_OBSOLETE():void
 		{
 			var bm:Bitmap = new ImageClass();
 			var bmd:BitmapData = new BitmapData(bm.width, bm.height, true, 0x808080);
@@ -378,6 +352,44 @@ package lab
 			this.addChild(bm);
 			bm.filters = [disMap];
 		}
+		*/
+		
+		/*
+		private function testDisplaceBrush2():DisplacementMapFilter
+		{
+			// GRADIENT VERTICAL ==================================================================
+			var s1:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x0000ff, 0], [1, 1], 90);
+			var graVer:BitmapData = new BitmapData(s1.width, s1.height, false, 0x808080);
+			graVer.draw(s1);
+			
+			// GRADIENT HORIZONTAL ================================================================
+			var s2:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x00ff00, 0], [1, 1]);
+			var graHor:BitmapData = new BitmapData(s2.width, s2.height, false, 0x808080);
+			graHor.draw(s2);
+			
+			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
+			var gra3:Shape = createGradient(GradientType.RADIAL, m_brushSize, m_brushSize, [0, 0], [0.1, 0]);
+			var smoothBMD:BitmapData = new BitmapData(m_brushSize, m_brushSize, false, 0x808080); // false 0x808080 IMPORTANT !!!
+			smoothBMD.draw(gra3);
+			smoothBMD.copyChannel(graVer, graVer.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
+			smoothBMD.copyChannel(graHor, graHor.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
+			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), new BlurFilter(20, 20, BitmapFilterQuality.HIGH));
+			
+			// DISPLACEMENT MAP ===================================================================
+			var disMapF:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_targetX, m_targetY), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.IGNORE);
+			
+			// FOR DEBUG ==========================================================================
+			gradientView.addChild(s1);
+			s2.x = m_stage.stageWidth / 4;
+			gradientView.addChild(s2);
+			var dbgBM:Bitmap = new Bitmap(smoothBMD);
+			dbgBM.x = 0;
+			dbgBM.y = m_stage.stageHeight / 4;
+			gradientView.addChild(dbgBM);
+			
+			return disMapF;
+		}
+		*/
 	
 	} // end class ================================================================================
 
