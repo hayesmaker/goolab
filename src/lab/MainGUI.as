@@ -35,7 +35,7 @@ package lab
 			addChild(slSize);
 
 			var sl01:HUISlider = new HUISlider(this, 10, 25, "Scale",onSlide);
-			sl01.setSliderParams(1, 200, 0);
+			sl01.setSliderParams(1, 100, 0);
 			addChild(sl01);
 
 			//slX = new HUISlider(this, 10, 35, "X",onSlideXY);
