@@ -13,7 +13,7 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import lab.BrushLab;
+	import lab.*;
 	import liquify.TestLiquify;
 	
 	/**
@@ -42,7 +42,8 @@ package
 			{
 				//addChild(picture);
 				//addChild(new TestLiquify(stage));
-				addChild(new BrushLab(stage));
+				//addChild(BrushManager.getInstance(stage));
+				GUIBrushMediator.getInstance(stage);
 			}
 		
 			//tf.appendText(" +++"+Facebook.login(onFacebookLogin));

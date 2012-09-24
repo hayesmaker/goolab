@@ -29,9 +29,9 @@ package lab
 	 * ...
 	 * @author ductri
 	 */
-	public class BrushLab extends Sprite
+	public final class BrushManager extends Sprite
 	{
-		private var m_stage:Stage;
+		private static var m_stage:Stage;
 		
 		private var m_targetImage:Bitmap; // l'image surlaquelle est appliquée le filtre (le damier)
 		private var m_displaceMap:BitmapData; // la displacemap, sur laquelle est dessiné le pinceau
@@ -43,29 +43,53 @@ package lab
 		
 		private var mouse_pressed:Boolean;
 		
-		private var gui:MainGUI; // PANEL des commandes
-		private var gradientView:Sprite; // PANEL des gradients
+		private static var mediator:GUIBrushMediator;
+		
+		//private var gui:GUIManager; // PANEL des commandes
+		public var gradientView:Sprite; // PANEL des gradients
 		
 		[Embed(source="../assets/checker.jpg")]
 		public var ImageClass:Class;
 		[Embed(source="../assets/keira.jpg")]
 		public var ImageClass1:Class;
 		
+		private static var instance:BrushManager;
+		
 		/**
 		 *
 		 * @param	_s
 		 */
-		public function BrushLab(_s:Stage)
+		public function BrushManager(s:SingletonEnforcer)
 		{
-			m_stage = _s;
+			init();
+		}
+		
+		public static function getInstance(_s:Stage):BrushManager
+		{
+			if (!instance)
+			{
+				m_stage = _s;
+				
+				instance = new BrushManager(new SingletonEnforcer());
+			}
+			return instance;
+		}
+		
+		public static function setMediator(m:GUIBrushMediator):void
+		{
+			mediator = m;
+		}
+		
+		private function init():void
+		{
+			//m_stage = _s;
+			m_stage.addChild(this);
 			
 			gradientView = new Sprite();
 			
 			addChild(gradientView);
 			gradientView.x = 0;
 			gradientView.y = m_stage.stageHeight / 2;
-			gui = new MainGUI(this, m_stage.stageWidth / 2, 0, m_stage.stageWidth / 2, m_stage.stageHeight / 2);
-			gui.view = this;
 			
 			m_targetImage = new ImageClass1();
 			m_stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
@@ -109,8 +133,8 @@ package lab
 		
 		private function onMouseMove(e:MouseEvent):void
 		{
-			m_cursor.x = m_stage.mouseX// - m_brushSize / 2;
-			m_cursor.y = m_stage.mouseY// - m_brushSize / 2;
+			m_cursor.x = m_stage.mouseX // - m_brushSize / 2;
+			m_cursor.y = m_stage.mouseY // - m_brushSize / 2;
 		}
 		
 		private function onEnterFrame(e:Event):void
@@ -131,16 +155,48 @@ package lab
 			switch (e.keyCode)
 			{
 				case Keyboard.SPACE: 
-					m_greenVec.reverse();
-					m_blueVec.reverse();
-					updateGooBrush();
+					reverseBrush();
 					break;
 			}
 		}
 		
+		public function fishEyeBrush():void
+		{
+			m_greenVec = [0x00ff00, 0];
+			m_blueVec = [0x0000ff, 0];
+			updateGooBrush();
+		}
+
+		public function shrinkBrush():void
+		{
+			m_greenVec = [0,0x00ff00];
+			m_blueVec = [0, 0x0000ff];
+			updateGooBrush();
+		}
+		
+		public function eraseBrush():void
+		{
+			m_greenVec = [0x808080, 0x808080];
+			m_blueVec = [0x808080, 0x808080];
+			updateGooBrush();
+		}
+
+		public function moveBrush():void
+		{
+			//m_greenVec = [0,0x00ff00];
+			//m_blueVec = [0, 0x0000ff];
+			//updateGooBrush();
+		}
+
+		public function reverseBrush():void
+		{
+			m_greenVec.reverse();
+			m_blueVec.reverse();
+			updateGooBrush();
+		}
+		
 		private function onMouseWheel(e:MouseEvent):void
 		{
-			
 			m_brushSize += e.delta;
 			if (m_brushSize < 1)
 				m_brushSize = 1;
@@ -181,21 +237,17 @@ package lab
 			m_targetImage.filters = [m_displacementMapFilter];
 		}
 		
-		private var m_disScale:Number = 40; // scale in DisplacementMapFilter
+		public var m_disScale:Number = 40; // scale in DisplacementMapFilter
 		private var m_targetX:Number = 20;
 		private var m_targetY:Number = 20;
-		private var m_brushSize:Number = 10;
+		public var m_brushSize:Number = 10;
 		private var m_greenVec:Array;
 		private var m_blueVec:Array;
 		
 		private function initObjects():void
 		{
-			m_greenVec = [0x00ff00, 0];
-			m_blueVec = [0x0000ff, 0];
-			m_greenVec.reverse();
-			m_blueVec.reverse();
+			fishEyeBrush();
 		}
-		
 		
 		private function updateCursor():void
 		{
@@ -203,9 +255,11 @@ package lab
 			g.clear();
 			//g.beginFill(0x808080, 0.5);
 			g.lineStyle(1, 0xff00ff, 0.5);
-			g.drawCircle(0, 0, m_brushSize/2);
-			m_cursor.x = m_targetX;
-			m_cursor.y = m_targetY;
+			g.drawCircle(0, 0, m_brushSize / 2);
+		/*
+		   m_cursor.x = m_targetX;
+		   m_cursor.y = m_targetY;
+		 */
 		}
 		
 		/**
@@ -213,7 +267,7 @@ package lab
 		 *
 		 * @return
 		 */
-		private function updateGooBrush():BitmapData
+		public function updateGooBrush():BitmapData
 		{
 			
 			// GRADIENT VERTICAL ==================================================================
@@ -249,26 +303,12 @@ package lab
 			//dbgBM.y = 0; // m_stage.stageHeight / 4;
 			gradientView.addChild(m_brush);
 			
+			m_displacementMapFilter = 
+//m_targetImage.filters.push // don't work
+				(new DisplacementMapFilter(m_blurredDisplaceMap, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.IGNORE));
 			
-//m_displacementMapFilter = 
-
-
-m_targetImage.filters.push(new DisplacementMapFilter(m_blurredDisplaceMap, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.WRAP));
-
 			return brush;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		/**
 		 *
@@ -294,32 +334,6 @@ m_targetImage.filters.push(new DisplacementMapFilter(m_blurredDisplaceMap, new P
 			return sh;
 		}
 		
-		/**
-		 *
-		 * @param	_s
-		 */
-		public function setDisplacementScale(_s:Number):void
-		{
-			while (gradientView.numChildren != 0)
-				gradientView.removeChildAt(0);
-			
-			m_disScale = _s;
-			updateGooBrush();
-		}
-		
-		/**
-		 *
-		 * @param	_s
-		 */
-		public function setDisplacementSize(_s:Number):void
-		{
-			while (gradientView.numChildren != 0)
-				gradientView.removeChildAt(0);
-			
-			m_brushSize = _s;
-			updateGooBrush();
-		}
-		
 		public function setApplyPos(_x:Number, _y:Number):void
 		{
 			while (gradientView.numChildren != 0)
@@ -329,68 +343,24 @@ m_targetImage.filters.push(new DisplacementMapFilter(m_blurredDisplaceMap, new P
 			m_targetY = _y;
 			updateGooBrush();
 		}
-		
-		private function randomize(b:BitmapData):void
-		{
-			for (var w:int = 0; w < b.width; w++)
-			{
-				for (var h:int = 0; h < b.height; h++)
-				{
-					b.setPixel(w, h, Math.random() * 65536);
-				}
-			}
-		}
-		
-		/*
-		private function initDisplacementMap_OBSOLETE():void
-		{
-			var bm:Bitmap = new ImageClass();
-			var bmd:BitmapData = new BitmapData(bm.width, bm.height, true, 0x808080);
-			
-			var disMap:DisplacementMapFilter = new DisplacementMapFilter(bmd, new Point(0, 0), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 0, 0, DisplacementMapFilterMode.IGNORE);
-			
-			this.addChild(bm);
-			bm.filters = [disMap];
-		}
-		*/
-		
-		/*
-		private function testDisplaceBrush2():DisplacementMapFilter
-		{
-			// GRADIENT VERTICAL ==================================================================
-			var s1:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x0000ff, 0], [1, 1], 90);
-			var graVer:BitmapData = new BitmapData(s1.width, s1.height, false, 0x808080);
-			graVer.draw(s1);
-			
-			// GRADIENT HORIZONTAL ================================================================
-			var s2:Shape = createGradient(GradientType.LINEAR, m_brushSize, m_brushSize, [0x00ff00, 0], [1, 1]);
-			var graHor:BitmapData = new BitmapData(s2.width, s2.height, false, 0x808080);
-			graHor.draw(s2);
-			
-			// GRADIENT SMOOTH + MERGE DES DEUX GRADIENTS =========================================
-			var gra3:Shape = createGradient(GradientType.RADIAL, m_brushSize, m_brushSize, [0, 0], [0.1, 0]);
-			var smoothBMD:BitmapData = new BitmapData(m_brushSize, m_brushSize, false, 0x808080); // false 0x808080 IMPORTANT !!!
-			smoothBMD.draw(gra3);
-			smoothBMD.copyChannel(graVer, graVer.rect, new Point(), BitmapDataChannel.BLUE, BitmapDataChannel.BLUE);
-			smoothBMD.copyChannel(graHor, graHor.rect, new Point(), BitmapDataChannel.GREEN, BitmapDataChannel.GREEN);
-			smoothBMD.applyFilter(smoothBMD, smoothBMD.rect, new Point(), new BlurFilter(20, 20, BitmapFilterQuality.HIGH));
-			
-			// DISPLACEMENT MAP ===================================================================
-			var disMapF:DisplacementMapFilter = new DisplacementMapFilter(smoothBMD, new Point(m_targetX, m_targetY), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, m_disScale, m_disScale, DisplacementMapFilterMode.IGNORE);
-			
-			// FOR DEBUG ==========================================================================
-			gradientView.addChild(s1);
-			s2.x = m_stage.stageWidth / 4;
-			gradientView.addChild(s2);
-			var dbgBM:Bitmap = new Bitmap(smoothBMD);
-			dbgBM.x = 0;
-			dbgBM.y = m_stage.stageHeight / 4;
-			gradientView.addChild(dbgBM);
-			
-			return disMapF;
-		}
-		*/
+	
+	/*
+	   private function initDisplacementMap_OBSOLETE():void
+	   {
+	   var bm:Bitmap = new ImageClass();
+	   var bmd:BitmapData = new BitmapData(bm.width, bm.height, true, 0x808080);
+	
+	   var disMap:DisplacementMapFilter = new DisplacementMapFilter(bmd, new Point(0, 0), BitmapDataChannel.GREEN, BitmapDataChannel.BLUE, 0, 0, DisplacementMapFilterMode.IGNORE);
+	
+	   this.addChild(bm);
+	   bm.filters = [disMap];
+	   }
+	 */
 	
 	} // end class ================================================================================
 
 } // end package ==================================================================================
+
+internal class SingletonEnforcer
+{
+}
