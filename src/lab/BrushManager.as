@@ -43,7 +43,7 @@ package lab
 		
 		private var mouse_pressed:Boolean;
 		
-		private static var mediator:GUIBrushMediator;
+		private static var mediator:Mediator;
 		
 		//private var gui:GUIManager; // PANEL des commandes
 		public var gradientView:Sprite; // PANEL des gradients
@@ -75,7 +75,7 @@ package lab
 			return instance;
 		}
 		
-		public static function setMediator(m:GUIBrushMediator):void
+		public static function setMediator(m:Mediator):void
 		{
 			mediator = m;
 		}

@@ -1,27 +1,31 @@
 /*
 
-   https://apps.facebook.com/flash_test_ductri/
+https://apps.facebook.com/flash_test_ductri/
 
-   http://facebook.com/developers/
+http://facebook.com/developers/
 
-   http://
-
- */
+*/
 
 package
 
 {
+	
 	import flash.display.Sprite;
+	
 	import flash.events.Event;
+
 	import lab.*;
+	/*
 	import liquify.TestLiquify;
+	*/
 	
 	/**
 	 * ...
 	 * @author Duc-Tri VU
 	 */
-	[Frame(factoryClass="Preloader")]
+	//[Frame(factoryClass="Preloader")]
 	
+//	[SWF(120,102,76)]
 
 	public class Main extends Sprite
 	{
@@ -36,6 +40,7 @@ package
 		
 		private function init(e:Event = null):void
 		{
+			
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
 		
@@ -43,7 +48,7 @@ package
 				//addChild(picture);
 				//addChild(new TestLiquify(stage));
 				//addChild(BrushManager.getInstance(stage));
-				GUIBrushMediator.getInstance(stage);
+				Mediator.getInstance(stage);
 			}
 		
 			//tf.appendText(" +++"+Facebook.login(onFacebookLogin));

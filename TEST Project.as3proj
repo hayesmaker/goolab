@@ -8,9 +8,9 @@
     <movie fps="30" />
     <movie width="600" />
     <movie height="600" />
-    <movie version="11" />
-    <movie minorVersion="1" />
-    <movie platform="Flash Player" />
+    <movie version="3" />
+    <movie minorVersion="3" />
+    <movie platform="AIR Mobile" />
     <movie background="#800000" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
@@ -83,7 +83,7 @@
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="Default" />
+    <option testMovie="Unknown" />
   </options>
   <!-- Plugin storage -->
   <storage />
