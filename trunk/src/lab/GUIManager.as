@@ -19,7 +19,7 @@ package lab
 		
 		private static var _container:DisplayObjectContainer;
 		private static var instance:GUIManager;
-		private static var mediator:GUIBrushMediator;
+		private static var mediator:Mediator;
 		
 		
 		public static const FISH_EYE_BRUSH:String = "Fish eye brush";
@@ -81,7 +81,7 @@ package lab
 			return instance;
 		}
 		
-		public static function setMediator(m:GUIBrushMediator):void
+		public static function setMediator(m:Mediator):void
 		{
 			mediator = m;
 		}
